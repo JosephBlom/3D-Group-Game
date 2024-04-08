@@ -15,5 +15,9 @@ public class Test : MonoBehaviour
         {
             GetComponent<Player>().counter--;
         }
+        else if (Input.GetKeyUp(KeyCode.E))
+        {
+
+        }
     }
 }
