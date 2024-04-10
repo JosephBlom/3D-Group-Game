@@ -1313,6 +1313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2141d1f9fb0ada74087d251548fb3150, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menu: {fileID: 1231087714}
 --- !u!65 &1719401977
 BoxCollider:
   m_ObjectHideFlags: 0
