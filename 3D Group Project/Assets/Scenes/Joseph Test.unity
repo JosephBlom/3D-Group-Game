@@ -2306,12 +2306,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8487868637802111270, guid: f4f7e1ef19a017e40b0c3a7b3577f10c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8487868637802111270, guid: f4f7e1ef19a017e40b0c3a7b3577f10c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 40485216}
+    - target: {fileID: 8487868637802111270, guid: f4f7e1ef19a017e40b0c3a7b3577f10c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: startQuest
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487868637802111270, guid: f4f7e1ef19a017e40b0c3a7b3577f10c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DialogueManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487868637802111270, guid: f4f7e1ef19a017e40b0c3a7b3577f10c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2325,29 +2337,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1343052121324154135, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
-      propertyPath: dialogue.dialogueLines.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1343052121324154135, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
-      propertyPath: dialogue.dialogueLines.Array.data[0].line
-      value: Hello would you like to hear my quest?
-      objectReference: {fileID: 0}
-    - target: {fileID: 1343052121324154135, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
-      propertyPath: dialogue.dialogueLines.Array.data[1].line
-      value: I need you to go kill ten spiders!
-      objectReference: {fileID: 0}
-    - target: {fileID: 1343052121324154135, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
-      propertyPath: dialogue.dialogueLines.Array.data[0].quest
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1343052121324154135, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
-      propertyPath: dialogue.dialogueLines.Array.data[1].quest
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1694383663657270886, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
       propertyPath: m_Name
       value: NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 5233365517448181564, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5233365517448181564, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.data[0].line
+      value: Hello Adventurer!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5233365517448181564, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.data[1].line
+      value: Can you kill 10 spiders for me?
+      objectReference: {fileID: 0}
+    - target: {fileID: 5233365517448181564, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
+      propertyPath: dialogue.dialogueLines.Array.data[1].quest
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7416538872357183042, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
+      propertyPath: quests.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7416538872357183042, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
+      propertyPath: quests.Array.data[0].kill
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7984524479806740692, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
       propertyPath: m_LocalPosition.x

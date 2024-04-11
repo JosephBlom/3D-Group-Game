@@ -11,8 +11,9 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] Button acceptQuest;
     [SerializeField] GameObject player;
 
-    private Queue<DialogueLine> sentences;
+    GameObject NPC;
 
+    private Queue<DialogueLine> sentences;
 
     private void Start()
     {
@@ -21,8 +22,9 @@ public class DialogueManager : MonoBehaviour
         sentences = new Queue<DialogueLine>();
     }
 
-    public void StartDialogue(Dialogue dialogue)
+    public void StartDialogue(Dialogue dialogue, GameObject NPC)
     {
+        this.NPC = NPC;
         sentences.Clear();
 
         dialogueCanvas.enabled = true;
@@ -50,6 +52,13 @@ public class DialogueManager : MonoBehaviour
             acceptQuest.enabled = true;
             acceptQuest.GetComponentInChildren<TextMeshProUGUI>().enabled = true;
             acceptQuest.image.enabled = true;
+            
+            Quest quest = NPC.GetComponent<QuestManager>().isQuest();
+            if(quest == null)
+            {
+                acceptQuest.enabled = false;
+                acceptQuest.GetComponentInChildren<TextMeshProUGUI>().text = "Completed!";
+            }
         }
         else
         {
@@ -74,7 +83,6 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue()
     {
-        ExitMenu();
         CloseDialogue();
     }
 
@@ -88,5 +96,11 @@ public class DialogueManager : MonoBehaviour
     {
         player.GetComponent<StarterAssets.StarterAssetsInputs>().cursorInputForLook = true;
         player.GetComponent<PlayerManager>().inMenu = false;
+    }
+
+    public void startQuest()
+    {
+        NPC.GetComponent<QuestManager>().startQuest();
+        CloseDialogue();
     }
 }
