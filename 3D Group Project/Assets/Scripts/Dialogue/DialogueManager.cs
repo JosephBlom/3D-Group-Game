@@ -2,21 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI textArea;
     [SerializeField] Canvas dialogueCanvas;
+    [SerializeField] Button acceptQuest;
     [SerializeField] GameObject player;
 
-    private Queue<string> sentences;
+    private Queue<DialogueLine> sentences;
 
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         dialogueCanvas.enabled = false;
-        sentences = new Queue<string>();
+        sentences = new Queue<DialogueLine>();
     }
 
     public void StartDialogue(Dialogue dialogue)
@@ -25,7 +27,7 @@ public class DialogueManager : MonoBehaviour
 
         dialogueCanvas.enabled = true;
 
-        foreach (string sentence in dialogue.sentences)
+        foreach (DialogueLine sentence in dialogue.dialogueLines)
         {
             sentences.Enqueue(sentence);
         }
@@ -41,15 +43,29 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        string sentence = sentences.Dequeue();
+        DialogueLine sentence = sentences.Dequeue();
+
+        if (sentence.quest)
+        {
+            acceptQuest.enabled = true;
+            acceptQuest.GetComponentInChildren<TextMeshProUGUI>().enabled = true;
+            acceptQuest.image.enabled = true;
+        }
+        else
+        {
+            acceptQuest.enabled = false;
+            acceptQuest.GetComponentInChildren<TextMeshProUGUI>().enabled = false;
+            acceptQuest.image.enabled = false;
+        }
+
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
     }
 
-    IEnumerator TypeSentence(string sentence)
+    IEnumerator TypeSentence(DialogueLine sentence)
     {
         textArea.text = "";
-        foreach (char character in sentence.ToCharArray())
+        foreach (char character in sentence.line.ToCharArray())
         {
             textArea.text += character;
             yield return new WaitForSeconds(0.02f);
