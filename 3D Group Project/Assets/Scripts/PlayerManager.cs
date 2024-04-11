@@ -7,7 +7,7 @@ public class PlayerManager : MonoBehaviour
 {
     [SerializeField] Transform playerCast;
 
-    bool inMenu = false;
+    public bool inMenu = false;
 
     void Start()
     {
@@ -21,8 +21,13 @@ public class PlayerManager : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.F))
         {
             Physics.Raycast(playerCast.position, transform.TransformDirection(Vector3.forward), out hit, 3);
-            hit.collider.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
-            inMenu = true;
+            if (hit.collider != null)
+            {
+                hit.collider.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
+                GetComponent<StarterAssets.StarterAssetsInputs>().cursorInputForLook = false;
+                inMenu = true;
+            }
+            
         }
     }
 }

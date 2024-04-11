@@ -7,12 +7,14 @@ public class DialogueManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI textArea;
     [SerializeField] Canvas dialogueCanvas;
+    [SerializeField] GameObject player;
 
     private Queue<string> sentences;
 
 
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         dialogueCanvas.enabled = false;
         sentences = new Queue<string>();
     }
@@ -56,12 +58,19 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue()
     {
-        Debug.Log("End of Dialogue");
+        ExitMenu();
+        CloseDialogue();
     }
 
     public void CloseDialogue()
     {
+        ExitMenu();
         dialogueCanvas.enabled = false;
     }
 
+    public void ExitMenu()
+    {
+        player.GetComponent<StarterAssets.StarterAssetsInputs>().cursorInputForLook = true;
+        player.GetComponent<PlayerManager>().inMenu = false;
+    }
 }

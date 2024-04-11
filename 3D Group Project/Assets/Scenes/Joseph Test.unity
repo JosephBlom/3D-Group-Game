@@ -169,6 +169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textArea: {fileID: 1506697246}
   dialogueCanvas: {fileID: 1460001860}
+  player: {fileID: 0}
 --- !u!1 &257229872
 GameObject:
   m_ObjectHideFlags: 0
@@ -922,7 +923,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.1509434, g: 0.05339979, b: 0.05339979, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1240,7 +1241,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 453084650579209855, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
-      insertIndex: -1
+      insertIndex: 5
       addedObject: {fileID: 1573573695}
   m_SourcePrefab: {fileID: 100100000, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
 --- !u!1 &994237746
@@ -2171,6 +2172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCast: {fileID: 1868346825}
+  inMenu: 0
 --- !u!1 &1606587266
 GameObject:
   m_ObjectHideFlags: 0
