@@ -6,9 +6,11 @@ using UnityEngine;
 public class PlayerData
 {
     public int counter;
+    public float timer;
 
     public PlayerData(Player player)
     {
         counter = player.counter;
+        timer = player.timer;
     }
 }

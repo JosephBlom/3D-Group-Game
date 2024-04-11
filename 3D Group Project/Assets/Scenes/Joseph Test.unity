@@ -2176,6 +2176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   counter: 0
+  timer: 0
 --- !u!114 &2058287416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2363,7 +2364,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7416538872357183042, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
       propertyPath: quests.Array.data[0].kill
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7984524479806740692, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
       propertyPath: m_LocalPosition.x
