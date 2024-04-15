@@ -17,14 +17,12 @@ public class PlayerManager : MonoBehaviour
     void Update()
     {
         RaycastHit hit;
-        Cursor.lockState = inMenu ? CursorLockMode.None : CursorLockMode.Locked;
         if (Input.GetKeyUp(KeyCode.F))
         {
             Physics.Raycast(playerCast.position, transform.TransformDirection(Vector3.forward), out hit, 3);
             if (hit.collider != null)
             {
                 hit.collider.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
-                GetComponent<StarterAssets.StarterAssetsInputs>().cursorInputForLook = false;
                 inMenu = true;
             }
             

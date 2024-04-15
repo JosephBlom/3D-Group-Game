@@ -710,6 +710,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hovered: 0
   heldItem: {fileID: 0}
+  thisSlotQuantityText: {fileID: 0}
 --- !u!1 &1229421975815348429
 GameObject:
   m_ObjectHideFlags: 0
@@ -801,6 +802,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hovered: 0
   heldItem: {fileID: 0}
+  thisSlotQuantityText: {fileID: 0}
 --- !u!1 &1240661881835940145
 GameObject:
   m_ObjectHideFlags: 0
@@ -967,6 +969,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hovered: 0
   heldItem: {fileID: 0}
+  thisSlotQuantityText: {fileID: 0}
 --- !u!1 &1427705348763565964
 GameObject:
   m_ObjectHideFlags: 0
@@ -1346,6 +1349,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4575541272340981432}
+  - {fileID: 8581719112330177793}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1507,6 +1511,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hovered: 0
   heldItem: {fileID: 0}
+  thisSlotQuantityText: {fileID: 0}
 --- !u!1 &2169062243788298318
 GameObject:
   m_ObjectHideFlags: 0
@@ -1734,6 +1739,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hovered: 0
   heldItem: {fileID: 0}
+  thisSlotQuantityText: {fileID: 0}
 --- !u!1 &2279770945908354291
 GameObject:
   m_ObjectHideFlags: 0
@@ -2172,6 +2178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hovered: 0
   heldItem: {fileID: 0}
+  thisSlotQuantityText: {fileID: 0}
 --- !u!1 &2982031575723687863
 GameObject:
   m_ObjectHideFlags: 0
@@ -2549,6 +2556,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hovered: 0
   heldItem: {fileID: 0}
+  thisSlotQuantityText: {fileID: 0}
 --- !u!1 &3365657472823992741
 GameObject:
   m_ObjectHideFlags: 0
@@ -2640,6 +2648,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hovered: 0
   heldItem: {fileID: 0}
+  thisSlotQuantityText: {fileID: 0}
 --- !u!1 &3423343039912029577
 GameObject:
   m_ObjectHideFlags: 0
@@ -3242,6 +3251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hovered: 0
   heldItem: {fileID: 0}
+  thisSlotQuantityText: {fileID: 0}
 --- !u!1 &3932605682336607806
 GameObject:
   m_ObjectHideFlags: 0
@@ -3333,6 +3343,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hovered: 0
   heldItem: {fileID: 0}
+  thisSlotQuantityText: {fileID: 0}
 --- !u!1 &3946719410396721888
 GameObject:
   m_ObjectHideFlags: 0
@@ -3424,6 +3435,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hovered: 0
   heldItem: {fileID: 0}
+  thisSlotQuantityText: {fileID: 0}
 --- !u!1 &4149239720258314989
 GameObject:
   m_ObjectHideFlags: 0
@@ -3515,6 +3527,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hovered: 0
   heldItem: {fileID: 0}
+  thisSlotQuantityText: {fileID: 0}
 --- !u!1 &4315656633952351056
 GameObject:
   m_ObjectHideFlags: 0
@@ -3575,6 +3588,81 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!1 &4574987419023107715
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8581719112330177793}
+  - component: {fileID: 5135900545408528576}
+  - component: {fileID: 1063900017797282129}
+  m_Layer: 0
+  m_Name: Drag Icon Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8581719112330177793
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4574987419023107715}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1638730057014476260}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 50, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &5135900545408528576
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4574987419023107715}
+  m_CullTransparentMesh: 1
+--- !u!114 &1063900017797282129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4574987419023107715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -3837,6 +3925,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hovered: 0
   heldItem: {fileID: 0}
+  thisSlotQuantityText: {fileID: 0}
 --- !u!1 &5224719274224388330
 GameObject:
   m_ObjectHideFlags: 0
@@ -4139,6 +4228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hovered: 0
   heldItem: {fileID: 0}
+  thisSlotQuantityText: {fileID: 0}
 --- !u!1 &5385061732577963060
 GameObject:
   m_ObjectHideFlags: 0
@@ -4230,6 +4320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hovered: 0
   heldItem: {fileID: 0}
+  thisSlotQuantityText: {fileID: 0}
 --- !u!1 &5541584586634891522
 GameObject:
   m_ObjectHideFlags: 0
@@ -4607,6 +4698,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hovered: 0
   heldItem: {fileID: 0}
+  thisSlotQuantityText: {fileID: 0}
 --- !u!1 &6488198356421117833
 GameObject:
   m_ObjectHideFlags: 0
@@ -4773,6 +4865,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hovered: 0
   heldItem: {fileID: 0}
+  thisSlotQuantityText: {fileID: 0}
 --- !u!1 &6704743360587559852
 GameObject:
   m_ObjectHideFlags: 0
@@ -4939,6 +5032,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hovered: 0
   heldItem: {fileID: 0}
+  thisSlotQuantityText: {fileID: 0}
 --- !u!1 &7133407080740231490
 GameObject:
   m_ObjectHideFlags: 0
@@ -5799,6 +5893,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hovered: 0
   heldItem: {fileID: 0}
+  thisSlotQuantityText: {fileID: 0}
 --- !u!1 &8349120167833462422
 GameObject:
   m_ObjectHideFlags: 0
@@ -5965,6 +6060,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hovered: 0
   heldItem: {fileID: 0}
+  thisSlotQuantityText: {fileID: 0}
 --- !u!1 &8775710041101217113
 GameObject:
   m_ObjectHideFlags: 0
@@ -6464,6 +6560,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hovered: 0
   heldItem: {fileID: 0}
+  thisSlotQuantityText: {fileID: 0}
 --- !u!1 &9038655957299023910
 GameObject:
   m_ObjectHideFlags: 0
