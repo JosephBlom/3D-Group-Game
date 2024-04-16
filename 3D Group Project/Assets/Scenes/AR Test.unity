@@ -2231,9 +2231,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: 100
-  playerRegenTick: 0.25
-  playerRegenDelay: 5
-  playerShield: 3
+  playerRegenTick: 1
+  playerRegenDelay: 2
+  playerShield: 1
   playerShieldRegenTick: 0.1
   playerShieldRegenDelay: 3
   extraHealthActive: 0
