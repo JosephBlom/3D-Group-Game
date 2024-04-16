@@ -18,6 +18,7 @@ public class SaveManager : MonoBehaviour
 
     public void SavePlayer()
     {
+        player.fillInventory();
         SaveSystem.SavePlayer(player);
     }
 
@@ -26,5 +27,13 @@ public class SaveManager : MonoBehaviour
         PlayerData data = SaveSystem.LoadPlayer();
 
         player.counter = data.counter;
+        player.timer = data.timer;
+        for(int i = 0; i < 21; i++)
+        {
+            player.itemNames.Add(data.itemNames[i]);
+            player.itemDescription.Add(data.itemDescription[i]);
+            player.itemCurQuantity.Add(data.itemCurQuantity[i]);
+            player.itemMaxQuantity.Add(data.itemMaxQuantity[i]);
+        }
     }
 }

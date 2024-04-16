@@ -7,10 +7,38 @@ public class PlayerData
 {
     public int counter;
     public float timer;
+    public List<string> itemNames = new List<string>();
+    public List<string> itemDescription = new List<string>();
+    public List<int> itemCurQuantity = new List<int>();
+    public List<int> itemMaxQuantity = new List<int>();
 
     public PlayerData(Player player)
     {
         counter = player.counter;
         timer = player.timer;
+        fillInventory(player.GetComponent<Inventory>());
+    }
+
+    private void fillInventory(Inventory script)
+    {
+        List<Slot> inventory = script.inventorySlots;
+        foreach (Slot slot in inventory)
+        {
+            if(slot.heldItem != null)
+            {
+                itemNames.Add(slot.heldItem.name);
+                itemDescription.Add(slot.heldItem.description);
+                itemCurQuantity.Add(slot.heldItem.currentQuantity);
+                itemMaxQuantity.Add(slot.heldItem.maxQuantity);
+            }
+            else
+            {
+                itemNames.Add(null);
+                itemDescription.Add(null);
+                itemCurQuantity.Add(0);
+                itemMaxQuantity.Add(0);
+            }
+            
+        }
     }
 }

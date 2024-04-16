@@ -72,19 +72,19 @@ public class PlayerHealthSystem : MonoBehaviour
     }
 
     // natural regen
-    public void PlayerHealthRegen()
+    private void PlayerHealthRegen()
     {
         if (!isAlive || playerHealth >= maxHealth) { return; }
 
         StartCoroutine(Regen());
     }
-    public void PlayerShieldRegen()
+    private void PlayerShieldRegen()
     {
         if (!isAlive || playerShield >= maxShield) { return; }
 
         StartCoroutine(ShieldRegen());
     }
-    public void HealthFix()
+    private void HealthFix()
     {
         if (playerHealth < 0)
         {

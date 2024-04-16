@@ -95,7 +95,7 @@ public class DialogueManager : MonoBehaviour
     public void ExitMenu()
     {
         player.GetComponent<StarterAssets.StarterAssetsInputs>().cursorInputForLook = true;
-        player.GetComponent<PlayerManager>().inMenu = false;
+        player.GetComponent<PlayerManager>().mouseLock(false);
     }
 
     public void startQuest()
