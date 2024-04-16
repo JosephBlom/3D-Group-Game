@@ -17,15 +17,13 @@ public class PlayerUI : MonoBehaviour
     {
         healthSystem = GetComponent<PlayerHealthSystem>();
 
-        healthSlider = GetComponent<Slider>();
-        shieldSlider = GetComponent<Slider>();
+        healthSlider = GetComponentInChildren<Slider>();
+        shieldSlider = GetComponentInChildren<Slider>();
     }
     private void Update()
     {
         healthText.text = healthSystem.playerHealth.ToString();
-        healthSlider.value = healthSystem.playerHealth;
         shieldHPText.text = healthSystem.playerShield.ToString();
-        shieldSlider.value = healthSystem.playerShield;
     }
 
 }

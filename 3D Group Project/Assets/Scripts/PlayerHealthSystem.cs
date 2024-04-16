@@ -19,10 +19,6 @@ public class PlayerHealthSystem : MonoBehaviour
 
     private int maxHealth;
     private int maxShield;
-    private float shieldTimer;
-    private float shieldTickTimer;
-    private float regenTimer;
-    private float healthTimer;
 
     private bool isAlive = true;
     private bool shieldRegen = false;
@@ -47,22 +43,22 @@ public class PlayerHealthSystem : MonoBehaviour
     public void PlayerTakeDamage(int damage)
     {
         if (!isAlive) { return; }
-        if(playerShield > 0)
+        if (playerShield > 0)
         {
             int damagetoSubtract = playerShield;
             playerShield -= damage;
             damage -= damagetoSubtract;
-            shieldTimer = 0;
-            if(damagetoSubtract > 0)
+            shieldRegen = false;
+            if (damage > 0)
             {
                 playerHealth -= damage;
-                regenTimer = 0;
+                regenActive = false;
             }
         }
         else
         {
             playerHealth -= damage;
-            regenTimer = 0;
+            regenActive = false;
         }
     }
     public void PlayerHeal(int health)
@@ -76,58 +72,19 @@ public class PlayerHealthSystem : MonoBehaviour
     }
 
     // natural regen
-    public void PlayerHealthRegen()
+    private void PlayerHealthRegen()
     {
-        if (!isAlive || playerHealth >= maxHealth) {return;}
+        if (!isAlive || playerHealth >= maxHealth) { return; }
 
-        healthTimer += Time.deltaTime;
-        regenTimer += Time.deltaTime;
-        if (regenTimer < playerRegenDelay)
-        {
-            regenActive = false;
-        }
-        else
-        {
-            regenActive = true;
-        }
-        
-        if(regenActive)
-        {
-            bool regenTick = healthTimer >= playerRegenTick;
-            if (regenTick)
-            {
-                playerHealth++;
-                Debug.Log(playerHealth);
-                healthTimer = 0;
-            }
-        }
+        StartCoroutine(Regen());
     }
-    public void PlayerShieldRegen()
+    private void PlayerShieldRegen()
     {
         if (!isAlive || playerShield >= maxShield) { return; }
 
-        shieldTickTimer += Time.deltaTime;
-        shieldTimer += Time.deltaTime;
-        if (shieldTimer < playerRegenDelay)
-        {
-            shieldRegen = false;
-        }
-        else
-        {
-            shieldRegen = true;
-        }
-
-        if (shieldRegen)
-        {
-            bool shieldTick = shieldTickTimer >= playerShieldRegenTick;
-            if (shieldTick)
-            {
-                playerShield++;
-                shieldTickTimer = 0;
-            }
-        }
+        StartCoroutine(ShieldRegen());
     }
-    public void HealthFix()
+    private void HealthFix()
     {
         if (playerHealth < 0)
         {
@@ -137,5 +94,33 @@ public class PlayerHealthSystem : MonoBehaviour
         {
             playerShield = 0;
         }
+        if(playerHealth > maxHealth && !extraHealthActive)
+        {
+            playerHealth = maxHealth;
+        }
+    }
+    private IEnumerator Regen()
+    {
+        if (!regenActive)
+        {
+            yield return new WaitForSeconds(playerRegenDelay);
+            regenActive = true;
+        }
+
+        yield return new WaitForSeconds(playerRegenTick);
+        playerHealth++;
+        StopAllCoroutines();
+    }
+    private IEnumerator ShieldRegen()
+    {
+        if(!shieldRegen)
+        {
+            yield return new WaitForSeconds(playerShieldRegenDelay);
+            shieldRegen = true;
+        }
+
+        yield return new WaitForSeconds(playerShieldRegenTick);
+        playerShield++;
+        StopAllCoroutines();
     }
 }
