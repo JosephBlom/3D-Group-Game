@@ -9,11 +9,6 @@ public class PlayerManager : MonoBehaviour
 
     public bool inMenu = false;
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         RaycastHit hit;
@@ -23,9 +18,17 @@ public class PlayerManager : MonoBehaviour
             if (hit.collider != null)
             {
                 hit.collider.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
-                inMenu = true;
+                mouseLock(true);
             }
             
         }
+        
+    }
+
+    public void mouseLock(bool enable)
+    {
+        Cursor.lockState = enable ? CursorLockMode.None : CursorLockMode.Locked;
+        Cursor.visible = enable;
+        GetComponentInChildren<StarterAssets.StarterAssetsInputs>().cursorInputForLook = !enable;
     }
 }
