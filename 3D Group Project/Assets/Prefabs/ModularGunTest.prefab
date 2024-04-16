@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8903834180363111555}
   - component: {fileID: 823115900354116551}
   - component: {fileID: 2037976862364007542}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ModularGunTest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,9 +28,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1594529055912856147}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.70710707, y: -0, z: -0, w: 0.70710653}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0.338, y: -0.232, z: 0.56}
-  m_LocalScale: {x: 0.3241, y: 0.3241, z: 0.3241}
+  m_LocalScale: {x: 0.2596365, y: 0.2596365, z: 0.2596365}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7110670965144823294}
@@ -121,16 +121,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c2036355d2e0bf42834e8ed7ab3258e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet: {fileID: 7808518807400987192, guid: 6e8ae2e3421f0684fb9481db9100445d, type: 3}
+  automatic: 1
+  weaponInaccuracy: 0.1
+  fireRate: 0.5
+  reloadSpeed: 0.5
+  rangedDamage: 0.5
+  gunRange: 15
+  bulletCount: 1
+  bulletDespawnTimer: 1
+  ammoType: 1
+  ammoConsumed: 1
+  magazineSize: 30
   debug: 1
   firepoint: {fileID: 8427066566267478590}
-  bullet: {fileID: 7808518807400987192, guid: 6e8ae2e3421f0684fb9481db9100445d, type: 3}
-  canAttack: 1
-  rangedCooldown: 0.1
-  rangedDamage: 0.5
-  rangedRange: 15
-  numberofShots: 1
-  pickupText: {fileID: 0}
-  canPickup: 0
 --- !u!1 &8427066566267478590
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,7 +11,8 @@ public class RaycastShooting : MonoBehaviour
     [SerializeField] private GameObject bullet;
     [SerializeField] private bool automatic = true;
     [Min(0), SerializeField] private float weaponInaccuracy = 0.1f;
-    [SerializeField] private float weaponCooldown = 0.5f;
+    [SerializeField] private float fireRate = 0.5f;
+    [SerializeField] private float reloadSpeed = 0.5f;
     [Min(0), SerializeField] private float rangedDamage = 0.5f;
     [Min(0.1f), SerializeField] private float gunRange = 5f;
     [Min(1), SerializeField] private int bulletCount = 1;
@@ -27,6 +28,7 @@ public class RaycastShooting : MonoBehaviour
     [SerializeField] private GameObject firepoint;
 
     private bool canAttack = true;
+    private bool reloading = false;
     private int ammoCount;
 
     private void Awake()
@@ -48,17 +50,21 @@ public class RaycastShooting : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.R) && ammoCount < magazineSize)
         {
-            ammoCount = magazineSize;
-            Debug.Log("Reloaded. new ammo is " + ammoCount);
+            if(canAttack)
+            {
+                IEnumerator reload = Reload(reloadSpeed);
+                StopCoroutine(reload);
+                StartCoroutine(reload);
+            }
         }
     }
     private void Shoot()
     {
-        if (!canAttack || ammoCount <= 0)
+        if (!canAttack || ammoCount <= 0 || reloading)
         {
             return;
         }
-        IEnumerator cooldown = WeaponCooldown(weaponCooldown);
+        IEnumerator cooldown = WeaponCooldown(fireRate);
         for (int i = 0; i < bulletCount; i++)
         {
             GameObject realBullet = Instantiate(bullet, firepoint.transform.position + new Vector3((Random.Range(0, weaponInaccuracy)), (Random.Range(0, weaponInaccuracy)), (Random.Range(0, weaponInaccuracy))), Camera.main.transform.rotation);
@@ -67,12 +73,19 @@ public class RaycastShooting : MonoBehaviour
         }
         StartCoroutine(cooldown);
         ammoCount -= ammoConsumed;
-        Debug.Log(ammoCount);
     }
     private IEnumerator WeaponCooldown(float seconds)
     {
         canAttack = false;
         yield return new WaitForSeconds(seconds);
+        canAttack = true;
+    }
+    private IEnumerator Reload(float seconds)
+    {
+        canAttack = false;
+        yield return new WaitForSeconds(seconds);
+        ammoCount = magazineSize;
+        Debug.Log("Reloaded. new ammo is " + ammoCount);
         canAttack = true;
     }
 }
