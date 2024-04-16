@@ -27,7 +27,6 @@ public class Player : MonoBehaviour
     {
         foreach (Slot slot in inventory)
         {
-            Debug.Log("Ran");
             if (slot.heldItem != null)
             {
                 itemNames.Add(slot.heldItem.name);

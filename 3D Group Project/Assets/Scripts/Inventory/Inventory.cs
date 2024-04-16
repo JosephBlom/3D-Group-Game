@@ -22,6 +22,10 @@ public class Inventory : MonoBehaviour
     private Item currentDraggedItem;
     private int currentDragSlotIndex = -1;
 
+    [Header("Save")]
+    [SerializeField] ItemList list;
+    private Player player;
+    private List<Item> allItems;
 
     private void Start()
     {
@@ -32,6 +36,10 @@ public class Inventory : MonoBehaviour
         {
             uiSlots.initialiseSlot();
         }
+
+        player = GetComponent<Player>();
+        allItems = list.allItems;
+        loadInventory(player);
     }
 
     private void Update()
@@ -56,6 +64,23 @@ public class Inventory : MonoBehaviour
             dropItem();
         }
         dragIconImage.transform.position = Input.mousePosition;
+    }
+
+    public void loadInventory(Player player)
+    {
+        for(int i = 0; i < inventorySlots.Count; i++)
+        {
+            Debug.Log("Ran");
+            for(int y = 0; y < allItems.Count; y++)
+            {
+                if (allItems[y].name.Equals(player.itemNames[i]))
+                {
+                    //Work on using the set item command to set the item.
+                    inventorySlots[i].heldItem = allItems[y];
+                    inventorySlots[i].heldItem.currentQuantity = player.itemCurQuantity[i];
+                }
+            }
+        }
     }
 
     private void itemRaycast(bool hasClicked = false)

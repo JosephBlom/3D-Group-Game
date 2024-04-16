@@ -6,7 +6,7 @@ public class SaveManager : MonoBehaviour
 {
     [SerializeField] Player player;
 
-    private void Start()
+    private void Awake()
     {
         LoadPlayer();
     }
