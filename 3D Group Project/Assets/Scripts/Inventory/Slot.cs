@@ -7,6 +7,7 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public bool hovered;
     public Item heldItem;
+    public int slotQuantity;
 
     private Color opaque = new Color(1, 1, 1, 1);
     private Color transparent = new Color(1, 1, 1, 0);
@@ -51,7 +52,7 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         if(heldItem != null)
         {
-            thisSlotQuantityText.text = heldItem.currentQuantity.ToString();
+            thisSlotQuantityText.text = slotQuantity.ToString();
         }
         else
         {

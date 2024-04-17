@@ -18,17 +18,6 @@ public class Dialogue
     public List<DialogueLine> dialogueLines = new List<DialogueLine>();
 }
 
-[System.Serializable]
-public class Quest
-{
-    public bool kill;
-    public bool find;
-    public List<GameObject> needKill = new List<GameObject>();
-    public List<GameObject> needFind = new List<GameObject>();
-    public bool isActive;
-    public bool completed;
-}
-
 public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue dialogue;

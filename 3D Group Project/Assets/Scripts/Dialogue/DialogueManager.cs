@@ -52,12 +52,12 @@ public class DialogueManager : MonoBehaviour
             acceptQuest.enabled = true;
             acceptQuest.GetComponentInChildren<TextMeshProUGUI>().enabled = true;
             acceptQuest.image.enabled = true;
-            
-            Quest quest = NPC.GetComponent<QuestManager>().isQuest();
-            if(quest == null)
+
+            Quest quest = NPC.GetComponent<QuestManager>().quest;
+            if (quest.completed)
             {
+                acceptQuest.GetComponentInChildren<TextMeshProUGUI>().text = "Completed";
                 acceptQuest.enabled = false;
-                acceptQuest.GetComponentInChildren<TextMeshProUGUI>().text = "Completed!";
             }
         }
         else
@@ -100,7 +100,7 @@ public class DialogueManager : MonoBehaviour
 
     public void startQuest()
     {
-        NPC.GetComponent<QuestManager>().startQuest();
+        //NPC.GetComponent<QuestManager>().startQuest();
         CloseDialogue();
     }
 }

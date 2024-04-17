@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3035712910896023212}
   - component: {fileID: 3583306950471196531}
   - component: {fileID: 5233365517448181564}
-  - component: {fileID: 7416538872357183042}
+  - component: {fileID: 6543715846535084946}
   m_Layer: 0
   m_Name: NPC (NEEDS A DIALOGUE MANAGER)
   m_TagString: Untagged
@@ -151,16 +151,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     dialogueLines:
-    - quest:
-        activeOnLine: 0
-        kill: 0
-        find: 0
-        needKill: []
-        needFind: []
-        isActive: 0
-        completed: 0
-      line: 
---- !u!114 &7416538872357183042
+    - quest: 0
+      line: Hello Adventurer!
+    - quest: 1
+      line: Can you kill 10 spiders for me?
+--- !u!114 &6543715846535084946
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -169,7 +164,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1694383663657270886}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59c6396d687073f408a418dad8a67b12, type: 3}
+  m_Script: {fileID: 11500000, guid: c03fd6054514516429746b1cfdbabfba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quests: []
+  quest:
+    isActive: 0
+    title: 
+    description: 
+    experienceReward: 0
+    goldReward: 0
+  player: {fileID: 0}

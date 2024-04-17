@@ -7,7 +7,7 @@ public class PlayerManager : MonoBehaviour
 {
     [SerializeField] Transform playerCast;
 
-    public bool inMenu = false;
+    public Quest quest;
 
     void Update()
     {

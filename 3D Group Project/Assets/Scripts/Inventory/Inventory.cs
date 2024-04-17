@@ -27,6 +27,8 @@ public class Inventory : MonoBehaviour
     private Player player;
     private List<Item> allItems;
 
+    private PlayerManager playerManager;
+
     private void Start()
     {
         toggleInventory(false);
@@ -38,6 +40,7 @@ public class Inventory : MonoBehaviour
         }
 
         player = GetComponent<Player>();
+        playerManager = GetComponentInChildren<PlayerManager>();
         allItems = list.allItems;
         loadInventory(player);
     }
@@ -76,8 +79,9 @@ public class Inventory : MonoBehaviour
                 if (allItems[y].name.Equals(player.itemNames[i]))
                 {
                     //Work on using the set item command to set the item.
+                    inventorySlots[i].slotQuantity = player.itemCurQuantity[i];
                     inventorySlots[i].setItem(allItems[y]);
-                    inventorySlots[i].heldItem.currentQuantity = player.itemCurQuantity[i];
+                    
                 }
             }
         }
@@ -98,6 +102,8 @@ public class Inventory : MonoBehaviour
                     Item newItem = hit.collider.GetComponent<Item>();
                     if (newItem)
                     {
+                        playerManager.quest.goal.ItemCollected(hit.collider.tag);
+                        playerManager.quest.checkComplete();
                         addItemToInventory(newItem);
                     }
                 }
@@ -124,18 +130,18 @@ public class Inventory : MonoBehaviour
 
             if (heldItem != null && itemToAdd.name == heldItem.name)
             {
-                int freeSpaceInSlot = heldItem.maxQuantity = heldItem.currentQuantity;
+                int freeSpaceInSlot = heldItem.maxQuantity - heldItem.currentQuantity;
 
                 if (freeSpaceInSlot >= leftoverQuantity)
                 {
-                    heldItem.currentQuantity += leftoverQuantity;
+                    inventorySlots[i].slotQuantity += leftoverQuantity;
                     Destroy(itemToAdd.gameObject);
                     inventorySlots[i].updateData();
                     return;
                 }
                 else
                 {
-                    heldItem.currentQuantity = heldItem.maxQuantity;
+                    inventorySlots[i].slotQuantity = heldItem.maxQuantity;
                     leftoverQuantity -= freeSpaceInSlot;
                 }
             }
@@ -175,10 +181,6 @@ public class Inventory : MonoBehaviour
         for (int i = 0; i < inventorySlots.Count; i++)
         {
             Slot curSlot = inventorySlots[i];
-            if (curSlot.hovered)
-            {
-                Debug.Log(curSlot.heldItem);
-            }
             if(curSlot.hovered && curSlot.hasItem())
             {
                 currentDragSlotIndex = i;

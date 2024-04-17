@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
             {
                 itemNames.Add(slot.heldItem.name);
                 itemDescription.Add(slot.heldItem.description);
-                itemCurQuantity.Add(slot.heldItem.currentQuantity);
+                itemCurQuantity.Add(slot.slotQuantity);
                 itemMaxQuantity.Add(slot.heldItem.maxQuantity);
             }
             else
