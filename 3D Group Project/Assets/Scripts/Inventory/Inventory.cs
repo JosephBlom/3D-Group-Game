@@ -76,7 +76,7 @@ public class Inventory : MonoBehaviour
                 if (allItems[y].name.Equals(player.itemNames[i]))
                 {
                     //Work on using the set item command to set the item.
-                    inventorySlots[i].heldItem = allItems[y];
+                    inventorySlots[i].setItem(allItems[y]);
                     inventorySlots[i].heldItem.currentQuantity = player.itemCurQuantity[i];
                 }
             }
@@ -175,6 +175,10 @@ public class Inventory : MonoBehaviour
         for (int i = 0; i < inventorySlots.Count; i++)
         {
             Slot curSlot = inventorySlots[i];
+            if (curSlot.hovered)
+            {
+                Debug.Log(curSlot.heldItem);
+            }
             if(curSlot.hovered && curSlot.hasItem())
             {
                 currentDragSlotIndex = i;
