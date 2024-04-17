@@ -128,6 +128,10 @@ public class EnemyHealthSystem : MonoBehaviour
         {
             enemyHealth = enemy_maxHealth;
         }
+        if (enemyShield > enemy_maxShield)
+        {
+            enemyShield = enemy_maxShield;
+        }
     }
     private void Die()
     {
