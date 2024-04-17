@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class RaycastShooting : MonoBehaviour
+public class GunSystem : MonoBehaviour
 {
     [Header("General Weapon Settings")]
     [SerializeField] private GameObject bullet;
@@ -21,7 +21,7 @@ public class RaycastShooting : MonoBehaviour
     [Header("Weapon Ammo Settings")]
     [SerializeField] private int ammoType = 1;
     [Min(0), SerializeField] private int ammoConsumed = 1;
-    [Min(0), SerializeField] private int magazineSize = 30;
+    [Min(0), SerializeField] public int magazineSize = 30;
 
     [Header("Debug Settings")]
     [SerializeField] private bool debug = true;
@@ -29,7 +29,7 @@ public class RaycastShooting : MonoBehaviour
 
     private bool canAttack = true;
     private bool reloading = false;
-    private int ammoCount;
+    public int ammoCount;
 
     private void Awake()
     {
