@@ -61,7 +61,6 @@ public class DialogueManager : MonoBehaviour
             }
             else if (quest.isActive && !quest.completed)
             {
-                NPC.GetComponent<QuestManager>().checkQuest();
                 acceptQuest.enabled = false;
                 acceptQuest.GetComponentInChildren<TextMeshProUGUI>().text = "Need to complete mission!";
             }
@@ -111,7 +110,7 @@ public class DialogueManager : MonoBehaviour
     }
     public void completeQuest()
     {
-        NPC.GetComponent<QuestManager>().completeQuest();
+        //NPC.GetComponent<QuestManager>().completeQuest();
         CloseDialogue();
     }
 }
