@@ -2468,6 +2468,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2081429772}
+  - {fileID: 594035857}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &439740186
@@ -3347,6 +3348,62 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: b98185666e2db154a9e9012d6270c56b, type: 3}
+--- !u!1 &594035856
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 594035857}
+  - component: {fileID: 594035858}
+  m_Layer: 0
+  m_Name: QuestMan
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &594035857
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594035856}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 153.03278, y: -15.345042, z: -191.80786}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 439601491}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &594035858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594035856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c03fd6054514516429746b1cfdbabfba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quest:
+    isActive: 0
+    completed: 0
+    title: 
+    experienceReward: 0
+    goldReward: 0
+    goal:
+      goalType: 0
+      requiredAmount: 0
+      currentAmount: 0
+      requiredTag: 
+  player: {fileID: 1996081198}
 --- !u!1001 &611383103
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10732,6 +10789,17 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 7d1c542ac0453aa40a248ffb042193c2, type: 3}
+--- !u!114 &1996081198 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 436696021697102984, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
+  m_PrefabInstance: {fileID: 2077518390}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e11aea2ec4f57f48991444c0ddd4a60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1996651046
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11964,7 +12032,7 @@ GameObject:
   - component: {fileID: 2081429772}
   - component: {fileID: 2081429773}
   m_Layer: 0
-  m_Name: Dialogue
+  m_Name: DialogueMan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
