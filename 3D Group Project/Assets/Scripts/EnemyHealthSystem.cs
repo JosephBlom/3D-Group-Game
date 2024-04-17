@@ -10,6 +10,7 @@ public class EnemyHealthSystem : MonoBehaviour
     [SerializeField] private int enemyRegenDelay = 5;
 
     [Header("Enemy Shield Settings")]
+    [SerializeField] public bool enableShield = true;
     [Min(1), SerializeField] public int enemyShield = 100;
     [SerializeField] private float enemyShieldRegenTick = 0.05f;
     [SerializeField] private int enemyShieldRegenDelay = 5;
@@ -23,12 +24,23 @@ public class EnemyHealthSystem : MonoBehaviour
     private void Awake()
     {
         enemy_maxHealth = enemyHealth;
-        enemy_maxShield = enemyShield;
+        if (enableShield)
+        {
+            enemy_maxShield = enemyShield;
+        }
+        else
+        {
+            enemy_maxShield = 0;
+            enemyShield = 0;
+        }
     }
     private void Update()
     {
+        if(enableShield)
+        {
+            EnemyShieldRegen();
+        }
         EnemyHealthRegen();
-        EnemyShieldRegen();
         EnemyHealthFix();
         Die();
     }

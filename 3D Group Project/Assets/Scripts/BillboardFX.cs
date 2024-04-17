@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class BillboardFX : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Transform camTransform;
+
+    Quaternion originalRotation;
+
     void Start()
     {
-        
+        camTransform = Camera.main.transform;
+        originalRotation = transform.rotation;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        transform.rotation = camTransform.rotation * originalRotation;
     }
 }

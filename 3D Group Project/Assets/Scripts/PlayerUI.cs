@@ -12,18 +12,23 @@ public class PlayerUI : MonoBehaviour
     [SerializeField] Slider shieldSlider;
     PlayerHealthSystem healthSystem;
 
-
     private void Awake()
     {
         healthSystem = GetComponent<PlayerHealthSystem>();
-
-        healthSlider = GetComponentInChildren<Slider>();
-        shieldSlider = GetComponentInChildren<Slider>();
+        healthSlider.maxValue = healthSystem.playerHealth;
+        shieldSlider.maxValue = healthSystem.playerShield;
     }
     private void Update()
     {
+        healthSlider.value = healthSystem.playerHealth;
+        shieldSlider.value = healthSystem.playerShield;
         healthText.text = healthSystem.playerHealth.ToString();
         shieldHPText.text = healthSystem.playerShield.ToString();
     }
+    private void HPTextManager()
+    {
+        
+    }
+
 
 }
