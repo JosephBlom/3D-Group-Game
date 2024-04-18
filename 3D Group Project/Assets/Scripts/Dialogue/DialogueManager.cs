@@ -102,15 +102,4 @@ public class DialogueManager : MonoBehaviour
         player.GetComponent<StarterAssets.StarterAssetsInputs>().cursorInputForLook = true;
         player.GetComponent<PlayerManager>().mouseLock(false);
     }
-
-    public void startQuest()
-    {
-        //NPC.GetComponent<QuestManager>().startQuest();
-        CloseDialogue();
-    }
-    public void completeQuest()
-    {
-        //NPC.GetComponent<QuestManager>().completeQuest();
-        CloseDialogue();
-    }
 }
