@@ -14,7 +14,7 @@ public class QuestManager : MonoBehaviour
 
     public void AcceptQuest()
     {
-        quest.isActive = true;
-        player.quest = quest;
+        player.currentNPC.GetComponent<QuestManager>().quest.isActive = true;
+        player.quest = player.currentNPC.GetComponent<QuestManager>().quest;
     }
 }

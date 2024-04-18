@@ -8,6 +8,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] Transform playerCast;
 
     public Quest quest;
+    public GameObject currentNPC;
 
     void Update()
     {
@@ -17,6 +18,7 @@ public class PlayerManager : MonoBehaviour
             Physics.Raycast(playerCast.position, transform.TransformDirection(Vector3.forward), out hit, 3);
             if (hit.collider != null)
             {
+                currentNPC = hit.collider.gameObject;
                 hit.collider.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
                 mouseLock(true);
             }
