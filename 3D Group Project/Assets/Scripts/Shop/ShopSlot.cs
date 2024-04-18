@@ -12,28 +12,10 @@ public class ShopSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     private Image thisSlotImage;
 
-    public void initialiseSlot()
+    public void intialiseSlot()
     {
-        thisSlotImage = gameObject.GetComponent<Image>();
-        thisSlotImage.sprite = null;
-        thisSlotImage.color = transparent;
-        setItem(null);
-    }
-
-    public void setItem(Item item)
-    {
-        heldItem = item;
-
-        if (item != null)
-        {
-            thisSlotImage.sprite = heldItem.icon;
-            thisSlotImage.color = opaque;
-        }
-        else
-        {
-            thisSlotImage.sprite = null;
-            thisSlotImage.color = transparent;
-        }
+        thisSlotImage.sprite = heldItem.icon;
+        thisSlotImage.color = opaque;
     }
 
     public Item getItem()

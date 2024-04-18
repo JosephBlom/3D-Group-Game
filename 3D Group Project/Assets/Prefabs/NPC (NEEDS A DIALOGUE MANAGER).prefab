@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3583306950471196531}
   - component: {fileID: 5233365517448181564}
   - component: {fileID: 2126303012984873928}
+  - component: {fileID: 7463539345158865803}
   m_Layer: 0
   m_Name: NPC (NEEDS A DIALOGUE MANAGER)
   m_TagString: Untagged
@@ -179,3 +180,23 @@ MonoBehaviour:
       currentAmount: 0
       requiredTag: Special Item
   player: {fileID: 0}
+--- !u!114 &7463539345158865803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694383663657270886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abd2ddcfd4e748044bd4179c539e2773, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerManager: {fileID: 0}
+  shopCanvas: {fileID: 0}
+  npcNameText: {fileID: 0}
+  itemDescription: {fileID: 0}
+  itemCost: {fileID: 0}
+  playerGold: {fileID: 0}
+  shopSlots: []
+  shop: {fileID: 0}
