@@ -21,7 +21,7 @@ public class QuestGoal
     {
         if (goalType == GoalType.Kill)
         {
-            if(requiredTag != null && requiredTag.Equals(tag))
+            if (requiredTag != null && requiredTag.Equals(tag))
             {
                 currentAmount++;
             }

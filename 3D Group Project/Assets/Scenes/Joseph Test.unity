@@ -426,17 +426,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1014041626}
   m_CullTransparentMesh: 1
---- !u!114 &1027399450 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6543715846535084946, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
-  m_PrefabInstance: {fileID: 1346489711817519770}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c03fd6054514516429746b1cfdbabfba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1052233065 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2420737299430998251, guid: 8f48a4befe2c9694b8b12531cc021705, type: 3}
@@ -1262,7 +1251,7 @@ PrefabInstance:
     - target: {fileID: 8487868637802111270, guid: f4f7e1ef19a017e40b0c3a7b3577f10c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1027399450}
+      objectReference: {fileID: 0}
     - target: {fileID: 8487868637802111270, guid: f4f7e1ef19a017e40b0c3a7b3577f10c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: AcceptQuest

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3035712910896023212}
   - component: {fileID: 3583306950471196531}
   - component: {fileID: 5233365517448181564}
-  - component: {fileID: 6543715846535084946}
+  - component: {fileID: 2126303012984873928}
   m_Layer: 0
   m_Name: NPC (NEEDS A DIALOGUE MANAGER)
   m_TagString: Untagged
@@ -155,7 +155,7 @@ MonoBehaviour:
       line: Hello Adventurer!
     - quest: 1
       line: Can you kill 10 spiders for me?
---- !u!114 &6543715846535084946
+--- !u!114 &2126303012984873928
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -170,9 +170,9 @@ MonoBehaviour:
   quest:
     isActive: 0
     completed: 0
-    title: On the Hunt!
-    experienceReward: 25
-    goldReward: 15
+    title: Item Hunting
+    experienceReward: 100
+    goldReward: 125
     goal:
       goalType: 1
       requiredAmount: 1
