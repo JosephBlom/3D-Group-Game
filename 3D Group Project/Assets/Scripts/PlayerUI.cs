@@ -16,24 +16,43 @@ public class PlayerUI : MonoBehaviour
 
     private void Awake()
     {
-        ChangeMaxAmmo();
+        EnableAmmoUI();
+        if(gunsystem != null)
+        {
+            ChangeMaxAmmo();
+        }
+        else
+        {
+            ammoSlider.GetComponentInChildren<Image>().enabled = false; 
+        }
         healthSystem = GetComponent<PlayerHealthSystem>();
         healthSlider.maxValue = healthSystem.playerHealth;
         shieldSlider.maxValue = healthSystem.playerShield;
     }
     private void Update()
     {
-        ammoSlider.value = gunsystem.ammoCount;
+        if(gunsystem != null)
+        {
+            ammoSlider.value = gunsystem.ammoCount;
+        }
         healthSlider.value = healthSystem.playerHealth;
         shieldSlider.value = healthSystem.playerShield;
         healthText.text = healthSystem.playerHealth.ToString();
         shieldHPText.text = healthSystem.playerShield.ToString();
     }
+    // call these 2 when picking up/equipping gun
     public void ChangeMaxAmmo()
     {
         gunsystem = FindFirstObjectByType<GunSystem>();
         ammoSlider.maxValue = gunsystem.magazineSize;
     }
-
+    public void EnableAmmoUI()
+    {
+        gunsystem = FindFirstObjectByType<GunSystem>();
+        if (gunsystem != null)
+        {
+            ammoSlider.GetComponentInChildren<Image>().enabled = true;
+        }
+    }
 
 }

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1594529055912856147
+--- !u!1 &696492633184019784
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,49 +8,80 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6798388515320333241}
-  - component: {fileID: 4994408066851095108}
-  - component: {fileID: 8903834180363111555}
-  - component: {fileID: 823115900354116551}
-  - component: {fileID: 2037976862364007542}
-  m_Layer: 3
-  m_Name: ModularGunTest
+  - component: {fileID: 7749232673822294277}
+  m_Layer: 0
+  m_Name: Firepoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6798388515320333241
+--- !u!4 &7749232673822294277
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1594529055912856147}
+  m_GameObject: {fileID: 696492633184019784}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.338, y: -0.232, z: 0.56}
-  m_LocalScale: {x: 0.2596365, y: 0.2596365, z: 0.2596365}
+  m_LocalRotation: {x: -0.70710707, y: -0, z: -0, w: 0.70710653}
+  m_LocalPosition: {x: 0, y: 1.022, z: -0}
+  m_LocalScale: {x: 0.33107063, y: 1.1076828, z: 1.557544}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8490349185471443769}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1002392180234657533
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8490349185471443769}
+  - component: {fileID: 8616240471368565495}
+  - component: {fileID: 4089400443322253459}
+  - component: {fileID: 1132918044333217487}
+  - component: {fileID: 4875051994624942538}
+  m_Layer: 7
+  m_Name: Shotgun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8490349185471443769
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002392180234657533}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0000000611583, y: -0.7071063, z: -0.70710737, w: 0.000000022351742}
+  m_LocalPosition: {x: -6.27, y: -0.27, z: 0.685}
+  m_LocalScale: {x: 0.25963658, y: 0.49159583, z: 0.25963655}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7110670965144823294}
+  - {fileID: 7749232673822294277}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!33 &4994408066851095108
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: -180}
+--- !u!33 &8616240471368565495
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1594529055912856147}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &8903834180363111555
+  m_GameObject: {fileID: 1002392180234657533}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &4089400443322253459
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1594529055912856147}
+  m_GameObject: {fileID: 1002392180234657533}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -86,13 +117,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &823115900354116551
+--- !u!136 &1132918044333217487
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1594529055912856147}
+  m_GameObject: {fileID: 1002392180234657533}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -106,63 +137,33 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5000001
-  m_Height: 2
+  m_Height: 1.19
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &2037976862364007542
+--- !u!114 &4875051994624942538
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1594529055912856147}
+  m_GameObject: {fileID: 1002392180234657533}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c2036355d2e0bf42834e8ed7ab3258e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 7808518807400987192, guid: 6e8ae2e3421f0684fb9481db9100445d, type: 3}
-  automatic: 1
-  weaponInaccuracy: 0.1
-  fireRate: 0.5
-  reloadSpeed: 0.5
+  automatic: 0
+  weaponInaccuracy: 0.15
+  fireRate: 0.25
+  reloadSpeed: 2
   rangedDamage: 0.5
-  gunRange: 15
-  bulletCount: 1
+  gunRange: 20
+  bulletCount: 7
   bulletDespawnTimer: 1
-  ammoType: 1
+  ammoType: 2
   ammoConsumed: 1
-  magazineSize: 30
+  magazineSize: 8
   debug: 1
-  firepoint: {fileID: 8427066566267478590}
---- !u!1 &8427066566267478590
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7110670965144823294}
-  m_Layer: 0
-  m_Name: Firepoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7110670965144823294
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8427066566267478590}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0.70710707, y: -0, z: -0, w: 0.70710653}
-  m_LocalPosition: {x: 0, y: 1.022, z: -0}
-  m_LocalScale: {x: 0.33107063, y: 1.1076828, z: 1.557544}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6798388515320333241}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  firepoint: {fileID: 696492633184019784}
+  ammoCount: 0

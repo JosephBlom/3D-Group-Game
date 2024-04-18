@@ -37,16 +37,19 @@ public class GunSystem : MonoBehaviour
     }
     private void Update()
     {
+        if (transform.parent != Camera.main.transform)
+        {
+            Debug.Log("ploogy");
+            return;
+        }
+
         if (Input.GetButton("Fire1") && automatic)
         {
             Shoot();
         }
-        else
+        else if (Input.GetButtonDown("Fire1") && !automatic)
         {
-            if (Input.GetButtonDown("Fire1") && !automatic)
-            {
-                Shoot();
-            }
+            Shoot();
         }
         if (Input.GetKeyDown(KeyCode.R) && ammoCount < magazineSize)
         {
