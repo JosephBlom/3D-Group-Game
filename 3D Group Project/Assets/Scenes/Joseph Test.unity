@@ -1292,38 +1292,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC
       objectReference: {fileID: 0}
-    - target: {fileID: 6543715846535084946, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6543715846535084946, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
-      propertyPath: quest.title
-      value: On the Hunt!
-      objectReference: {fileID: 0}
-    - target: {fileID: 6543715846535084946, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
-      propertyPath: quest.goldReward
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 6543715846535084946, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
-      propertyPath: quest.description
-      value: Venture out and kill 10 wolves.
-      objectReference: {fileID: 0}
-    - target: {fileID: 6543715846535084946, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
-      propertyPath: quest.goal.goalType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6543715846535084946, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
-      propertyPath: quest.experienceReward
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 6543715846535084946, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
-      propertyPath: quest.goal.requiredTag
-      value: Special Item
-      objectReference: {fileID: 0}
-    - target: {fileID: 6543715846535084946, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
-      propertyPath: quest.goal.requiredAmount
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7984524479806740692, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.849
