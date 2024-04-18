@@ -130,7 +130,7 @@ public class Inventory : MonoBehaviour
 
             if (heldItem != null && itemToAdd.name == heldItem.name)
             {
-                int freeSpaceInSlot = heldItem.maxQuantity - heldItem.currentQuantity;
+                int freeSpaceInSlot = heldItem.maxQuantity -heldItem.currentQuantity;
 
                 if (freeSpaceInSlot >= leftoverQuantity)
                 {

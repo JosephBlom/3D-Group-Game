@@ -28,6 +28,7 @@ public class SaveManager : MonoBehaviour
 
         player.counter = data.counter;
         player.timer = data.timer;
+        player.gold = data.gold;
         for(int i = 0; i < 21; i++)
         {
             player.itemNames.Add(data.itemNames[i]);

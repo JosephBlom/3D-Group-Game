@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public List<string> itemDescription = new List<string>();
     public List<int> itemCurQuantity = new List<int>();
     public List<int> itemMaxQuantity = new List<int>();
+    public int gold;
 
     public List<Slot> inventory;
 

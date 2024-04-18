@@ -11,11 +11,13 @@ public class PlayerData
     public List<string> itemDescription = new List<string>();
     public List<int> itemCurQuantity = new List<int>();
     public List<int> itemMaxQuantity = new List<int>();
+    public int gold;
 
     public PlayerData(Player player)
     {
         counter = player.counter;
         timer = player.timer;
+        gold = player.gold;
         fillInventory(player.GetComponent<Inventory>());
     }
 
