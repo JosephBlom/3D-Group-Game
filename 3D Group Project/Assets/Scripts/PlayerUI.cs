@@ -8,9 +8,16 @@ public class PlayerUI : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI healthText;
     [SerializeField] TextMeshProUGUI shieldHPText;
+
+    // main hp/shield UI
     [SerializeField] Slider healthSlider;
     [SerializeField] Slider shieldSlider;
+
+    // tiny crosshair bar UI
     [SerializeField] Slider ammoSlider;
+    [SerializeField] Slider tinyhealthSlider;
+    [SerializeField] Slider tinyshieldSlider;
+
     PlayerHealthSystem healthSystem;
     GunSystem gunsystem;
 
@@ -28,6 +35,8 @@ public class PlayerUI : MonoBehaviour
         healthSystem = GetComponent<PlayerHealthSystem>();
         healthSlider.maxValue = healthSystem.playerHealth;
         shieldSlider.maxValue = healthSystem.playerShield;
+        tinyhealthSlider.maxValue = healthSystem.playerHealth;
+        tinyshieldSlider.maxValue = healthSystem.playerShield;
     }
     private void Update()
     {
@@ -37,6 +46,8 @@ public class PlayerUI : MonoBehaviour
         }
         healthSlider.value = healthSystem.playerHealth;
         shieldSlider.value = healthSystem.playerShield;
+        tinyhealthSlider.value = healthSystem.playerHealth;
+        tinyshieldSlider.value = healthSystem.playerShield;
         healthText.text = healthSystem.playerHealth.ToString();
         shieldHPText.text = healthSystem.playerShield.ToString();
     }
