@@ -4,6 +4,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEngine.Rendering.DebugUI;
 
 public class GunSystem : MonoBehaviour
 {
@@ -21,11 +22,12 @@ public class GunSystem : MonoBehaviour
     [Header("Weapon Ammo Settings")]
     [SerializeField] private int ammoType = 1;
     [Min(0), SerializeField] private int ammoConsumed = 1;
-    [Min(0), SerializeField] public int magazineSize = 30;
+    [Min(0), SerializeField] public int maxAmmoSize = 30;
 
     [Header("Debug Settings")]
     [SerializeField] private bool debug = true;
     [SerializeField] private GameObject firepoint;
+    [SerializeField] private PlayerAmmoManager playerAmmoManager;
 
     private bool canAttack = true;
     private bool reloading = false;
@@ -33,7 +35,11 @@ public class GunSystem : MonoBehaviour
 
     private void Awake()
     {
-        ammoCount = magazineSize;
+        if (transform.parent == Camera.main.transform)
+        {
+            playerAmmoManager = Camera.main.transform.parent.GetComponentInChildren<PlayerAmmoManager>();
+        }
+        ammoCount = maxAmmoSize;
     }
     private void Update()
     {
@@ -51,9 +57,15 @@ public class GunSystem : MonoBehaviour
         {
             Shoot();
         }
-        if (Input.GetKeyDown(KeyCode.R) && ammoCount < magazineSize)
+        if (Input.GetKeyDown(KeyCode.R) && ammoCount < maxAmmoSize)
         {
-            if(canAttack)
+            if (playerAmmoManager.FindAmmoType(ammoType) <= 0)
+            {
+                Debug.Log(playerAmmoManager.FindAmmoType(ammoType));
+                Debug.Log("not enough ammo");
+                return;
+            }
+            if (canAttack)
             {
                 IEnumerator reload = Reload(reloadSpeed);
                 StopCoroutine(reload);
@@ -63,7 +75,7 @@ public class GunSystem : MonoBehaviour
     }
     private void Shoot()
     {
-        if (!canAttack || ammoCount <= 0 || reloading)
+        if (!canAttack || ammoCount <= 0 || reloading || playerAmmoManager == null)
         {
             return;
         }
@@ -87,7 +99,20 @@ public class GunSystem : MonoBehaviour
     {
         canAttack = false;
         yield return new WaitForSeconds(seconds);
-        ammoCount = magazineSize;
+        if(ammoCount > 0)
+        {
+            int ammoAdded = ammoCount;
+            ammoCount += playerAmmoManager.FindAmmoType(ammoType);
+            if(ammoCount > maxAmmoSize) {ammoCount = maxAmmoSize;}
+            ammoAdded = Mathf.Abs(ammoAdded - ammoCount);
+            playerAmmoManager.RemoveAmmo(ammoAdded, ammoType);
+        }
+        else
+        {
+            ammoCount += playerAmmoManager.FindAmmoType(ammoType);
+            if (ammoCount > maxAmmoSize) { ammoCount = maxAmmoSize; }
+            playerAmmoManager.RemoveAmmo(ammoCount, ammoType);
+        }
         Debug.Log("Reloaded. new ammo is " + ammoCount);
         canAttack = true;
     }

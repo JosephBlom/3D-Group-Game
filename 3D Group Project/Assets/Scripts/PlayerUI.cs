@@ -44,7 +44,7 @@ public class PlayerUI : MonoBehaviour
     public void ChangeMaxAmmo()
     {
         gunsystem = FindFirstObjectByType<GunSystem>();
-        ammoSlider.maxValue = gunsystem.magazineSize;
+        ammoSlider.maxValue = gunsystem.maxAmmoSize;
     }
     public void EnableAmmoUI()
     {
