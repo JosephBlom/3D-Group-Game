@@ -7,37 +7,40 @@ using TMPro;
 
 public class ShopManager : MonoBehaviour
 {
-    [SerializeField] PlayerManager playerManager;
+    [SerializeField] GameObject player;
 
     [Header("Canvas Objects")]
     public GameObject shopCanvas;
     public TextMeshProUGUI npcNameText;
     public TextMeshProUGUI itemDescription;
     public TextMeshProUGUI itemCost;
+    public TextMeshProUGUI itemName;
     public TextMeshProUGUI playerGold;
 
     [Header("Shop Objects")]
-    public List<Slot> shopSlots = new List<Slot>();
+    public List<ShopSlot> shopSlots = new List<ShopSlot>();
 
     public Shop shop;
 
     public void openShop()
     {
-        shop = playerManager.currentNPC.GetComponent<Shop>();
+        shop = player.GetComponent<PlayerManager>().currentNPC.GetComponent<Shop>();
+        FindFirstObjectByType<DialogueManager>().GetComponent<DialogueManager>().dialogueCanvas.enabled = false;
         toggleShop(true);
         for(int i = 0; i < shopSlots.Count; i++)
         {
             shopSlots[i].heldItem = shop.merchandise[i];
-            shopSlots[i].initialiseSlot();
+            shopSlots[i].intialiseSlot();
         }
         npcNameText.text = shop.npcName;
     }
 
-    public void updateMenu(string itemDescription, int itemCost, int playerGold)
+    public void updateMenu(string itemDescription, int itemCost, int playerGold, string itemName)
     {
         this.itemDescription.text = itemDescription;
         this.itemCost.text = itemCost.ToString();
         this.playerGold.text = playerGold.ToString();
+        this.itemName.text = itemName;
     }
 
     public void purchaseItem(int itemCost, int playerGold)
@@ -52,6 +55,6 @@ public class ShopManager : MonoBehaviour
         Cursor.lockState = enable ? CursorLockMode.None : CursorLockMode.Locked;
         Cursor.visible = enable;
 
-        GetComponentInChildren<StarterAssets.StarterAssetsInputs>().cursorInputForLook = !enable;
+        player.GetComponent<StarterAssets.StarterAssetsInputs>().cursorInputForLook = !enable;
     }
 }

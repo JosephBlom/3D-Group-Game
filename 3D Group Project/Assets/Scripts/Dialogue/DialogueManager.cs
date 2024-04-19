@@ -7,8 +7,9 @@ using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI textArea;
-    [SerializeField] Canvas dialogueCanvas;
+    public Canvas dialogueCanvas;
     [SerializeField] Button acceptQuest;
+    [SerializeField] Button shopButton;
     [SerializeField] GameObject player;
 
     GameObject NPC;
@@ -70,6 +71,18 @@ public class DialogueManager : MonoBehaviour
             acceptQuest.enabled = false;
             acceptQuest.GetComponentInChildren<TextMeshProUGUI>().enabled = false;
             acceptQuest.image.enabled = false;
+        }
+        if (sentence.shop)
+        {
+            shopButton.enabled = true;
+            shopButton.GetComponentInChildren<TextMeshProUGUI>().enabled = true;
+            shopButton.image.enabled = true;
+        }
+        else
+        {
+            shopButton.enabled = false;
+            shopButton.GetComponentInChildren<TextMeshProUGUI>().enabled = false;
+            shopButton.image.enabled = false;
         }
 
         StopAllCoroutines();
