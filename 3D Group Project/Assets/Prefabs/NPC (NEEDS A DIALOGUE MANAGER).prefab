@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5233365517448181564}
   - component: {fileID: 2126303012984873928}
   - component: {fileID: 7463539345158865803}
+  - component: {fileID: 808643494127492629}
   m_Layer: 0
   m_Name: NPC (NEEDS A DIALOGUE MANAGER)
   m_TagString: Untagged
@@ -153,8 +154,10 @@ MonoBehaviour:
   dialogue:
     dialogueLines:
     - quest: 0
+      shop: 0
       line: Hello Adventurer!
     - quest: 1
+      shop: 0
       line: Can you kill 10 spiders for me?
 --- !u!114 &2126303012984873928
 MonoBehaviour:
@@ -200,3 +203,19 @@ MonoBehaviour:
   playerGold: {fileID: 0}
   shopSlots: []
   shop: {fileID: 0}
+--- !u!114 &808643494127492629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694383663657270886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3207d0b6858aa8847bd8521a2effc07e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcName: Jim
+  merchandise:
+  - {fileID: 1202167561150950552, guid: fb3430ac19a7ac142b26c8b1aa02c6b8, type: 3}
+  - {fileID: 8555102310535570318, guid: c5d0efe9cbc185b4b85f1c59cb8bca14, type: 3}

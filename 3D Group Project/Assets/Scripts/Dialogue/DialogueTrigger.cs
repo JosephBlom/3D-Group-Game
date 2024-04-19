@@ -8,6 +8,7 @@ public class DialogueLine
 {
     [Tooltip("Toggle This to Make the Accept Quest Button Appear.")]
     public bool quest;
+    public bool shop;
     [TextArea(3, 6)]
     public string line;
 }

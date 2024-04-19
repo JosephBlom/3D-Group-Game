@@ -73,7 +73,6 @@ public class Inventory : MonoBehaviour
     {
         for(int i = 0; i < inventorySlots.Count; i++)
         {
-            Debug.Log("Ran");
             for(int y = 0; y < allItems.Count; y++)
             {
                 if (allItems[y].name.Equals(player.itemNames[i]))
