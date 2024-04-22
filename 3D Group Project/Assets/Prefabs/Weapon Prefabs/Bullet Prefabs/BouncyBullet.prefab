@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7949787164880910644}
   - component: {fileID: -8203711118676622307}
   m_Layer: 7
-  m_Name: bullet
+  m_Name: BouncyBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -93,7 +93,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7808518807400987192}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 8c7b9c6ea02ce894cae2228b6a2f6386, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -123,7 +123,7 @@ MonoBehaviour:
   delayedExplosive: 0
   explosionCollider: {fileID: 4375215141754323340, guid: 0a97e5c70abdfb147a55e63fc7b70129, type: 3}
   explosionDelay: 5
-  explosionRadius: 5
+  explosionRadius: 8
   despawnOnCollision: 0
   bulletDespawnTimer: 5
 --- !u!54 &-8203711118676622307

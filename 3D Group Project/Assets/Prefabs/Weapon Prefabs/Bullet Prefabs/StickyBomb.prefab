@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7949787164880910644}
   - component: {fileID: -8203711118676622307}
   m_Layer: 7
-  m_Name: bullet
+  m_Name: StickyBomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -119,13 +119,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 302bd995363057a40bda4e064569cbd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosive: 0
-  delayedExplosive: 0
+  explosive: 1
+  delayedExplosive: 1
   explosionCollider: {fileID: 4375215141754323340, guid: 0a97e5c70abdfb147a55e63fc7b70129, type: 3}
   explosionDelay: 5
-  explosionRadius: 5
+  explosionRadius: 8
   despawnOnCollision: 0
-  bulletDespawnTimer: 5
+  bulletDespawnTimer: 6
 --- !u!54 &-8203711118676622307
 Rigidbody:
   m_ObjectHideFlags: 0
