@@ -7,6 +7,7 @@ TagManager:
   - CinemachineTarget
   - Special Item
   - DialogueCanvas
+  - PlayerObject
   layers:
   - Default
   - TransparentFX

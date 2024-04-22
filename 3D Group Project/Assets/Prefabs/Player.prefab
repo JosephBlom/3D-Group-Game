@@ -55,6 +55,7 @@ MonoBehaviour:
   itemDescription: []
   itemCurQuantity: 
   itemMaxQuantity: 
+  gold: 0
   inventory: []
 --- !u!114 &8079648894621899595
 MonoBehaviour:
@@ -233,6 +234,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerObject
       objectReference: {fileID: 0}
+    - target: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: m_TagString
+      value: PlayerObject
+      objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -329,6 +334,7 @@ MonoBehaviour:
       requiredAmount: 0
       currentAmount: 0
       requiredTag: 
+  currentNPC: {fileID: 0}
 --- !u!1001 &3118478159934627850
 PrefabInstance:
   m_ObjectHideFlags: 0
