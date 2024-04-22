@@ -8,9 +8,15 @@ public class PauseManager : MonoBehaviour
     public Canvas pauseCanvas;
     public Canvas settingsCanvas;
 
+    private void Start()
+    {
+        pauseCanvas.enabled = false;
+        settingsCanvas.enabled = false;
+    }
+
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (pauseCanvas.enabled || settingsCanvas.enabled)
             {
@@ -55,5 +61,6 @@ public class PauseManager : MonoBehaviour
     void lockMouse(bool enable)
     {
         Cursor.lockState = enable ? CursorLockMode.None : CursorLockMode.Locked;
+        FindFirstObjectByType<StarterAssets.StarterAssetsInputs>().gameObject.GetComponent<StarterAssets.StarterAssetsInputs>().cursorInputForLook = !enable;
     }
 }

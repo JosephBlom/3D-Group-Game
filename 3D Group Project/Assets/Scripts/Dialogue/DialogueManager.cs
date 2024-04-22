@@ -112,7 +112,7 @@ public class DialogueManager : MonoBehaviour
 
     public void ExitMenu()
     {
-        player.GetComponent<StarterAssets.StarterAssetsInputs>().cursorInputForLook = true;
-        player.GetComponent<PlayerManager>().mouseLock(false);
+        FindFirstObjectByType<StarterAssets.StarterAssetsInputs>().gameObject.GetComponent<StarterAssets.StarterAssetsInputs>().cursorInputForLook = true;
+        FindFirstObjectByType<PlayerManager>().gameObject.GetComponent<PlayerManager>().mouseLock(false);
     }
 }
