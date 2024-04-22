@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealthSystem : MonoBehaviour
 {
@@ -17,6 +19,7 @@ public class PlayerHealthSystem : MonoBehaviour
     [Header("Misc Settings")]
     [SerializeField] public bool extraHealthActive = false;
 
+    private PlayerUI playerUI;
     private int maxHealth;
     private int maxShield;
 
@@ -25,6 +28,7 @@ public class PlayerHealthSystem : MonoBehaviour
     private bool regenActive = false;
     private void Awake()
     {
+        playerUI = GetComponent<PlayerUI>();
         maxHealth = playerHealth;
         maxShield = playerShield;
     }
@@ -33,6 +37,20 @@ public class PlayerHealthSystem : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
         {
             PlayerTakeDamage(5);
+        }
+        else if(Input.GetKeyDown(KeyCode.V))
+        {
+            PlayerHeal(5);
+        }
+        else if(Input.GetKeyDown(KeyCode.H))
+        {
+            SetMaxHealth(50);
+            SetMaxShield(5);
+        }
+        else if (Input.GetKeyDown(KeyCode.B))
+        {
+            SetMaxHealth(250);
+            SetMaxShield(500);
         }
 
         PlayerHealthRegen();
@@ -68,6 +86,28 @@ public class PlayerHealthSystem : MonoBehaviour
         if (playerHealth > maxHealth && !extraHealthActive)
         {
             playerHealth = maxHealth;
+        }
+    }
+    public void SetMaxHealth(int newMaxHealth)
+    {
+        if(!isAlive || playerUI == null) { return; }
+        maxHealth = newMaxHealth;
+        playerUI.healthSlider.maxValue = newMaxHealth;
+        playerUI.tinyhealthSlider.maxValue = newMaxHealth;
+        if (playerHealth > maxHealth)
+        {
+            playerHealth = maxHealth;
+        }
+    }
+    public void SetMaxShield(int newMaxShield)
+    {
+        if (!isAlive || playerUI == null) { return; }
+        maxShield = newMaxShield;
+        playerUI.shieldSlider.maxValue = newMaxShield;
+        playerUI.tinyshieldSlider.maxValue = newMaxShield;
+        if (playerShield > maxShield)
+        {
+            playerShield = maxShield;
         }
     }
 

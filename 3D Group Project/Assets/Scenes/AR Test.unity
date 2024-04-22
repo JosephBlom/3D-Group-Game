@@ -2684,7 +2684,23 @@ PrefabInstance:
       value: ModularGunTest
       objectReference: {fileID: 0}
     - target: {fileID: 2037976862364007542, guid: 5ff08e955507e9248a28239f3b31b8aa, type: 3}
+      propertyPath: burst
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2037976862364007542, guid: 5ff08e955507e9248a28239f3b31b8aa, type: 3}
       propertyPath: ammoType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2037976862364007542, guid: 5ff08e955507e9248a28239f3b31b8aa, type: 3}
+      propertyPath: automatic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2037976862364007542, guid: 5ff08e955507e9248a28239f3b31b8aa, type: 3}
+      propertyPath: burstBulletCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2037976862364007542, guid: 5ff08e955507e9248a28239f3b31b8aa, type: 3}
+      propertyPath: weaponInaccuracy
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6798388515320333241, guid: 5ff08e955507e9248a28239f3b31b8aa, type: 3}
