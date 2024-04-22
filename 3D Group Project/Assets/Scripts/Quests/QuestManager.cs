@@ -16,5 +16,8 @@ public class QuestManager : MonoBehaviour
     {
         player.currentNPC.GetComponent<QuestManager>().quest.isActive = true;
         player.quest = player.currentNPC.GetComponent<QuestManager>().quest;
+        GameObject.FindGameObjectWithTag("DialogueCanvas").GetComponent<Canvas>().enabled = false;
+        player.gameObject.GetComponent<StarterAssets.StarterAssetsInputs>().cursorInputForLook = true;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }
