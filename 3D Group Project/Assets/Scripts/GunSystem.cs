@@ -8,15 +8,19 @@ using static UnityEngine.Rendering.DebugUI;
 
 public class GunSystem : MonoBehaviour
 {
-    [Header("General Weapon Settings")]
-    [SerializeField] private GameObject bullet;
+    [Header("Weapon Variants")]
     [SerializeField] private bool automatic = true;
+
+    [Header("Weapon Variant Settings")]
+    [SerializeField] private GameObject bullet;
+    [Min(1), SerializeField] private int bulletCount = 1;
+
+    [Header("General Weapon Settings")]
     [Min(0), SerializeField] private float weaponInaccuracy = 0.1f;
     [SerializeField] private float fireRate = 0.5f;
     [SerializeField] private float reloadSpeed = 0.5f;
     [Min(0), SerializeField] private float rangedDamage = 0.5f;
     [Min(0.1f), SerializeField] private float gunRange = 5f;
-    [Min(1), SerializeField] private int bulletCount = 1;
     [Min(0.05f), SerializeField] private int bulletDespawnTimer = 1;
 
     [Header("Weapon Ammo Settings")]
@@ -80,7 +84,8 @@ public class GunSystem : MonoBehaviour
             return;
         }
         IEnumerator cooldown = WeaponCooldown(fireRate);
-        for (int i = 0; i < bulletCount; i++)
+
+        for (int x = 0; x < bulletCount; x++)
         {
             GameObject realBullet = Instantiate(bullet, firepoint.transform.position + new Vector3((Random.Range(0, weaponInaccuracy)), (Random.Range(0, weaponInaccuracy)), (Random.Range(0, weaponInaccuracy))), Camera.main.transform.rotation);
             realBullet.GetComponent<ProjectileBehavior>().Fire(gunRange, Camera.main.transform.forward);

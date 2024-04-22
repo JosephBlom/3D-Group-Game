@@ -10,13 +10,13 @@ public class PlayerUI : MonoBehaviour
     [SerializeField] TextMeshProUGUI shieldHPText;
 
     // main hp/shield UI
-    [SerializeField] Slider healthSlider;
-    [SerializeField] Slider shieldSlider;
+    [SerializeField] public Slider healthSlider;
+    [SerializeField] public Slider shieldSlider;
 
     // tiny crosshair bar UI
     [SerializeField] Slider ammoSlider;
-    [SerializeField] Slider tinyhealthSlider;
-    [SerializeField] Slider tinyshieldSlider;
+    [SerializeField] public Slider tinyhealthSlider;
+    [SerializeField] public Slider tinyshieldSlider;
 
     PlayerHealthSystem healthSystem;
     GunSystem gunsystem;
