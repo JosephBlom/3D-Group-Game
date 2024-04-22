@@ -22,21 +22,29 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         thisSlotQuantityText = transform.GetChild(0).GetComponent<TMP_Text>();
         thisSlotImage.sprite = null;
         thisSlotImage.color = transparent;
-        setItem(null);
+        setItem(null, null);
     }
 
-    public void setItem(Item item)
+    public void setItem(Item item, Slot slot)
     {
         heldItem = item;
 
         if(item != null)
         {
+            if(slot != null)
+            {
+                slotQuantity = slot.slotQuantity;
+            }
+            else
+            {
+                slotQuantity = 1;
+            }
             thisSlotImage.sprite = heldItem.icon;
             thisSlotImage.color = opaque;
             updateData();
         }
         else
-        {
+        { 
             thisSlotImage.sprite = null;
             thisSlotImage.color = transparent;
             updateData();

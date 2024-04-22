@@ -20,6 +20,7 @@ public class Inventory : MonoBehaviour
     [Header("Drag and Drop")]
     public Image dragIconImage;
     private Item currentDraggedItem;
+    private Slot currentDraggedSlot;
     private int currentDragSlotIndex = -1;
 
     [Header("Save")]
@@ -77,10 +78,8 @@ public class Inventory : MonoBehaviour
             {
                 if (allItems[y].name.Equals(player.itemNames[i]))
                 {
-                    //Work on using the set item command to set the item.
+                    inventorySlots[i].setItem(allItems[y], null);
                     inventorySlots[i].slotQuantity = player.itemCurQuantity[i];
-                    inventorySlots[i].setItem(allItems[y]);
-                    
                 }
             }
         }
@@ -129,7 +128,7 @@ public class Inventory : MonoBehaviour
 
             if (heldItem != null && itemToAdd.name == heldItem.name)
             {
-                int freeSpaceInSlot = heldItem.maxQuantity -heldItem.currentQuantity;
+                int freeSpaceInSlot = heldItem.maxQuantity -inventorySlots[i].slotQuantity;
 
                 if (freeSpaceInSlot >= leftoverQuantity)
                 {
@@ -155,8 +154,8 @@ public class Inventory : MonoBehaviour
 
         if(leftoverQuantity > 0 && openSlot)
         {
-            openSlot.setItem(itemToAdd);
-            itemToAdd.currentQuantity = leftoverQuantity;
+            openSlot.setItem(itemToAdd, null);
+            openSlot.slotQuantity = leftoverQuantity;
             itemToAdd.gameObject.SetActive(false);
         }
         else
@@ -183,12 +182,13 @@ public class Inventory : MonoBehaviour
             if(curSlot.hovered && curSlot.hasItem())
             {
                 currentDragSlotIndex = i;
-
+                currentDraggedSlot = curSlot;
+                
                 currentDraggedItem = curSlot.getItem();
                 dragIconImage.sprite = currentDraggedItem.icon;
                 dragIconImage.color = new Color(1, 1, 1, 1);
 
-                curSlot.setItem(null);
+                curSlot.setItem(null, null);
             }
         }
     }
@@ -207,16 +207,16 @@ public class Inventory : MonoBehaviour
                 {
                     Item itemToSwap = curSlot.getItem();
 
-                    curSlot.setItem(currentDraggedItem);
+                    curSlot.setItem(currentDraggedItem, currentDraggedSlot);
 
-                    inventorySlots[currentDragSlotIndex].setItem(itemToSwap);
+                    inventorySlots[currentDragSlotIndex].setItem(itemToSwap, inventorySlots[i]);
 
                     resetDragVariables();
                     return;
                 }
                 else
                 {
-                    curSlot.setItem(currentDraggedItem);
+                    curSlot.setItem(currentDraggedItem, currentDraggedSlot);
                     resetDragVariables();
                     return;
                 }
@@ -224,7 +224,8 @@ public class Inventory : MonoBehaviour
         }
 
         //If we get to this point we have either dropped the item in a non "inventory" spot or closed the inventory.
-        inventorySlots[currentDragSlotIndex].setItem(currentDraggedItem);
+        //expect this line to error because the null in set item will cause "dropped" items to have a slotQuantity of 1.
+        inventorySlots[currentDragSlotIndex].setItem(currentDraggedItem, null);
         resetDragVariables();
     }
 
@@ -237,7 +238,7 @@ public class Inventory : MonoBehaviour
             {
                 curSlot.getItem().gameObject.SetActive(true);
                 curSlot.getItem().transform.position = dropLocation.position;
-                curSlot.setItem(null);
+                curSlot.setItem(null, null);
                 break;
             }
         }
