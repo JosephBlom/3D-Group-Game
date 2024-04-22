@@ -21,7 +21,6 @@ public class GunSystem : MonoBehaviour
     [SerializeField] private float reloadSpeed = 0.5f;
     [Min(0), SerializeField] private float rangedDamage = 0.5f;
     [Min(0.1f), SerializeField] private float gunRange = 5f;
-    [Min(0.05f), SerializeField] private int bulletDespawnTimer = 1;
 
     [Header("Weapon Ammo Settings")]
     [SerializeField] private int ammoType = 1;
@@ -89,7 +88,6 @@ public class GunSystem : MonoBehaviour
         {
             GameObject realBullet = Instantiate(bullet, firepoint.transform.position + new Vector3((Random.Range(0, weaponInaccuracy)), (Random.Range(0, weaponInaccuracy)), (Random.Range(0, weaponInaccuracy))), Camera.main.transform.rotation);
             realBullet.GetComponent<ProjectileBehavior>().Fire(gunRange, Camera.main.transform.forward);
-            Destroy(realBullet, bulletDespawnTimer);
         }
         StartCoroutine(cooldown);
         ammoCount -= ammoConsumed;
