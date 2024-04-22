@@ -209,7 +209,7 @@ public class Inventory : MonoBehaviour
 
                     curSlot.setItem(currentDraggedItem, currentDraggedSlot);
 
-                    inventorySlots[currentDragSlotIndex].setItem(itemToSwap, inventorySlots[i]);
+                    inventorySlots[currentDragSlotIndex].setItem(itemToSwap, inventorySlots[currentDragSlotIndex]);
 
                     resetDragVariables();
                     return;
@@ -225,7 +225,7 @@ public class Inventory : MonoBehaviour
 
         //If we get to this point we have either dropped the item in a non "inventory" spot or closed the inventory.
         //expect this line to error because the null in set item will cause "dropped" items to have a slotQuantity of 1.
-        inventorySlots[currentDragSlotIndex].setItem(currentDraggedItem, null);
+        inventorySlots[currentDragSlotIndex].setItem(currentDraggedItem, inventorySlots[currentDragSlotIndex]);
         resetDragVariables();
     }
 
