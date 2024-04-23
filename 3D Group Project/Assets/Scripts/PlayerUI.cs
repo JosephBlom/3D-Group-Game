@@ -32,7 +32,7 @@ public class PlayerUI : MonoBehaviour
         {
             ammoSlider.GetComponentInChildren<Image>().enabled = false; 
         }
-        healthSystem = GetComponent<PlayerHealthSystem>();
+        healthSystem = GetComponentInChildren<PlayerHealthSystem>();
         healthSlider.maxValue = healthSystem.playerHealth;
         shieldSlider.maxValue = healthSystem.playerShield;
         tinyhealthSlider.maxValue = healthSystem.playerHealth;

@@ -14,12 +14,13 @@ public class GunSystem : MonoBehaviour
     [Header("Weapon Variant Settings")]
     [SerializeField] private GameObject bullet;
     [Min(1), SerializeField] private int bulletCount = 1;
+    [Min(1), SerializeField] private int explosionDamage = 35;
 
     [Header("General Weapon Settings")]
     [Min(0), SerializeField] private float weaponInaccuracy = 0.1f;
     [SerializeField] private float fireRate = 0.5f;
     [SerializeField] private float reloadSpeed = 0.5f;
-    [Min(0), SerializeField] private float rangedDamage = 0.5f;
+    [Min(0), SerializeField] private int rangedDamage = 1;
     [Min(0.1f), SerializeField] private float gunRange = 5f;
 
     [Header("Weapon Ammo Settings")]
@@ -88,6 +89,10 @@ public class GunSystem : MonoBehaviour
         {
             GameObject realBullet = Instantiate(bullet, firepoint.transform.position + new Vector3((Random.Range(0, weaponInaccuracy)), (Random.Range(0, weaponInaccuracy)), (Random.Range(0, weaponInaccuracy))), Camera.main.transform.rotation);
             realBullet.GetComponent<ProjectileBehavior>().Fire(gunRange, Camera.main.transform.forward);
+            ProjectileBehavior projectileBehavior = realBullet.GetComponent<ProjectileBehavior>();
+            projectileBehavior.shooter = gameObject.transform.parent.parent.name;
+            projectileBehavior.damage = rangedDamage;
+            projectileBehavior.explosionDamage = explosionDamage;
         }
         StartCoroutine(cooldown);
         ammoCount -= ammoConsumed;
