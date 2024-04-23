@@ -142,9 +142,19 @@ public class EnemyHealthSystem : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
     private void OnCollisionEnter(Collision collision)
     {
-        EnemyDamage(5);
+        if (collision.gameObject.layer == 7)
+        {
+            EnemyDamage(collision.gameObject.GetComponent<ProjectileBehavior>().damage);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.layer == 8)
+        {
+            EnemyDamage(other.gameObject.GetComponent<ExplosionBehavior>().damage);
+        }
     }
 }

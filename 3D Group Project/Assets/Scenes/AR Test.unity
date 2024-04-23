@@ -2696,16 +2696,36 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2037976862364007542, guid: 5ff08e955507e9248a28239f3b31b8aa, type: 3}
+      propertyPath: fireRate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2037976862364007542, guid: 5ff08e955507e9248a28239f3b31b8aa, type: 3}
+      propertyPath: gunRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2037976862364007542, guid: 5ff08e955507e9248a28239f3b31b8aa, type: 3}
       propertyPath: automatic
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2037976862364007542, guid: 5ff08e955507e9248a28239f3b31b8aa, type: 3}
       propertyPath: maxAmmoSize
-      value: 5
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2037976862364007542, guid: 5ff08e955507e9248a28239f3b31b8aa, type: 3}
+      propertyPath: reloadSpeed
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2037976862364007542, guid: 5ff08e955507e9248a28239f3b31b8aa, type: 3}
+      propertyPath: rangedDamage
+      value: 85
       objectReference: {fileID: 0}
     - target: {fileID: 2037976862364007542, guid: 5ff08e955507e9248a28239f3b31b8aa, type: 3}
       propertyPath: burstCooldown
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2037976862364007542, guid: 5ff08e955507e9248a28239f3b31b8aa, type: 3}
+      propertyPath: explosionDamage
+      value: 95
       objectReference: {fileID: 0}
     - target: {fileID: 2037976862364007542, guid: 5ff08e955507e9248a28239f3b31b8aa, type: 3}
       propertyPath: burstBulletCount
@@ -2713,7 +2733,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2037976862364007542, guid: 5ff08e955507e9248a28239f3b31b8aa, type: 3}
       propertyPath: weaponInaccuracy
-      value: 0
+      value: 0.025
       objectReference: {fileID: 0}
     - target: {fileID: 6798388515320333241, guid: 5ff08e955507e9248a28239f3b31b8aa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3498,6 +3518,7 @@ GameObject:
   - component: {fileID: 543958369}
   - component: {fileID: 543958368}
   - component: {fileID: 543958367}
+  - component: {fileID: 543958375}
   m_Layer: 9
   m_Name: EnemyTest (2)
   m_TagString: Untagged
@@ -3666,6 +3687,33 @@ Transform:
   - {fileID: 1280959949}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &543958375
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543958366}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &549707014
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6414,6 +6462,7 @@ GameObject:
   - component: {fileID: 1103141590}
   - component: {fileID: 1103141596}
   - component: {fileID: 1103141597}
+  - component: {fileID: 1103141598}
   m_Layer: 9
   m_Name: EnemyTest
   m_TagString: Untagged
@@ -6582,6 +6631,33 @@ MonoBehaviour:
   shieldText: {fileID: 1937077563}
   hpSlider: {fileID: 1459767461}
   shieldSlider: {fileID: 1499507899}
+--- !u!54 &1103141598
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103141589}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1108359672
 GameObject:
   m_ObjectHideFlags: 0
@@ -11474,6 +11550,7 @@ GameObject:
   - component: {fileID: 2003049758}
   - component: {fileID: 2003049757}
   - component: {fileID: 2003049756}
+  - component: {fileID: 2003049764}
   m_Layer: 9
   m_Name: BigEnemyTest
   m_TagString: Untagged
@@ -11642,6 +11719,33 @@ Transform:
   - {fileID: 637993855}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &2003049764
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003049755}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2006111223
 GameObject:
   m_ObjectHideFlags: 0
