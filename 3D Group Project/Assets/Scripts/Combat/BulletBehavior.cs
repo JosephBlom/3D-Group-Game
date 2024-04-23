@@ -19,6 +19,7 @@ public class ProjectileBehavior : MonoBehaviour
 
     private Rigidbody _rb;
     public string shooter;
+    public string weaponName;
     public int damage;
     public int explosionDamage;
 

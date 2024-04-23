@@ -49,7 +49,6 @@ public class GunSystem : MonoBehaviour
     {
         if (transform.parent != Camera.main.transform)
         {
-            Debug.Log("ploogy");
             return;
         }
 
@@ -91,6 +90,7 @@ public class GunSystem : MonoBehaviour
             realBullet.GetComponent<ProjectileBehavior>().Fire(gunRange, Camera.main.transform.forward);
             ProjectileBehavior projectileBehavior = realBullet.GetComponent<ProjectileBehavior>();
             projectileBehavior.shooter = gameObject.transform.parent.parent.name;
+            projectileBehavior.weaponName = gameObject.name;
             projectileBehavior.damage = rangedDamage;
             projectileBehavior.explosionDamage = explosionDamage;
         }
