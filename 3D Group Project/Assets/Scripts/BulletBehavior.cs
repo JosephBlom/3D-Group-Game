@@ -26,6 +26,7 @@ public class ProjectileBehavior : MonoBehaviour
         {
             Destroy(gameObject, bulletDespawnTimer);
         }
+        else { Destroy(gameObject, 10); }
     }
     public void Fire(float speed, Vector3 direction)
     {
