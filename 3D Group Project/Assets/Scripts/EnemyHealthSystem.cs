@@ -156,5 +156,15 @@ public class EnemyHealthSystem : MonoBehaviour
         {
             EnemyDamage(other.gameObject.GetComponent<ExplosionBehavior>().damage);
         }
+        else if (other.gameObject.layer == 7)
+        {
+            if(other.gameObject.GetComponent<MeleeBehavior>() == null)
+            {
+                Debug.LogWarning("not it bruv");
+                return;
+            }
+            EnemyDamage(other.gameObject.GetComponent<MeleeBehavior>().damage);
+            Destroy(other.gameObject);
+        }
     }
 }

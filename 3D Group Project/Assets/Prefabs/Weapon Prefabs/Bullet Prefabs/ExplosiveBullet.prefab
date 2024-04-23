@@ -123,9 +123,12 @@ MonoBehaviour:
   delayedExplosive: 0
   explosionCollider: {fileID: 4375215141754323340, guid: 0a97e5c70abdfb147a55e63fc7b70129, type: 3}
   explosionDelay: 5
-  explosionRadius: 2.5
+  explosionRadius: 5
   despawnOnCollision: 1
   bulletDespawnTimer: 1
+  shooter: 
+  damage: 0
+  explosionDamage: 0
 --- !u!54 &-8203711118676622307
 Rigidbody:
   m_ObjectHideFlags: 0
