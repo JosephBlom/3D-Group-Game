@@ -163,4 +163,21 @@ public class PlayerHealthSystem : MonoBehaviour
         playerShield++;
         StopAllCoroutines();
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.layer == 9)
+        {
+            Debug.Log("skibi");
+            PlayerTakeDamage(10);
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == 8)
+        {
+            Debug.Log("Yowch!");
+            PlayerTakeDamage(other.gameObject.GetComponent<ExplosionBehavior>().damage);
+        }
+    }
+
 }

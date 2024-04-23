@@ -18,6 +18,9 @@ public class ProjectileBehavior : MonoBehaviour
     [SerializeField] private int bulletDespawnTimer = 1;
 
     private Rigidbody _rb;
+    public string shooter;
+    public int damage;
+    public int explosionDamage;
 
     private void Awake()
     {
@@ -44,6 +47,8 @@ public class ProjectileBehavior : MonoBehaviour
             {
                 GameObject explosion = Instantiate(explosionCollider, gameObject.transform.position, Quaternion.identity);
                 explosion.transform.localScale = new Vector3(explosionRadius, explosionRadius, explosionRadius);
+                explosion.GetComponent<ExplosionBehavior>().shooter = shooter;
+                explosion.GetComponent<ExplosionBehavior>().damage = explosionDamage;
                 Destroy(gameObject);
                 Destroy(explosion, 2.5f);
             }
@@ -58,6 +63,8 @@ public class ProjectileBehavior : MonoBehaviour
         yield return new WaitForSeconds(delay);
         GameObject explosion = Instantiate(explosionCollider, gameObject.transform.position, Quaternion.identity);
         explosion.transform.localScale = new Vector3(explosionRadius, explosionRadius, explosionRadius);
+        explosion.GetComponent<ExplosionBehavior>().shooter = shooter;
+        explosion.GetComponent<ExplosionBehavior>().damage = explosionDamage;
         Destroy(gameObject);
         Destroy(explosion, 2.5f);
         StopAllCoroutines();
