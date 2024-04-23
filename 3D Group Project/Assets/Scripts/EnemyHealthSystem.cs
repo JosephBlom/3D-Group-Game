@@ -142,9 +142,29 @@ public class EnemyHealthSystem : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
     private void OnCollisionEnter(Collision collision)
     {
-        EnemyDamage(5);
+        if (collision.gameObject.layer == 7)
+        {
+            EnemyDamage(collision.gameObject.GetComponent<ProjectileBehavior>().damage);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.layer == 8)
+        {
+            EnemyDamage(other.gameObject.GetComponent<ExplosionBehavior>().damage);
+        }
+        else if (other.gameObject.layer == 7)
+        {
+            if(other.gameObject.GetComponent<MeleeBehavior>() == null)
+            {
+                Debug.LogWarning("not it bruv");
+                return;
+            }
+            EnemyDamage(other.gameObject.GetComponent<MeleeBehavior>().damage);
+            Destroy(other.gameObject);
+        }
     }
 }

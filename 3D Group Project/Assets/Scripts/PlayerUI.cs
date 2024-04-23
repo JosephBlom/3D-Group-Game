@@ -21,17 +21,8 @@ public class PlayerUI : MonoBehaviour
     PlayerHealthSystem healthSystem;
     GunSystem gunsystem;
 
-    private void Awake()
+    private void Start()
     {
-        EnableAmmoUI();
-        if(gunsystem != null)
-        {
-            ChangeMaxAmmo();
-        }
-        else
-        {
-            ammoSlider.GetComponentInChildren<Image>().enabled = false; 
-        }
         healthSystem = GetComponentInChildren<PlayerHealthSystem>();
         healthSlider.maxValue = healthSystem.playerHealth;
         shieldSlider.maxValue = healthSystem.playerShield;
@@ -40,9 +31,14 @@ public class PlayerUI : MonoBehaviour
     }
     private void Update()
     {
-        if(gunsystem != null)
+        EnableAmmoUI();
+        if (gunsystem != null)
         {
-            ammoSlider.value = gunsystem.ammoCount;
+            ChangeMaxAmmo();
+        }
+        else
+        {
+            ammoSlider.GetComponentInChildren<Image>().enabled = false;
         }
         healthSlider.value = healthSystem.playerHealth;
         shieldSlider.value = healthSystem.playerShield;
@@ -59,7 +55,7 @@ public class PlayerUI : MonoBehaviour
     }
     public void EnableAmmoUI()
     {
-        gunsystem = FindFirstObjectByType<GunSystem>();
+        gunsystem = GetComponentInChildren<GunSystem>();
         if (gunsystem != null)
         {
             ammoSlider.GetComponentInChildren<Image>().enabled = true;
