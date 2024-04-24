@@ -21,6 +21,9 @@ public class EnemyHealthSystem : MonoBehaviour
     private bool enemyAlive = true;
     private bool enemy_shieldRegen = false;
     private bool enemy_regenActive = false;
+
+    private string killerName = "Herobrine";
+    private string weaponName = "gun";
     private void Awake()
     {
         enemy_maxHealth = enemyHealth;
@@ -138,7 +141,7 @@ public class EnemyHealthSystem : MonoBehaviour
         if (enemyHealth <= 0)
         {
             enemyAlive = false;
-            Debug.Log("Blehhh...");
+            Debug.Log(gameObject.name + " was killed by " + killerName + " using a " + weaponName);
             Destroy(gameObject);
         }
     }
@@ -147,6 +150,8 @@ public class EnemyHealthSystem : MonoBehaviour
         if (collision.gameObject.layer == 7)
         {
             EnemyDamage(collision.gameObject.GetComponent<ProjectileBehavior>().damage);
+            weaponName = collision.gameObject.GetComponent<ProjectileBehavior>().weaponName;
+            killerName = collision.gameObject.GetComponent<ProjectileBehavior>().shooter;
         }
     }
 
@@ -155,6 +160,8 @@ public class EnemyHealthSystem : MonoBehaviour
         if(other.gameObject.layer == 8)
         {
             EnemyDamage(other.gameObject.GetComponent<ExplosionBehavior>().damage);
+            weaponName = other.gameObject.GetComponent<ExplosionBehavior>().weaponName;
+            killerName = other.gameObject.GetComponent<ExplosionBehavior>().shooter;
         }
         else if (other.gameObject.layer == 7)
         {
@@ -164,6 +171,8 @@ public class EnemyHealthSystem : MonoBehaviour
                 return;
             }
             EnemyDamage(other.gameObject.GetComponent<MeleeBehavior>().damage);
+            weaponName = other.gameObject.GetComponent<MeleeBehavior>().weaponName;
+            killerName = other.gameObject.GetComponent<MeleeBehavior>().shooter;
             Destroy(other.gameObject);
         }
     }

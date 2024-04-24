@@ -67,6 +67,7 @@ public class MeleeSystem : MonoBehaviour
         }
         MeleeBehavior projectileBehavior = meleeHitbox.GetComponent<MeleeBehavior>();
         projectileBehavior.shooter = gameObject.transform.parent.parent.name;
+        projectileBehavior.weaponName = gameObject.name;
         projectileBehavior.damage = meleeDamage;
         Destroy(meleeHitbox, 1);
         StartCoroutine(cooldown);
