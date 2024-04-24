@@ -37,13 +37,13 @@ public class ShopSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         if(heldItem != null)
         {
             playerManager.currentNPC.GetComponent<ShopManager>().updateMenu(heldItem.description, heldItem.cost, player.gold, heldItem.name);
+            playerManager.currentNPC.GetComponent<ShopManager>().hoveredItem = heldItem;
         }
         hovered = true;
     }
 
     public void OnPointerExit(PointerEventData pointerEventData)
     {
-        playerManager.currentNPC.GetComponent<ShopManager>().updateMenu("", 0, player.gold, "");
         hovered = false;
     }
 }

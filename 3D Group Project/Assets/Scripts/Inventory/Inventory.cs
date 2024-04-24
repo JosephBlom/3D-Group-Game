@@ -80,6 +80,7 @@ public class Inventory : MonoBehaviour
                 {
                     inventorySlots[i].setItem(allItems[y], null);
                     inventorySlots[i].slotQuantity = player.itemCurQuantity[i];
+                    inventorySlots[i].updateData();
                 }
             }
         }
@@ -102,7 +103,7 @@ public class Inventory : MonoBehaviour
                     {
                         playerManager.quest.goal.ItemCollected(hit.collider.tag);
                         playerManager.quest.checkComplete();
-                        addItemToInventory(newItem);
+                        addItemToInventory(newItem, false);
                     }
                 }
                 else //show name
@@ -118,7 +119,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    private void addItemToInventory(Item itemToAdd)
+    public void addItemToInventory(Item itemToAdd, bool shopItem)
     {
         int leftoverQuantity = itemToAdd.currentQuantity;
         Slot openSlot = null;
@@ -133,8 +134,9 @@ public class Inventory : MonoBehaviour
                 if (freeSpaceInSlot >= leftoverQuantity)
                 {
                     inventorySlots[i].slotQuantity += leftoverQuantity;
-                    Destroy(itemToAdd.gameObject);
                     inventorySlots[i].updateData();
+                    if(!shopItem)
+                        Destroy(itemToAdd.gameObject);
                     return;
                 }
                 else
@@ -207,9 +209,11 @@ public class Inventory : MonoBehaviour
                 {
                     Item itemToSwap = curSlot.getItem();
 
+                    int count = curSlot.slotQuantity;
+                    
                     curSlot.setItem(currentDraggedItem, currentDraggedSlot);
 
-                    inventorySlots[currentDragSlotIndex].setItem(itemToSwap, inventorySlots[currentDragSlotIndex]);
+                    inventorySlots[currentDragSlotIndex].swapItem(itemToSwap, count);
 
                     resetDragVariables();
                     return;
@@ -224,7 +228,6 @@ public class Inventory : MonoBehaviour
         }
 
         //If we get to this point we have either dropped the item in a non "inventory" spot or closed the inventory.
-        //expect this line to error because the null in set item will cause "dropped" items to have a slotQuantity of 1.
         inventorySlots[currentDragSlotIndex].setItem(currentDraggedItem, inventorySlots[currentDragSlotIndex]);
         resetDragVariables();
     }
