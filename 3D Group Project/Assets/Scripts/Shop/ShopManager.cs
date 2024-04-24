@@ -37,6 +37,11 @@ public class ShopManager : MonoBehaviour
         }
         npcNameText.text = shop.npcName;
     }
+    
+    public void closeShop()
+    {
+        toggleShop(false);
+    }
 
     public void updateMenu(string itemDescription, int itemCost, int playerGold, string itemName)
     {
