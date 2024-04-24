@@ -159,20 +159,26 @@ public class EnemyHealthSystem : MonoBehaviour
     {
         if(other.gameObject.layer == 8)
         {
-            EnemyDamage(other.gameObject.GetComponent<ExplosionBehavior>().damage);
-            weaponName = other.gameObject.GetComponent<ExplosionBehavior>().weaponName;
-            killerName = other.gameObject.GetComponent<ExplosionBehavior>().shooter;
-        }
-        else if (other.gameObject.layer == 7)
-        {
-            if(other.gameObject.GetComponent<MeleeBehavior>() == null)
+            if (other.gameObject.GetComponent<MeleeBehavior>() != null && !other.gameObject.GetComponent<MeleeBehavior>().enemyFriendly)
+            {
+                EnemyDamage(other.gameObject.GetComponent<MeleeBehavior>().damage);
+                weaponName = other.gameObject.GetComponent<MeleeBehavior>().weaponName;
+                killerName = other.gameObject.GetComponent<MeleeBehavior>().shooter;
+            }
+            if(other.gameObject.GetComponent<ExplosionBehavior>() != null && !other.gameObject.GetComponent<MeleeBehavior>().enemyFriendly)
+            {
+                EnemyDamage(other.gameObject.GetComponent<ExplosionBehavior>().damage);
+                weaponName = other.gameObject.GetComponent<ExplosionBehavior>().weaponName;
+                killerName = other.gameObject.GetComponent<ExplosionBehavior>().shooter;
+            }
+            else
             {
                 Debug.LogWarning("not it bruv");
                 return;
             }
-            EnemyDamage(other.gameObject.GetComponent<MeleeBehavior>().damage);
-            weaponName = other.gameObject.GetComponent<MeleeBehavior>().weaponName;
-            killerName = other.gameObject.GetComponent<MeleeBehavior>().shooter;
+        }
+        else if (other.gameObject.layer == 7)
+        {
             Destroy(other.gameObject);
         }
     }

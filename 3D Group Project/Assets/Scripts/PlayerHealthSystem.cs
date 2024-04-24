@@ -175,8 +175,22 @@ public class PlayerHealthSystem : MonoBehaviour
     {
         if (other.gameObject.layer == 8)
         {
-            Debug.Log("Yowch!");
-            PlayerTakeDamage(other.gameObject.GetComponent<ExplosionBehavior>().damage);
+            if(other.gameObject.GetComponent<ExplosionBehavior>() != null)
+            {
+                Debug.Log("Yowch!");
+                if (!other.gameObject.GetComponent<ExplosionBehavior>().friendly)
+                {
+                    PlayerTakeDamage(other.gameObject.GetComponent<ExplosionBehavior>().damage);
+                }
+            }
+            else if (other.gameObject.GetComponent<MeleeBehavior>() != null)
+            {
+                Debug.Log("OwmeleeLol!");
+                if(!other.gameObject.GetComponent<MeleeBehavior>().friendly)
+                {
+                    PlayerTakeDamage(other.gameObject.GetComponent<MeleeBehavior>().damage);
+                }
+            }
         }
     }
 
