@@ -68,6 +68,26 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         }
     }
 
+    public void swapItem(Item item, int count)
+    {
+        heldItem = item;
+
+        if (item != null)
+        {
+            slotQuantity = count;
+            thisSlotImage.sprite = heldItem.icon;
+            thisSlotImage.color = opaque;
+            updateData();
+        }
+        else
+        {
+            thisSlotImage.sprite = null;
+            thisSlotImage.color = transparent;
+            updateData();
+        }
+    }
+
+
     public bool hasItem()
     {
         return heldItem ? true : false;

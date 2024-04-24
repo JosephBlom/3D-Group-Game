@@ -8,6 +8,7 @@ using TMPro;
 public class ShopManager : MonoBehaviour
 {
     [SerializeField] GameObject player;
+    [SerializeField] GameObject playerObject;
 
     [Header("Canvas Objects")]
     public GameObject shopCanvas;
@@ -22,9 +23,11 @@ public class ShopManager : MonoBehaviour
 
     public Shop shop;
 
+    public Item hoveredItem;
+
     public void openShop()
     {
-        shop = player.GetComponent<PlayerManager>().currentNPC.GetComponent<Shop>();
+        shop = playerObject.GetComponent<PlayerManager>().currentNPC.GetComponent<Shop>();
         FindFirstObjectByType<DialogueManager>().GetComponent<DialogueManager>().dialogueCanvas.enabled = false;
         toggleShop(true);
         for(int i = 0; i < shopSlots.Count; i++)
@@ -43,9 +46,19 @@ public class ShopManager : MonoBehaviour
         this.itemName.text = itemName;
     }
 
-    public void purchaseItem(int itemCost, int playerGold)
+    public void purchaseItem()
     {
-        this.playerGold.text = (itemCost - playerGold).ToString();
+        int gold = player.GetComponent<Player>().gold;
+        if (hoveredItem.cost > gold)
+        {
+            Debug.Log("You don't have enough gold.");
+        }
+        else
+        {
+            this.playerGold.text = (hoveredItem.cost - gold).ToString();
+            player.GetComponent<Player>().gold -= hoveredItem.cost;
+            player.GetComponent<Inventory>().addItemToInventory(hoveredItem, true);   
+        }
     }
 
     private void toggleShop(bool enable)
@@ -55,6 +68,6 @@ public class ShopManager : MonoBehaviour
         Cursor.lockState = enable ? CursorLockMode.None : CursorLockMode.Locked;
         Cursor.visible = enable;
 
-        player.GetComponent<StarterAssets.StarterAssetsInputs>().cursorInputForLook = !enable;
+        playerObject.GetComponent<StarterAssets.StarterAssetsInputs>().cursorInputForLook = !enable;
     }
 }
