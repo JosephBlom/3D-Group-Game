@@ -9,7 +9,7 @@ public class ProjectileBehavior : MonoBehaviour
     [SerializeField] private bool delayedExplosive = false;
 
     [Header("Variant Settings")]
-    [SerializeField] GameObject explosionCollider;
+    [SerializeField] public GameObject explosionCollider;
     [SerializeField] private int explosionDelay = 5;
     [SerializeField] private float explosionRadius = 5;
 
@@ -18,6 +18,8 @@ public class ProjectileBehavior : MonoBehaviour
     [SerializeField] private int bulletDespawnTimer = 1;
 
     private Rigidbody _rb;
+    public bool friendly;
+    public bool enemyFriendly = false;
     public string shooter;
     public string weaponName;
     public int damage;

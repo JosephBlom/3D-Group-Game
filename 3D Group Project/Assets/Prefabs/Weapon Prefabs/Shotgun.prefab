@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 4089400443322253459}
   - component: {fileID: 1132918044333217487}
   - component: {fileID: 4875051994624942538}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Shotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,18 +152,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c2036355d2e0bf42834e8ed7ab3258e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 7808518807400987192, guid: 6e8ae2e3421f0684fb9481db9100445d, type: 3}
   automatic: 0
+  bullet: {fileID: 7808518807400987192, guid: 6e8ae2e3421f0684fb9481db9100445d, type: 3}
+  bulletCount: 7
+  explosionDamage: 35
   weaponInaccuracy: 0.15
   fireRate: 0.25
   reloadSpeed: 2
-  rangedDamage: 0.5
+  rangedDamage: 0
   gunRange: 20
-  bulletCount: 7
-  bulletDespawnTimer: 1
   ammoType: 2
   ammoConsumed: 1
-  magazineSize: 8
+  maxAmmoSize: 30
   debug: 1
   firepoint: {fileID: 696492633184019784}
+  playerAmmoManager: {fileID: 0}
   ammoCount: 0

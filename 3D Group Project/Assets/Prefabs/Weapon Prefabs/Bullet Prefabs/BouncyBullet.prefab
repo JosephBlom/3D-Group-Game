@@ -99,7 +99,7 @@ SphereCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 136
+    m_Bits: 128
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -126,6 +126,12 @@ MonoBehaviour:
   explosionRadius: 8
   despawnOnCollision: 0
   bulletDespawnTimer: 5
+  friendly: 0
+  enemyFriendly: 0
+  shooter: 
+  weaponName: 
+  damage: 0
+  explosionDamage: 0
 --- !u!54 &-8203711118676622307
 Rigidbody:
   m_ObjectHideFlags: 0
