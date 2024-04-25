@@ -86,13 +86,14 @@ public class GunSystem : MonoBehaviour
 
         for (int x = 0; x < bulletCount; x++)
         {
-            GameObject realBullet = Instantiate(bullet, firepoint.transform.position + new Vector3((Random.Range(0, weaponInaccuracy)), (Random.Range(0, weaponInaccuracy)), (Random.Range(0, weaponInaccuracy))), Camera.main.transform.rotation);
+            GameObject realBullet = Instantiate(bullet, firepoint.transform.position + new Vector3((Random.Range(-weaponInaccuracy, weaponInaccuracy)), (Random.Range(-weaponInaccuracy, weaponInaccuracy)), (Random.Range(-weaponInaccuracy, weaponInaccuracy))), Camera.main.transform.rotation);
             realBullet.GetComponent<ProjectileBehavior>().Fire(gunRange, Camera.main.transform.forward);
             ProjectileBehavior projectileBehavior = realBullet.GetComponent<ProjectileBehavior>();
             projectileBehavior.shooter = gameObject.transform.parent.parent.name;
             projectileBehavior.weaponName = gameObject.name;
             projectileBehavior.damage = rangedDamage;
             projectileBehavior.friendly = true;
+            projectileBehavior.enemyFriendly = false;
             projectileBehavior.explosionDamage = explosionDamage;
         }
         StartCoroutine(cooldown);
