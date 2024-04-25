@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.EventSystems;
@@ -23,7 +24,6 @@ public class EnemyNav : MonoBehaviour
     [SerializeField] GameObject meleeFirepoint;
 
     [Header("Ranged Attack Settings")]
-    [SerializeField] private bool burstFire = false;
     [SerializeField] private int rangedDamage = 10;
     [SerializeField] private int explosionDamage = 10;
     [SerializeField] private int ammoCount = 30;
@@ -56,7 +56,7 @@ public class EnemyNav : MonoBehaviour
         }
         else if (rangedEnabled)
         {
-                RangedAttack();
+            RangedAttack();
         }
         Vector3 moveDirection = player.transform.position - transform.position;
         if (moveDirection.magnitude < chaseDistance)
@@ -108,7 +108,7 @@ public class EnemyNav : MonoBehaviour
             agent.isStopped = true;
             for (int x = 0; x < bulletsToShoot; x++)
             {
-                GameObject realBullet = Instantiate(bullet, rangedFirepoint.transform.position + new Vector3((Random.Range(0, bulletInaccuracy)), (Random.Range(0, bulletInaccuracy)), (Random.Range(0, bulletInaccuracy))), Quaternion.identity);
+                GameObject realBullet = Instantiate(bullet, rangedFirepoint.transform.position + new Vector3((Random.Range(-bulletInaccuracy, bulletInaccuracy)), (Random.Range(-bulletInaccuracy, bulletInaccuracy)), (Random.Range(-bulletInaccuracy, bulletInaccuracy))), Quaternion.identity);
                 realBullet.GetComponent<ProjectileBehavior>().Fire(bulletSpeed, rangedFirepoint.transform.forward);
                 ProjectileBehavior projectileBehavior = realBullet.GetComponent<ProjectileBehavior>();
                 projectileBehavior.shooter = gameObject.name;

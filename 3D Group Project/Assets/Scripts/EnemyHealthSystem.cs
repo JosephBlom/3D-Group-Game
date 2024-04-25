@@ -168,7 +168,7 @@ public class EnemyHealthSystem : MonoBehaviour
                 weaponName = other.gameObject.GetComponent<MeleeBehavior>().weaponName;
                 killerName = other.gameObject.GetComponent<MeleeBehavior>().shooter;
             }
-            if(other.gameObject.GetComponent<ExplosionBehavior>() != null && !other.gameObject.GetComponent<MeleeBehavior>().enemyFriendly)
+            if(other.gameObject.GetComponent<ExplosionBehavior>() != null && !other.gameObject.GetComponent<ExplosionBehavior>().enemyFriendly)
             {
                 EnemyDamage(other.gameObject.GetComponent<ExplosionBehavior>().damage);
                 weaponName = other.gameObject.GetComponent<ExplosionBehavior>().weaponName;
