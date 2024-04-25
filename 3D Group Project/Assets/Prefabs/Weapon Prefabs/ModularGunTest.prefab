@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8903834180363111555}
   - component: {fileID: 823115900354116551}
   - component: {fileID: 2037976862364007542}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: ModularGunTest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,20 +121,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c2036355d2e0bf42834e8ed7ab3258e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 7808518807400987192, guid: 6e8ae2e3421f0684fb9481db9100445d, type: 3}
   automatic: 1
+  bullet: {fileID: 7808518807400987192, guid: 6e8ae2e3421f0684fb9481db9100445d, type: 3}
+  bulletCount: 1
+  explosionDamage: 35
   weaponInaccuracy: 0.1
   fireRate: 0.05
   reloadSpeed: 1
-  rangedDamage: 0.5
+  rangedDamage: 0
   gunRange: 15
-  bulletCount: 1
-  bulletDespawnTimer: 1
   ammoType: 1
   ammoConsumed: 1
-  magazineSize: 65
+  maxAmmoSize: 30
   debug: 1
   firepoint: {fileID: 8427066566267478590}
+  playerAmmoManager: {fileID: 0}
   ammoCount: 0
 --- !u!1 &8427066566267478590
 GameObject:

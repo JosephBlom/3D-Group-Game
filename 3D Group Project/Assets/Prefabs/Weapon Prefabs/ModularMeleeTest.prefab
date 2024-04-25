@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3871610016733314764}
   - component: {fileID: 3355835035624755976}
   - component: {fileID: 4009890298906408989}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: ModularMeleeTest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,6 +122,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoSwing: 1
+  heavyAttack: 1
+  heavyAttackDamage: 2
+  heavyAttackCooldown: 1
   swingSpeed: 0.5
   meleeDamage: 15
   meleeRange: 1.5

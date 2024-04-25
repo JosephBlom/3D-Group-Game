@@ -165,10 +165,12 @@ public class PlayerHealthSystem : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.layer == 9)
+        if (collision.gameObject.layer == 7)
         {
-            Debug.Log("skibi");
-            PlayerTakeDamage(10);
+            if(collision.gameObject.GetComponent<ProjectileBehavior>() != null && !collision.gameObject.GetComponent<ProjectileBehavior>().friendly)
+            {
+                PlayerTakeDamage(collision.gameObject.GetComponent<ProjectileBehavior>().damage);
+            }
         }
     }
     private void OnTriggerEnter(Collider other)

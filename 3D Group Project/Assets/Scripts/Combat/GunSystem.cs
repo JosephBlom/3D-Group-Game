@@ -92,6 +92,7 @@ public class GunSystem : MonoBehaviour
             projectileBehavior.shooter = gameObject.transform.parent.parent.name;
             projectileBehavior.weaponName = gameObject.name;
             projectileBehavior.damage = rangedDamage;
+            projectileBehavior.friendly = true;
             projectileBehavior.explosionDamage = explosionDamage;
         }
         StartCoroutine(cooldown);

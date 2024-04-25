@@ -149,9 +149,12 @@ public class EnemyHealthSystem : MonoBehaviour
     {
         if (collision.gameObject.layer == 7)
         {
-            EnemyDamage(collision.gameObject.GetComponent<ProjectileBehavior>().damage);
-            weaponName = collision.gameObject.GetComponent<ProjectileBehavior>().weaponName;
-            killerName = collision.gameObject.GetComponent<ProjectileBehavior>().shooter;
+            if(collision.gameObject.GetComponent<ProjectileBehavior>() != null && !collision.gameObject.GetComponent<ProjectileBehavior>().enemyFriendly)
+            {
+                EnemyDamage(collision.gameObject.GetComponent<ProjectileBehavior>().damage);
+                weaponName = collision.gameObject.GetComponent<ProjectileBehavior>().weaponName;
+                killerName = collision.gameObject.GetComponent<ProjectileBehavior>().shooter;
+            }
         }
     }
 
