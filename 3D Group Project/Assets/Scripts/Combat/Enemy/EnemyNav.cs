@@ -118,6 +118,7 @@ public class EnemyNav : MonoBehaviour
                 ProjectileBehavior projectileBehavior = realBullet.GetComponent<ProjectileBehavior>();
                 projectileBehavior.shooter = gameObject.name;
                 projectileBehavior.enemyFriendly = true;
+                projectileBehavior.passiveFriendly = false;
                 projectileBehavior.damage = rangedDamage;
                 projectileBehavior.explosionDamage = explosionDamage;
             }
