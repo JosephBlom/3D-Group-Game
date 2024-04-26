@@ -10,6 +10,7 @@ public class EnemyNav : MonoBehaviour
     [Header("Navigation Settings")]
     [SerializeField] float chaseDistance;
     [SerializeField] GameObject player;
+    [SerializeField] bool patrolling;
 
     [Header("Enemy Settings")]
     [SerializeField] private bool meleeEnabled = true;
@@ -62,10 +63,14 @@ public class EnemyNav : MonoBehaviour
         if (moveDirection.magnitude < chaseDistance)
         {
             agent.destination = player.transform.position;
+            if (patrolling)
+                GetComponent<Patrol>().chasePlayer = true;
         }
         else
         {
             agent.destination = home;
+            if (patrolling)
+                GetComponent<Patrol>().chasePlayer = false;
         }
     }
     private IEnumerator MeleeAttack()
