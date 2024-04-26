@@ -19,6 +19,7 @@ public class ProjectileBehavior : MonoBehaviour
 
     private Rigidbody _rb;
     public bool friendly;
+    public bool passiveFriendly = false;
     public bool enemyFriendly = false;
     public string shooter;
     public string weaponName;
