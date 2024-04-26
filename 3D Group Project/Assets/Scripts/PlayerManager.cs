@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
 {
     [SerializeField] Transform playerCast;
+    [SerializeField] GameObject map;
 
     public Quest quest;
     public GameObject currentNPC;
@@ -24,6 +26,20 @@ public class PlayerManager : MonoBehaviour
             }
             
         }
+        if (Input.GetKeyUp(KeyCode.M))
+        {
+            Debug.Log("here");
+            if (map.active)
+            {
+                Debug.Log("off");
+                toggleMap(false);
+            }
+            else
+            {
+                Debug.Log("on");
+                toggleMap(true);
+            }
+        }
         
     }
 
@@ -32,5 +48,10 @@ public class PlayerManager : MonoBehaviour
         Cursor.lockState = enable ? CursorLockMode.None : CursorLockMode.Locked;
         Cursor.visible = enable;
         GetComponentInChildren<StarterAssets.StarterAssetsInputs>().cursorInputForLook = !enable;
+    }
+
+    public void toggleMap(bool open)
+    {
+        map.SetActive(open);
     }
 }
