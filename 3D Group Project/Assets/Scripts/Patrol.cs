@@ -21,7 +21,6 @@ public class Patrol : MonoBehaviour
             Vector3 distance = (patrolPoints[currentPoint].position - transform.position);
             if (distance.magnitude >= 0.5)
             {
-                Debug.Log(distance.magnitude);
                 transform.position = Vector3.MoveTowards(transform.position, patrolPoints[currentPoint].position, speed * Time.deltaTime);
             }
             else
