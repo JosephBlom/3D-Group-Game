@@ -142,6 +142,7 @@ public class EnemyHealthSystem : MonoBehaviour
         {
             enemyAlive = false;
             Debug.Log(gameObject.name + " was killed by " + killerName + " using a " + weaponName);
+            GetComponent<Enemy>().dropItems(transform);
             Destroy(gameObject);
         }
     }
