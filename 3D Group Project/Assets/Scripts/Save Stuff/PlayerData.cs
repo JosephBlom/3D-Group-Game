@@ -11,6 +11,7 @@ public class PlayerData
     public List<string> itemDescription = new List<string>();
     public List<int> itemCurQuantity = new List<int>();
     public List<int> itemMaxQuantity = new List<int>();
+    public float[] position;
     public int gold;
 
     public PlayerData(Player player)
@@ -19,6 +20,10 @@ public class PlayerData
         timer = player.timer;
         gold = player.gold;
         fillInventory(player.GetComponent<Inventory>());
+        position = new float[3];
+        position[0] = player.position.x;
+        position[1] = player.position.y;
+        position[2] = player.position.z;
     }
 
     private void fillInventory(Inventory script)

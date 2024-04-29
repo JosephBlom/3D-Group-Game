@@ -4,19 +4,24 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public int counter;
-    public float timer;
+    [Header("Inventory & Item Variables")]
+    public List<Slot> inventory;
     public List<string> itemNames = new List<string>();
     public List<string> itemDescription = new List<string>();
     public List<int> itemCurQuantity = new List<int>();
     public List<int> itemMaxQuantity = new List<int>();
-    public int gold;
 
-    public List<Slot> inventory;
+    [Header("Miscellaneous Variables")]
+    public int counter;
+    public float timer;
+    public int gold;
+    public GameObject playerObject;
+    public Vector3 position;
 
     private void Start()
     {
         inventory = GetComponent<Inventory>().inventorySlots;
+        position = playerObject.transform.position;
     }
 
     private void Update()

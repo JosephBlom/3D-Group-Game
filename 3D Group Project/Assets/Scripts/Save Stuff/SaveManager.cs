@@ -29,6 +29,7 @@ public class SaveManager : MonoBehaviour
         player.counter = data.counter;
         player.timer = data.timer;
         player.gold = data.gold;
+
         for(int i = 0; i < 21; i++)
         {
             player.itemNames.Add(data.itemNames[i]);
@@ -36,5 +37,11 @@ public class SaveManager : MonoBehaviour
             player.itemCurQuantity.Add(data.itemCurQuantity[i]);
             player.itemMaxQuantity.Add(data.itemMaxQuantity[i]);
         }
+
+        Vector3 position;
+        position.x = data.position[0];
+        position.y = data.position[1];
+        position.z = data.position[2];
+        player.playerObject.transform.position = position;
     }
 }
