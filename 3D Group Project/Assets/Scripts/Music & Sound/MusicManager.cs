@@ -10,6 +10,7 @@ public class MusicManager : MonoBehaviour
     public List<AudioClip> soundtracks = new List<AudioClip>();
     public int currentClip = 0;
     public Slider volumeSlider;
+    public float musicVolume;
 
     private void Update()
     {
@@ -33,5 +34,6 @@ public class MusicManager : MonoBehaviour
     public void SetVolume()
     {
         audioSource.volume = volumeSlider.value;
+        musicVolume = volumeSlider.value;
     }
 }
