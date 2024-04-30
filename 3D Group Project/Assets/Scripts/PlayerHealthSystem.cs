@@ -24,6 +24,7 @@ public class PlayerHealthSystem : MonoBehaviour
     private int maxShield;
 
     private bool isAlive = true;
+    private bool mountHorsie = false;
     private bool shieldRegen = false;
     private bool regenActive = false;
     private void Awake()
@@ -47,10 +48,9 @@ public class PlayerHealthSystem : MonoBehaviour
             SetMaxHealth(50);
             SetMaxShield(5);
         }
-        else if (Input.GetKeyDown(KeyCode.B))
+        else if (Input.GetKeyDown(KeyCode.E))
         {
-            SetMaxHealth(250);
-            SetMaxShield(500);
+            mountHorsie = true;
         }
 
         PlayerHealthRegen();
@@ -192,6 +192,24 @@ public class PlayerHealthSystem : MonoBehaviour
                 {
                     PlayerTakeDamage(other.gameObject.GetComponent<MeleeBehavior>().damage);
                 }
+            }
+        }
+        if(other.gameObject.GetComponent<HorseCollision>() != null)
+        {
+            Debug.Log("HOSRE");
+            other.gameObject.transform.parent.GetComponent<HorseMountScript>().player = gameObject;
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.GetComponent<HorseCollision>() != null)
+        {
+            Debug.Log("dd");
+            other.gameObject.transform.parent.GetComponent<HorseMountScript>().player = gameObject;
+            if (mountHorsie)
+            {
+                other.gameObject.transform.parent.GetComponent<HorseMountScript>().MountHorse();
             }
         }
     }
