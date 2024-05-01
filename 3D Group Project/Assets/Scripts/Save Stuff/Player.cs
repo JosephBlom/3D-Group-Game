@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        position = playerObject.transform.position;
         timer += Time.deltaTime;
     }
 
