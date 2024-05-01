@@ -99,7 +99,7 @@ GameObject:
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
-  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -142,7 +142,8 @@ MonoBehaviour:
   timer: 0
   gold: 0
   playerObject: {fileID: 6704587443757744156}
-  position: []
+  position: {x: 0, y: 0, z: 0}
+  horse: {fileID: 0}
 --- !u!114 &8079648894621899595
 MonoBehaviour:
   m_ObjectHideFlags: 0
