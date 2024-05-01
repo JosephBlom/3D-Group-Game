@@ -24,6 +24,7 @@ public class PlayerHealthSystem : MonoBehaviour
     private int maxShield;
 
     private bool isAlive = true;
+    private bool mountHorsie = false;
     private bool shieldRegen = false;
     private bool regenActive = false;
     private void Awake()
@@ -47,10 +48,10 @@ public class PlayerHealthSystem : MonoBehaviour
             SetMaxHealth(50);
             SetMaxShield(5);
         }
-        else if (Input.GetKeyDown(KeyCode.B))
+        else if(Input.GetKeyDown(KeyCode.E) && mountHorsie)
         {
-            SetMaxHealth(250);
-            SetMaxShield(500);
+            gameObject.transform.parent.GetComponentInChildren<HorseMountScript>().UnmountHorse();
+            mountHorsie = false;
         }
 
         PlayerHealthRegen();
@@ -179,7 +180,6 @@ public class PlayerHealthSystem : MonoBehaviour
         {
             if(other.gameObject.GetComponent<ExplosionBehavior>() != null)
             {
-                Debug.Log("Yowch!");
                 if (!other.gameObject.GetComponent<ExplosionBehavior>().friendly)
                 {
                     PlayerTakeDamage(other.gameObject.GetComponent<ExplosionBehavior>().damage);
@@ -187,11 +187,27 @@ public class PlayerHealthSystem : MonoBehaviour
             }
             else if (other.gameObject.GetComponent<MeleeBehavior>() != null)
             {
-                Debug.Log("OwmeleeLol!");
                 if(!other.gameObject.GetComponent<MeleeBehavior>().friendly)
                 {
                     PlayerTakeDamage(other.gameObject.GetComponent<MeleeBehavior>().damage);
                 }
+            }
+        }
+        if(other.gameObject.GetComponent<HorseCollision>() != null)
+        {
+            other.gameObject.transform.parent.GetComponent<HorseMountScript>().player = gameObject;
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.GetComponent<HorseCollision>() != null)
+        {
+            other.gameObject.transform.parent.GetComponent<HorseMountScript>().player = gameObject;
+            if (Input.GetKeyDown(KeyCode.E) && !mountHorsie)
+            {
+                other.gameObject.transform.parent.GetComponent<HorseMountScript>().MountHorse();
+                mountHorsie = true;
             }
         }
     }

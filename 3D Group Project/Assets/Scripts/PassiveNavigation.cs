@@ -14,7 +14,7 @@ public class PassiveNavigation : MonoBehaviour
     [SerializeField] private float generationDelay = 0.5f;
     [SerializeField] private float panicTime = 10;
 
-    [SerializeField] private GameObject player;
+    [SerializeField] public GameObject player;
     private bool isWandering = false;
     private bool isPanic = false;
     private string killerName = "Herobrine";
@@ -61,19 +61,19 @@ public class PassiveNavigation : MonoBehaviour
         float wanderDistance = 5;
         float wanderJitter = 5;
 
+        isWandering = true;
+
         wanderTarget += new Vector3(Random.Range(-1.0f, 1.0f) * wanderJitter, 0, Random.Range(-1.0f, 1.0f) * wanderJitter);
         wanderTarget.Normalize();
         wanderTarget *= wanderRadius;
 
-        isWandering = true;
         Vector3 targetLocal = wanderTarget + new Vector3(0, 0, wanderDistance);
         Vector3 targetWorld = this.gameObject.transform.InverseTransformVector(targetLocal);
 
         GetCharacterPositionOnNavMesh(targetWorld);
         Seek(targetWorld);
-        yield return new WaitForSeconds(generationDelay);
+        yield return new WaitForSeconds(1);
         isWandering = false;
-        StopAllCoroutines();
     }
     private IEnumerator Panic()
     {

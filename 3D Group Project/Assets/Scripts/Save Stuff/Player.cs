@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     public int gold;
     public GameObject playerObject;
     public Vector3 position;
+    [SerializeField] GameObject horse;
 
     private void Start()
     {

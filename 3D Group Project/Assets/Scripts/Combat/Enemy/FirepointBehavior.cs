@@ -10,7 +10,7 @@ public class FirepointBehavior : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("PlayerObject");
     }
 
     private void Update()
