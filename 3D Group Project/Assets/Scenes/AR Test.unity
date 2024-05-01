@@ -1780,8 +1780,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.870245, y: 1, z: 1}
-  m_Center: {x: -0.9351225, y: 0, z: 0}
+  m_Size: {x: 3.414895, y: 1.6448276, z: 2.7893162}
+  m_Center: {x: -0.9183183, y: 0.3224138, z: 0.4647379}
 --- !u!114 &139144546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3469,6 +3469,7 @@ GameObject:
   - component: {fileID: 704397301}
   - component: {fileID: 704397304}
   - component: {fileID: 704397305}
+  - component: {fileID: 704397306}
   m_Layer: 3
   m_Name: CollisionDetection
   m_TagString: Untagged
@@ -3610,6 +3611,20 @@ MonoBehaviour:
   playerShieldRegenTick: 0.05
   playerShieldRegenDelay: 5
   extraHealthActive: 0
+  isAlive: 1
+--- !u!114 &704397306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 704397299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 750acba50784674499e81cac9fd2477c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onMount: 0
 --- !u!114 &705315860 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2420737299430998251, guid: 8f48a4befe2c9694b8b12531cc021705, type: 3}
@@ -6284,10 +6299,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -12090,7 +12105,7 @@ MonoBehaviour:
   gold: 0
   playerObject: {fileID: 6704587443216735514}
   position: {x: 0, y: 0, z: 0}
-  horse: {fileID: 0}
+  horse: {fileID: 373588616}
 --- !u!1 &6422735614872364322
 GameObject:
   m_ObjectHideFlags: 0

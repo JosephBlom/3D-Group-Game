@@ -23,12 +23,20 @@ public class HorseMountScript : MonoBehaviour
         passivenav = GetComponent<PassiveNavigation>();
         player = GetComponentInChildren<HorseCollision>().player;
     }
+    private void Update()
+    {
+        if(player != null && gameObject.transform.parent == player.transform.parent.transform)
+        {
+            StartCoroutine(LocationFix());
+        }
+    }
+
     public void MountHorse()
     {
         if (player != null)
         {
             player.transform.parent.transform.position = playerMountPoint.transform.position + new Vector3(0, 0, 1);
-            player.transform.parent.Find("PlayerHorse").gameObject.SetActive(true);
+            player.transform.parent.parent.GetComponent<Player>().horse.gameObject.SetActive(true);
             playerHeight = player.transform.parent.GetComponent<CharacterController>().height;
             playerMovespeed = player.transform.parent.GetComponent<FirstPersonController>().MoveSpeed;
             playerOffset = player.transform.parent.GetComponent<FirstPersonController>().GroundedOffset;
@@ -42,10 +50,9 @@ public class HorseMountScript : MonoBehaviour
             }
         }
     }
-
     public void UnmountHorse()
     {
-        player.transform.parent.Find("PlayerHorse").gameObject.SetActive(false);
+        player.transform.parent.parent.GetComponent<Player>().horse.gameObject.SetActive(false);
         player.transform.parent.GetComponent<CharacterController>().height = playerHeight;
         player.transform.parent.GetComponent<FirstPersonController>().MoveSpeed = playerMovespeed;
         player.transform.parent.GetComponent<FirstPersonController>().GroundedOffset = playerOffset;
@@ -55,4 +62,21 @@ public class HorseMountScript : MonoBehaviour
             child.gameObject.SetActive(true);
         }
     }
+    private IEnumerator LocationFix()
+    {
+        bool location = true;
+        yield return new WaitForSecondsRealtime(1);
+        location = false;
+
+        if(!location)
+        {
+            if (gameObject.transform.parent == player.transform.parent.transform)
+            {
+                gameObject.transform.position = player.transform.position;
+                gameObject.transform.rotation = player.transform.rotation;
+            }
+        }
+        StopAllCoroutines();
+    }
+
 }
