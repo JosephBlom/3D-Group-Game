@@ -123,6 +123,15 @@ public class Inventory : MonoBehaviour
     {
         int leftoverQuantity = itemToAdd.currentQuantity;
         Slot openSlot = null;
+        Item itemPrefab = null;
+
+        for(int i = 0; i < allItems.Count; i++)
+        {
+            if (allItems[i].name.Equals(itemToAdd.name))
+            {
+                itemPrefab = allItems[i];
+            }
+        }
         for (int i = 0; i < inventorySlots.Count; i++)
         {
             Item heldItem = inventorySlots[i].getItem();
@@ -156,9 +165,10 @@ public class Inventory : MonoBehaviour
 
         if(leftoverQuantity > 0 && openSlot)
         {
-            openSlot.setItem(itemToAdd, null);
+            openSlot.setItem(itemPrefab, null);
             openSlot.slotQuantity = leftoverQuantity;
-            itemToAdd.gameObject.SetActive(false);
+            Destroy(itemToAdd.gameObject);
+            openSlot.updateData();
         }
         else
         {
@@ -239,8 +249,8 @@ public class Inventory : MonoBehaviour
             Slot curSlot = inventorySlots[i];
             if(curSlot.hovered && curSlot.hasItem())
             {
-                curSlot.getItem().gameObject.SetActive(true);
-                curSlot.getItem().transform.position = dropLocation.position;
+                GameObject droppedItem = Instantiate(curSlot.getItem().gameObject, dropLocation.position, Quaternion.identity);
+                droppedItem.GetComponent<Item>().currentQuantity = curSlot.slotQuantity;
                 curSlot.setItem(null, null);
                 break;
             }

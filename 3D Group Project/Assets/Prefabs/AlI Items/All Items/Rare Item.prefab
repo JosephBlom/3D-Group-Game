@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 3425684136424060900}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 457.0288, y: 0.97998905, z: 501.18228}
+  m_LocalPosition: {x: 7.624777, y: 1.0761868, z: 7.6367397}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -151,3 +151,5 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 758d7e28906d9da479a3640b5f88c08b, type: 3}
   currentQuantity: 1
   maxQuantity: 16
+  cost: 1
+  dropChance: 0
