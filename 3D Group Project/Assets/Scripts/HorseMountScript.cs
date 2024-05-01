@@ -21,7 +21,6 @@ public class HorseMountScript : MonoBehaviour
         horseCollision = GetComponentInChildren<HorseCollision>();
         enemyHealthSystem = GetComponent<EnemyHealthSystem>();
         passivenav = GetComponent<PassiveNavigation>();
-        player = GetComponentInChildren<HorseCollision>().player;
     }
     private void Update()
     {
