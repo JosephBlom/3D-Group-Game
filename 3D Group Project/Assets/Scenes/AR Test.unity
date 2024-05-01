@@ -2417,7 +2417,7 @@ GameObject:
   - component: {fileID: 373588619}
   - component: {fileID: 373588618}
   m_Layer: 3
-  m_Name: HorseModel (1)
+  m_Name: PlayerHorse
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2432,7 +2432,7 @@ Transform:
   m_GameObject: {fileID: 373588616}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.818, z: 0}
   m_LocalScale: {x: 1, y: 1.7060597, z: 2.964137}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12090,6 +12090,7 @@ MonoBehaviour:
   gold: 0
   playerObject: {fileID: 6704587443216735514}
   position: {x: 0, y: 0, z: 0}
+  horse: {fileID: 0}
 --- !u!1 &6422735614872364322
 GameObject:
   m_ObjectHideFlags: 0

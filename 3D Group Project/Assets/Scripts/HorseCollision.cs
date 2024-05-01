@@ -6,9 +6,4 @@ public class HorseCollision : MonoBehaviour
 {
     public GameObject player;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        
-    }
-
 }

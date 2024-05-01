@@ -44,7 +44,7 @@ public class EnemyNav : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("PlayerObject");
         home = transform.position;
         agent = GetComponent<NavMeshAgent>();
         secretAmmo = ammoCount;

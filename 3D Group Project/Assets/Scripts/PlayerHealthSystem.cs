@@ -48,9 +48,10 @@ public class PlayerHealthSystem : MonoBehaviour
             SetMaxHealth(50);
             SetMaxShield(5);
         }
-        else if (Input.GetKeyDown(KeyCode.E))
+        else if(Input.GetKeyDown(KeyCode.E) && mountHorsie)
         {
-            mountHorsie = true;
+            gameObject.transform.parent.GetComponentInChildren<HorseMountScript>().UnmountHorse();
+            mountHorsie = false;
         }
 
         PlayerHealthRegen();
@@ -179,7 +180,6 @@ public class PlayerHealthSystem : MonoBehaviour
         {
             if(other.gameObject.GetComponent<ExplosionBehavior>() != null)
             {
-                Debug.Log("Yowch!");
                 if (!other.gameObject.GetComponent<ExplosionBehavior>().friendly)
                 {
                     PlayerTakeDamage(other.gameObject.GetComponent<ExplosionBehavior>().damage);
@@ -187,7 +187,6 @@ public class PlayerHealthSystem : MonoBehaviour
             }
             else if (other.gameObject.GetComponent<MeleeBehavior>() != null)
             {
-                Debug.Log("OwmeleeLol!");
                 if(!other.gameObject.GetComponent<MeleeBehavior>().friendly)
                 {
                     PlayerTakeDamage(other.gameObject.GetComponent<MeleeBehavior>().damage);
@@ -196,7 +195,6 @@ public class PlayerHealthSystem : MonoBehaviour
         }
         if(other.gameObject.GetComponent<HorseCollision>() != null)
         {
-            Debug.Log("HOSRE");
             other.gameObject.transform.parent.GetComponent<HorseMountScript>().player = gameObject;
         }
     }
@@ -205,11 +203,11 @@ public class PlayerHealthSystem : MonoBehaviour
     {
         if (other.gameObject.GetComponent<HorseCollision>() != null)
         {
-            Debug.Log("dd");
             other.gameObject.transform.parent.GetComponent<HorseMountScript>().player = gameObject;
-            if (mountHorsie)
+            if (Input.GetKeyDown(KeyCode.E) && !mountHorsie)
             {
                 other.gameObject.transform.parent.GetComponent<HorseMountScript>().MountHorse();
+                mountHorsie = true;
             }
         }
     }
