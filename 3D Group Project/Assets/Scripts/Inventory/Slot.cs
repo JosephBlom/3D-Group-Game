@@ -5,6 +5,7 @@ using TMPro;
 
 public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+    public bool equipmentSlot;
     public bool hovered;
     public Item heldItem;
     public int slotQuantity;

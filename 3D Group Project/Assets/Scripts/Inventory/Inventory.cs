@@ -136,7 +136,7 @@ public class Inventory : MonoBehaviour
         {
             Item heldItem = inventorySlots[i].getItem();
 
-            if (heldItem != null && itemToAdd.name == heldItem.name)
+            if (heldItem != null && itemToAdd.name == heldItem.name && !inventorySlots[i].equipmentSlot)
             {
                 int freeSpaceInSlot = heldItem.maxQuantity -inventorySlots[i].slotQuantity;
 
@@ -217,22 +217,72 @@ public class Inventory : MonoBehaviour
             {
                 if (curSlot.hasItem())
                 {
-                    Item itemToSwap = curSlot.getItem();
+                    Debug.Log("Huh 1");
+                    if(!curSlot.equipmentSlot && !inventorySlots[currentDragSlotIndex].equipmentSlot)
+                    {
+                        Debug.Log("Huh");
+                        Item itemToSwap = curSlot.getItem();
 
-                    int count = curSlot.slotQuantity;
+                        int count = curSlot.slotQuantity;
+
+                        curSlot.setItem(currentDraggedItem, currentDraggedSlot);
+
+                        inventorySlots[currentDragSlotIndex].swapItem(itemToSwap, count);
+
+                        resetDragVariables();
+                        return;
+                    }
+                    else
+                    {
+                        if(curSlot.equipmentSlot && !inventorySlots[currentDragSlotIndex].equipmentSlot)
+                        {
+                            Item itemToSwap = curSlot.getItem();
+                            Item itemBeingSwapped = inventorySlots[currentDragSlotIndex].getItem();
+                            if (itemBeingSwapped.CompareTag("Equipment"))
+                            {
+                                int count = curSlot.slotQuantity;
+                                curSlot.setItem(currentDraggedItem, currentDraggedSlot);
+                                inventorySlots[currentDragSlotIndex].swapItem(itemToSwap, count);
+                                resetDragVariables();
+                                return;
+                            }
+                        }
+                        else if(!curSlot.equipmentSlot && inventorySlots[currentDragSlotIndex].equipmentSlot)
+                        {
+                            Item itemToSwap = curSlot.getItem();
+                            if (itemToSwap.CompareTag("Equipment"))
+                            {
+                                int count = curSlot.slotQuantity;
+                                curSlot.setItem(currentDraggedItem, currentDraggedSlot);
+                                inventorySlots[currentDragSlotIndex].swapItem(itemToSwap, count);
+                                resetDragVariables();
+                                return;
+                            }
+                        }
+                    }
                     
-                    curSlot.setItem(currentDraggedItem, currentDraggedSlot);
-
-                    inventorySlots[currentDragSlotIndex].swapItem(itemToSwap, count);
-
-                    resetDragVariables();
-                    return;
                 }
                 else
                 {
-                    curSlot.setItem(currentDraggedItem, currentDraggedSlot);
-                    resetDragVariables();
-                    return;
+                    Debug.Log("Please");
+                    if (curSlot.equipmentSlot)
+                    {
+                        Debug.Log("First if");
+                        if (currentDraggedItem.CompareTag("Equipment"))
+                        {
+                            Debug.Log("Second if");
+                            curSlot.setItem(currentDraggedItem, currentDraggedSlot);
+                            resetDragVariables();
+                            return;
+                        }
+                    }
+                    else
+                    {
+
+                        curSlot.setItem(currentDraggedItem, currentDraggedSlot);
+                        resetDragVariables();
+                        return;
+                    }
                 }
             }
         }

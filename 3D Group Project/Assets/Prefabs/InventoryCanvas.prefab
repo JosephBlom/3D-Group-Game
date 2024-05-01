@@ -1002,6 +1002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acb54d66ef240ca49ae9743f1d112235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  equipmentSlot: 0
   hovered: 0
   heldItem: {fileID: 0}
   slotQuantity: 0
@@ -1095,6 +1096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acb54d66ef240ca49ae9743f1d112235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  equipmentSlot: 0
   hovered: 0
   heldItem: {fileID: 0}
   slotQuantity: 0
@@ -1263,6 +1265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acb54d66ef240ca49ae9743f1d112235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  equipmentSlot: 0
   hovered: 0
   heldItem: {fileID: 0}
   slotQuantity: 0
@@ -2094,6 +2097,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acb54d66ef240ca49ae9743f1d112235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  equipmentSlot: 0
   hovered: 0
   heldItem: {fileID: 0}
   slotQuantity: 0
@@ -2323,6 +2327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acb54d66ef240ca49ae9743f1d112235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  equipmentSlot: 0
   hovered: 0
   heldItem: {fileID: 0}
   slotQuantity: 0
@@ -3033,6 +3038,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acb54d66ef240ca49ae9743f1d112235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  equipmentSlot: 0
   hovered: 0
   heldItem: {fileID: 0}
   slotQuantity: 0
@@ -3412,6 +3418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acb54d66ef240ca49ae9743f1d112235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  equipmentSlot: 0
   hovered: 0
   heldItem: {fileID: 0}
   slotQuantity: 0
@@ -3505,6 +3512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acb54d66ef240ca49ae9743f1d112235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  equipmentSlot: 0
   hovered: 0
   heldItem: {fileID: 0}
   slotQuantity: 0
@@ -3595,6 +3603,7 @@ GameObject:
   - component: {fileID: 3238463791455755028}
   - component: {fileID: 6612583706383849956}
   - component: {fileID: 3779023669284520032}
+  - component: {fileID: 2594888633944350230}
   m_Layer: 0
   m_Name: Helmet
   m_TagString: Untagged
@@ -3659,6 +3668,23 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2594888633944350230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3466951254843650397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acb54d66ef240ca49ae9743f1d112235, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  equipmentSlot: 1
+  hovered: 0
+  heldItem: {fileID: 0}
+  slotQuantity: 0
+  thisSlotQuantityText: {fileID: 0}
 --- !u!1 &3484364449424602038
 GameObject:
   m_ObjectHideFlags: 0
@@ -3820,6 +3846,7 @@ GameObject:
   - component: {fileID: 5096730098840641010}
   - component: {fileID: 1354217863933294630}
   - component: {fileID: 8599349937806314400}
+  - component: {fileID: 7071020007324504087}
   m_Layer: 0
   m_Name: Chest
   m_TagString: Untagged
@@ -3884,6 +3911,23 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7071020007324504087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3650798937568236866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acb54d66ef240ca49ae9743f1d112235, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  equipmentSlot: 1
+  hovered: 0
+  heldItem: {fileID: 0}
+  slotQuantity: 0
+  thisSlotQuantityText: {fileID: 0}
 --- !u!1 &3755656841280326246
 GameObject:
   m_ObjectHideFlags: 0
@@ -4259,6 +4303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acb54d66ef240ca49ae9743f1d112235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  equipmentSlot: 0
   hovered: 0
   heldItem: {fileID: 0}
   slotQuantity: 0
@@ -4352,6 +4397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acb54d66ef240ca49ae9743f1d112235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  equipmentSlot: 0
   hovered: 0
   heldItem: {fileID: 0}
   slotQuantity: 0
@@ -4445,6 +4491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acb54d66ef240ca49ae9743f1d112235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  equipmentSlot: 0
   hovered: 0
   heldItem: {fileID: 0}
   slotQuantity: 0
@@ -4538,6 +4585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acb54d66ef240ca49ae9743f1d112235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  equipmentSlot: 0
   hovered: 0
   heldItem: {fileID: 0}
   slotQuantity: 0
@@ -4937,6 +4985,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acb54d66ef240ca49ae9743f1d112235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  equipmentSlot: 0
   hovered: 0
   heldItem: {fileID: 0}
   slotQuantity: 0
@@ -5241,6 +5290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acb54d66ef240ca49ae9743f1d112235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  equipmentSlot: 0
   hovered: 0
   heldItem: {fileID: 0}
   slotQuantity: 0
@@ -5334,6 +5384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acb54d66ef240ca49ae9743f1d112235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  equipmentSlot: 0
   hovered: 0
   heldItem: {fileID: 0}
   slotQuantity: 0
@@ -5425,6 +5476,7 @@ GameObject:
   - component: {fileID: 7753047215712902268}
   - component: {fileID: 1873907017924758964}
   - component: {fileID: 607907241120092391}
+  - component: {fileID: 604356218336258125}
   m_Layer: 0
   m_Name: Secondary
   m_TagString: Untagged
@@ -5489,6 +5541,23 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &604356218336258125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5515430250824932449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acb54d66ef240ca49ae9743f1d112235, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  equipmentSlot: 1
+  hovered: 0
+  heldItem: {fileID: 0}
+  slotQuantity: 0
+  thisSlotQuantityText: {fileID: 0}
 --- !u!1 &5541584586634891522
 GameObject:
   m_ObjectHideFlags: 0
@@ -5575,6 +5644,7 @@ GameObject:
   - component: {fileID: 3602457452912838243}
   - component: {fileID: 174679588427617731}
   - component: {fileID: 4899515917270442694}
+  - component: {fileID: 3160329829805299583}
   m_Layer: 0
   m_Name: Legs
   m_TagString: Untagged
@@ -5639,6 +5709,23 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3160329829805299583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5554638713786442166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acb54d66ef240ca49ae9743f1d112235, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  equipmentSlot: 1
+  hovered: 0
+  heldItem: {fileID: 0}
+  slotQuantity: 0
+  thisSlotQuantityText: {fileID: 0}
 --- !u!1 &5565249581962743501
 GameObject:
   m_ObjectHideFlags: 0
@@ -5939,6 +6026,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acb54d66ef240ca49ae9743f1d112235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  equipmentSlot: 0
   hovered: 0
   heldItem: {fileID: 0}
   slotQuantity: 0
@@ -6107,6 +6195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acb54d66ef240ca49ae9743f1d112235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  equipmentSlot: 0
   hovered: 0
   heldItem: {fileID: 0}
   slotQuantity: 0
@@ -6275,6 +6364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acb54d66ef240ca49ae9743f1d112235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  equipmentSlot: 0
   hovered: 0
   heldItem: {fileID: 0}
   slotQuantity: 0
@@ -6925,6 +7015,7 @@ GameObject:
   - component: {fileID: 7603082887064817822}
   - component: {fileID: 8047731081779397508}
   - component: {fileID: 5493978641621986318}
+  - component: {fileID: 7399013786827015699}
   m_Layer: 0
   m_Name: Primary
   m_TagString: Untagged
@@ -6989,6 +7080,23 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7399013786827015699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7933965274052903709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acb54d66ef240ca49ae9743f1d112235, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  equipmentSlot: 1
+  hovered: 0
+  heldItem: {fileID: 0}
+  slotQuantity: 0
+  thisSlotQuantityText: {fileID: 0}
 --- !u!1 &7985256500662669695
 GameObject:
   m_ObjectHideFlags: 0
@@ -7498,6 +7606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acb54d66ef240ca49ae9743f1d112235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  equipmentSlot: 0
   hovered: 0
   heldItem: {fileID: 0}
   slotQuantity: 0
@@ -7802,6 +7911,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acb54d66ef240ca49ae9743f1d112235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  equipmentSlot: 0
   hovered: 0
   heldItem: {fileID: 0}
   slotQuantity: 0
@@ -8089,6 +8199,7 @@ GameObject:
   - component: {fileID: 2797406341493814513}
   - component: {fileID: 1753210697433925958}
   - component: {fileID: 1225142364642501840}
+  - component: {fileID: 445105396944399546}
   m_Layer: 0
   m_Name: Boots
   m_TagString: Untagged
@@ -8153,6 +8264,23 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &445105396944399546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8862506518403461992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acb54d66ef240ca49ae9743f1d112235, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  equipmentSlot: 1
+  hovered: 0
+  heldItem: {fileID: 0}
+  slotQuantity: 0
+  thisSlotQuantityText: {fileID: 0}
 --- !u!1 &8882823693923966799
 GameObject:
   m_ObjectHideFlags: 0
@@ -8378,6 +8506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acb54d66ef240ca49ae9743f1d112235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  equipmentSlot: 0
   hovered: 0
   heldItem: {fileID: 0}
   slotQuantity: 0
