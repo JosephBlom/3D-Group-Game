@@ -31,6 +31,8 @@ public class PlayerHealthSystem : MonoBehaviour
         playerUI = GetComponent<PlayerUI>();
         maxHealth = playerHealth;
         maxShield = playerShield;
+        Debug.Log("maxHealth = " + maxHealth);
+        Debug.Log("maxSheild = " + maxShield);
     }
     private void Update()
     {
@@ -94,7 +96,7 @@ public class PlayerHealthSystem : MonoBehaviour
             playerHealth = maxHealth;
         }
     }
-    public void SetMaxShield(int newMaxShield)
+    public void SetMaxShield(float newMaxShield)
     {
         if (!isAlive || playerUI == null) { return; }
         maxShield = newMaxShield;
@@ -194,8 +196,17 @@ public class PlayerHealthSystem : MonoBehaviour
     }
     public void addItemBuffs(Item item)
     {
-        maxHealth += item.healthBonus;
-        maxShield += item.sheildBonus;
+        SetMaxHealth(maxHealth += item.healthBonus);
+        SetMaxShield(maxShield += item.sheildBonus);
+    }
+
+    public void removeItemBuffs(Item item)
+    {
+        SetMaxHealth(maxHealth -= item.healthBonus);
+        SetMaxShield(maxShield -= item.sheildBonus);
+
+        Debug.Log("maxHealth = " + maxHealth);
+        Debug.Log("maxSheild = " + maxShield);
     }
 
 }

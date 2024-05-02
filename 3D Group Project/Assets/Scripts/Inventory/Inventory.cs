@@ -192,7 +192,20 @@ public class Inventory : MonoBehaviour
         for (int i = 0; i < inventorySlots.Count; i++)
         {
             Slot curSlot = inventorySlots[i];
-            if(curSlot.hovered && curSlot.hasItem())
+            if(curSlot.hovered && curSlot.hasItem() && curSlot.equipmentSlot && curSlot.getItem().CompareTag("Equipment"))
+            {
+                currentDragSlotIndex = i;
+                currentDraggedSlot = curSlot;
+
+                currentDraggedItem = curSlot.getItem();
+                dragIconImage.sprite = currentDraggedItem.icon;
+                dragIconImage.color = new Color(1, 1, 1, 1);
+
+                playerHealthSystem.removeItemBuffs(curSlot.getItem());
+
+                curSlot.setItem(null, null);
+            }
+            else if(curSlot.hovered && curSlot.hasItem())
             {
                 currentDragSlotIndex = i;
                 currentDraggedSlot = curSlot;
