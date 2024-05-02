@@ -24,7 +24,7 @@ public class GunSystem : MonoBehaviour
     [Min(0.1f), SerializeField] private float gunRange = 5f;
 
     [Header("Weapon Ammo Settings")]
-    [SerializeField] private int ammoType = 1;
+    [SerializeField] public int ammoType = 1;
     [Min(0), SerializeField] private int ammoConsumed = 1;
     [Min(0), SerializeField] public int maxAmmoSize = 30;
 

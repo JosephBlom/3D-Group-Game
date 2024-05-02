@@ -8,6 +8,8 @@ public class PlayerUI : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI healthText;
     [SerializeField] TextMeshProUGUI shieldHPText;
+    [SerializeField] TextMeshProUGUI timerText;
+    [SerializeField] TextMeshProUGUI ammoText;
 
     // main hp/shield UI
     [SerializeField] public Slider healthSlider;
@@ -18,12 +20,14 @@ public class PlayerUI : MonoBehaviour
     [SerializeField] public Slider tinyhealthSlider;
     [SerializeField] public Slider tinyshieldSlider;
 
+    Player player;
     PlayerHealthSystem healthSystem;
     GunSystem gunsystem;
 
     private void Start()
     {
         healthSystem = GetComponentInChildren<PlayerHealthSystem>();
+        player = GetComponent<Player>();
         healthSlider.maxValue = healthSystem.playerHealth;
         shieldSlider.maxValue = healthSystem.playerShield;
         tinyhealthSlider.maxValue = healthSystem.playerHealth;
@@ -46,6 +50,7 @@ public class PlayerUI : MonoBehaviour
         tinyshieldSlider.value = healthSystem.playerShield;
         healthText.text = healthSystem.playerHealth.ToString();
         shieldHPText.text = healthSystem.playerShield.ToString();
+        timerText.text = player.timer.ToString();
     }
     // call these 2 when picking up/equipping gun
     public void ChangeMaxAmmo()
@@ -53,6 +58,7 @@ public class PlayerUI : MonoBehaviour
         gunsystem = FindFirstObjectByType<GunSystem>();
         ammoSlider.maxValue = gunsystem.maxAmmoSize;
         ammoSlider.value = gunsystem.ammoCount;
+        ammoText.text = gunsystem.ammoCount.ToString() + " / " + GetComponent<PlayerAmmoManager>().FindAmmoType(gunsystem.ammoType);
     }
     public void EnableAmmoUI()
     {
