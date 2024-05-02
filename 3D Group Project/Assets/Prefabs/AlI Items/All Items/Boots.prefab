@@ -149,6 +149,10 @@ MonoBehaviour:
   name: Boots
   description: no
   icon: {fileID: 21300000, guid: 8057924a644c9734b8cf3c4957814620, type: 3}
+  healthBonus: 5
+  sheildBonus: 10
+  baseDamage: 0
+  attackSpeed: 0
   currentQuantity: 1
   maxQuantity: 1
   cost: 1

@@ -149,6 +149,10 @@ MonoBehaviour:
   name: Leggings
   description: no
   icon: {fileID: 21300000, guid: 758ca94c4c875d44ea54809c7a1a8b13, type: 3}
+  healthBonus: 12
+  sheildBonus: 18
+  baseDamage: 0
+  attackSpeed: 0
   currentQuantity: 1
   maxQuantity: 1
   cost: 1
