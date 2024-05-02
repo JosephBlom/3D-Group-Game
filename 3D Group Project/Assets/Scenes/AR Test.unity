@@ -1994,6 +1994,67 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1555710293
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2208331391190862780}
+    m_Modifications:
+    - target: {fileID: 1594529055912856147, guid: 5ff08e955507e9248a28239f3b31b8aa, type: 3}
+      propertyPath: m_Name
+      value: ModularGunTest
+      objectReference: {fileID: 0}
+    - target: {fileID: 2037976862364007542, guid: 5ff08e955507e9248a28239f3b31b8aa, type: 3}
+      propertyPath: rangedDamage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6798388515320333241, guid: 5ff08e955507e9248a28239f3b31b8aa, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.338
+      objectReference: {fileID: 0}
+    - target: {fileID: 6798388515320333241, guid: 5ff08e955507e9248a28239f3b31b8aa, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.232
+      objectReference: {fileID: 0}
+    - target: {fileID: 6798388515320333241, guid: 5ff08e955507e9248a28239f3b31b8aa, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 6798388515320333241, guid: 5ff08e955507e9248a28239f3b31b8aa, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6798388515320333241, guid: 5ff08e955507e9248a28239f3b31b8aa, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6798388515320333241, guid: 5ff08e955507e9248a28239f3b31b8aa, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6798388515320333241, guid: 5ff08e955507e9248a28239f3b31b8aa, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6798388515320333241, guid: 5ff08e955507e9248a28239f3b31b8aa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6798388515320333241, guid: 5ff08e955507e9248a28239f3b31b8aa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6798388515320333241, guid: 5ff08e955507e9248a28239f3b31b8aa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5ff08e955507e9248a28239f3b31b8aa, type: 3}
 --- !u!1 &1565011987
 GameObject:
   m_ObjectHideFlags: 0
@@ -2745,6 +2806,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1765412913 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6798388515320333241, guid: 5ff08e955507e9248a28239f3b31b8aa, type: 3}
+  m_PrefabInstance: {fileID: 1555710293}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1783527498
 GameObject:
   m_ObjectHideFlags: 0
@@ -4280,6 +4346,8 @@ MonoBehaviour:
   dropLocation: {fileID: 3231112684461221185}
   dragIconImage: {fileID: 1488455964}
   playerHealthSystem: {fileID: 0}
+  currentDraggedItem: {fileID: 0}
+  currentDraggedSlot: {fileID: 0}
   list: {fileID: 0}
 --- !u!114 &90393621338506223
 MonoBehaviour:
@@ -6552,6 +6620,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3231112684461221185}
+  - {fileID: 1765412913}
   m_Father: {fileID: 2329324169709609169}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2227872147817247426
@@ -7231,6 +7300,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthText: {fileID: 1233632165175157638}
   shieldHPText: {fileID: 5247335214534574911}
+  timerText: {fileID: 1889561977970015909}
+  ammoText: {fileID: 3867193666302872981}
   healthSlider: {fileID: 5142924729136795468}
   shieldSlider: {fileID: 5356898645946006848}
   ammoSlider: {fileID: 8421635340576030290}
