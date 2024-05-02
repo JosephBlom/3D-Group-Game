@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     public List<string> itemDescription = new List<string>();
     public List<int> itemCurQuantity = new List<int>();
     public List<int> itemMaxQuantity = new List<int>();
+    public List<Secret> foundSecrets = new List<Secret>();
+    public List<string> foundSecretsNames = new List<string>();
 
     [Header("Miscellaneous Variables")]
     public int counter;

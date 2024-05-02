@@ -43,5 +43,7 @@ public class SaveManager : MonoBehaviour
         position.y = data.position[1];
         position.z = data.position[2];
         player.playerObject.transform.position = position;
+
+        player.foundSecretsNames = data.foundSecrets;
     }
 }

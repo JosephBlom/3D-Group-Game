@@ -9,9 +9,11 @@ public class Item : MonoBehaviour
     public string description = "New Description";
     public Sprite icon;
 
-    [Header("Bonus Stats")]
+    [Header("Armour Stats")]
     public float healthBonus;
     public float sheildBonus;
+
+    [Header("Weapon Stats")]
     public float baseDamage;
     public float attackSpeed;
 

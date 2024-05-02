@@ -464,6 +464,7 @@ GameObject:
   - component: {fileID: 4778673768096314308}
   - component: {fileID: 7872262906253220678}
   - component: {fileID: 3548797487942409459}
+  - component: {fileID: 4240126107085022574}
   m_Layer: 0
   m_Name: NewPlayerPrefab
   m_TagString: Player
@@ -528,6 +529,8 @@ MonoBehaviour:
   itemDescription: []
   itemCurQuantity: 
   itemMaxQuantity: 
+  foundSecrets: []
+  foundSecretsNames: []
   counter: 0
   timer: 0
   gold: 0
@@ -589,7 +592,9 @@ MonoBehaviour:
     m_Bits: 64
   dropLocation: {fileID: 7945818874498515787}
   dragIconImage: {fileID: 485327008374494950}
-  playerHealthSystem: {fileID: 0}
+  playerHealthSystem: {fileID: 4101448461941989022}
+  currentDraggedItem: {fileID: 0}
+  currentDraggedSlot: {fileID: 0}
   list: {fileID: 0}
 --- !u!114 &7872262906253220678
 MonoBehaviour:
@@ -625,6 +630,24 @@ MonoBehaviour:
   regularAmmoCount: 10
   energyAmmoCount: 0
   specialAmmoCount: 0
+--- !u!114 &4240126107085022574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549766728719437029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8142b9a998745954dbfd32512fc5066f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  raycastDistance: 5
+  itemLayer:
+    serializedVersion: 2
+    m_Bits: 2048
+  crosshair: {fileID: 6680503556937703652}
+  itemHoverText: {fileID: 2016122994515586307}
 --- !u!1 &872322782532288720
 GameObject:
   m_ObjectHideFlags: 0

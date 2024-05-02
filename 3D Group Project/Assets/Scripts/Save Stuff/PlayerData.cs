@@ -13,6 +13,7 @@ public class PlayerData
     public List<int> itemMaxQuantity = new List<int>();
     public float[] position;
     public int gold;
+    public List<string> foundSecrets = new List<string>();
 
     public PlayerData(Player player)
     {
@@ -24,6 +25,7 @@ public class PlayerData
         position[0] = player.position.x;
         position[1] = player.position.y;
         position[2] = player.position.z;
+        foundSecrets = player.foundSecretsNames;
     }
 
     private void fillInventory(Inventory script)
