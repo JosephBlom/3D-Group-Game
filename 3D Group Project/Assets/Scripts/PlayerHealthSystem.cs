@@ -204,9 +204,6 @@ public class PlayerHealthSystem : MonoBehaviour
     {
         SetMaxHealth(maxHealth -= item.healthBonus);
         SetMaxShield(maxShield -= item.sheildBonus);
-
-        Debug.Log("maxHealth = " + maxHealth);
-        Debug.Log("maxSheild = " + maxShield);
     }
 
 }

@@ -20,8 +20,8 @@ public class Inventory : MonoBehaviour
     [Header("Drag and Drop")]
     public Image dragIconImage;
     [SerializeField] PlayerHealthSystem playerHealthSystem;
-    private Item currentDraggedItem;
-    private Slot currentDraggedSlot;
+    public Item currentDraggedItem;
+    public Slot currentDraggedSlot;
     private int currentDragSlotIndex = -1;
 
     [Header("Save")]
@@ -309,7 +309,15 @@ public class Inventory : MonoBehaviour
         for(int i = 0; i < inventorySlots.Count; i++)
         {
             Slot curSlot = inventorySlots[i];
-            if(curSlot.hovered && curSlot.hasItem())
+            if (curSlot.hovered && curSlot.hasItem() && curSlot.equipmentSlot && curSlot.getItem().CompareTag("Equipment"))
+            {
+                GameObject droppedItem = Instantiate(curSlot.getItem().gameObject, dropLocation.position, Quaternion.identity);
+                droppedItem.GetComponent<Item>().currentQuantity = curSlot.slotQuantity;
+                playerHealthSystem.removeItemBuffs(curSlot.getItem());
+                curSlot.setItem(null, null);
+                break;
+            }
+            else if(curSlot.hovered && curSlot.hasItem())
             {
                 GameObject droppedItem = Instantiate(curSlot.getItem().gameObject, dropLocation.position, Quaternion.identity);
                 droppedItem.GetComponent<Item>().currentQuantity = curSlot.slotQuantity;
