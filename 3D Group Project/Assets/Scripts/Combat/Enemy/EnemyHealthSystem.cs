@@ -165,11 +165,15 @@ public class EnemyHealthSystem : MonoBehaviour
         {
             if (other.gameObject.GetComponent<MeleeBehavior>() != null && !other.gameObject.GetComponent<MeleeBehavior>().enemyFriendly)
             {
+                if (GetComponent<PassiveNavigation>() != null)
+                {
+                    GetComponent<PassiveNavigation>().player = GameObject.Find(killerName);
+                }
                 EnemyDamage(other.gameObject.GetComponent<MeleeBehavior>().damage);
                 weaponName = other.gameObject.GetComponent<MeleeBehavior>().weaponName;
                 killerName = other.gameObject.GetComponent<MeleeBehavior>().shooter;
             }
-            if(other.gameObject.GetComponent<ExplosionBehavior>() != null && !other.gameObject.GetComponent<ExplosionBehavior>().enemyFriendly)
+            if(other.gameObject.GetComponent<ExplosionBehavior>() != null)
             {
                 EnemyDamage(other.gameObject.GetComponent<ExplosionBehavior>().damage);
                 weaponName = other.gameObject.GetComponent<ExplosionBehavior>().weaponName;
@@ -177,7 +181,6 @@ public class EnemyHealthSystem : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning("not it bruv");
                 return;
             }
         }
