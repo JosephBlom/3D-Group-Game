@@ -7,12 +7,12 @@ using UnityEngine.UI;
 public class PlayerHealthSystem : MonoBehaviour
 {
     [Header("Player Health Settings")]
-    [Min(1), SerializeField] public int playerHealth = 100;
+    [Min(1), SerializeField] public float playerHealth = 100;
     [SerializeField] private float playerRegenTick = 0.05f;
     [SerializeField] private int playerRegenDelay = 5;
 
     [Header("Player Shield Settings")]
-    [Min(1), SerializeField] public int playerShield = 100;
+    [Min(1), SerializeField] public float playerShield = 100;
     [SerializeField] private float playerShieldRegenTick = 0.05f;
     [SerializeField] private int playerShieldRegenDelay = 5;
 
@@ -20,8 +20,8 @@ public class PlayerHealthSystem : MonoBehaviour
     [SerializeField] public bool extraHealthActive = false;
 
     private PlayerUI playerUI;
-    private int maxHealth;
-    private int maxShield;
+    private float maxHealth;
+    private float maxShield;
 
     public bool isAlive = true;
     private bool shieldRegen = false;
@@ -53,12 +53,12 @@ public class PlayerHealthSystem : MonoBehaviour
         HealthFix();
     }
     // external functionality
-    public void PlayerTakeDamage(int damage)
+    public void PlayerTakeDamage(float damage)
     {
         if (!isAlive) { return; }
         if (playerShield > 0)
         {
-            int damagetoSubtract = playerShield;
+            float damagetoSubtract = playerShield;
             playerShield -= damage;
             damage -= damagetoSubtract;
             shieldRegen = false;
@@ -74,7 +74,7 @@ public class PlayerHealthSystem : MonoBehaviour
             regenActive = false;
         }
     }
-    public void PlayerHeal(int health)
+    public void PlayerHeal(float health)
     {
         if (!isAlive || playerHealth == maxHealth) { return; }
         playerHealth += health;
@@ -83,7 +83,7 @@ public class PlayerHealthSystem : MonoBehaviour
             playerHealth = maxHealth;
         }
     }
-    public void SetMaxHealth(int newMaxHealth)
+    public void SetMaxHealth(float newMaxHealth)
     {
         if(!isAlive || playerUI == null) { return; }
         maxHealth = newMaxHealth;
@@ -191,6 +191,11 @@ public class PlayerHealthSystem : MonoBehaviour
         {
             other.gameObject.transform.parent.GetComponent<HorseMountScript>().player = gameObject;
         }
+    }
+    public void addItemBuffs(Item item)
+    {
+        maxHealth += item.healthBonus;
+        maxShield += item.sheildBonus;
     }
 
 }

@@ -19,6 +19,7 @@ public class Inventory : MonoBehaviour
 
     [Header("Drag and Drop")]
     public Image dragIconImage;
+    [SerializeField] PlayerHealthSystem playerHealthSystem;
     private Item currentDraggedItem;
     private Slot currentDraggedSlot;
     private int currentDragSlotIndex = -1;
@@ -217,10 +218,8 @@ public class Inventory : MonoBehaviour
             {
                 if (curSlot.hasItem())
                 {
-                    Debug.Log("Huh 1");
                     if(!curSlot.equipmentSlot && !inventorySlots[currentDragSlotIndex].equipmentSlot)
                     {
-                        Debug.Log("Huh");
                         Item itemToSwap = curSlot.getItem();
 
                         int count = curSlot.slotQuantity;
@@ -243,6 +242,7 @@ public class Inventory : MonoBehaviour
                                 int count = curSlot.slotQuantity;
                                 curSlot.setItem(currentDraggedItem, currentDraggedSlot);
                                 inventorySlots[currentDragSlotIndex].swapItem(itemToSwap, count);
+                                playerHealthSystem.addItemBuffs(curSlot.getItem());
                                 resetDragVariables();
                                 return;
                             }
@@ -255,6 +255,7 @@ public class Inventory : MonoBehaviour
                                 int count = curSlot.slotQuantity;
                                 curSlot.setItem(currentDraggedItem, currentDraggedSlot);
                                 inventorySlots[currentDragSlotIndex].swapItem(itemToSwap, count);
+                                playerHealthSystem.addItemBuffs(inventorySlots[currentDragSlotIndex].getItem());
                                 resetDragVariables();
                                 return;
                             }
@@ -264,14 +265,12 @@ public class Inventory : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("Please");
                     if (curSlot.equipmentSlot)
                     {
-                        Debug.Log("First if");
                         if (currentDraggedItem.CompareTag("Equipment"))
                         {
-                            Debug.Log("Second if");
                             curSlot.setItem(currentDraggedItem, currentDraggedSlot);
+                            playerHealthSystem.addItemBuffs(curSlot.getItem());
                             resetDragVariables();
                             return;
                         }
