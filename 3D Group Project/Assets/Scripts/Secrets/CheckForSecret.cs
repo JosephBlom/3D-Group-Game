@@ -12,6 +12,8 @@ public class CheckForSecret : MonoBehaviour
     public Image crosshair;
     public TMP_Text itemHoverText;
 
+    [SerializeField] SecretUI secretUI;
+
     Player player;
 
     private void Start()
@@ -42,6 +44,7 @@ public class CheckForSecret : MonoBehaviour
                         player.foundSecrets.Add(newSecret);
                         player.foundSecretsNames.Add(newSecret.secretName);
                         newSecret.gameObject.SetActive(false);
+                        secretUI.updateSecretsCount();
                     }
                 }
                 else //show name

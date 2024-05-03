@@ -7,6 +7,7 @@ public class SecretsInScene : MonoBehaviour
     public List<GameObject> secretsInScene = new List<GameObject>();
 
     [SerializeField] Player player;
+    [SerializeField] SecretUI secretUI;
 
     private void Start()
     {
@@ -25,5 +26,7 @@ public class SecretsInScene : MonoBehaviour
                 }
             }
         }
+
+        secretUI.updateSecretsCount();
     }
 }
