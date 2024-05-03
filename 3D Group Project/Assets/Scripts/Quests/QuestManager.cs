@@ -5,6 +5,7 @@ using UnityEngine;
 public class QuestManager : MonoBehaviour
 {
     public Quest quest;
+    [SerializeField] Waypoint missionWaypoint;
 
     public PlayerManager player;
     private void Start()
@@ -19,5 +20,6 @@ public class QuestManager : MonoBehaviour
         GameObject.FindGameObjectWithTag("DialogueCanvas").GetComponent<Canvas>().enabled = false;
         player.gameObject.GetComponent<StarterAssets.StarterAssetsInputs>().cursorInputForLook = true;
         Cursor.lockState = CursorLockMode.Locked;
+        missionWaypoint.target = quest.target;
     }
 }

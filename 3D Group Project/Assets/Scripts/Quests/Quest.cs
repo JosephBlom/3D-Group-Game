@@ -12,6 +12,8 @@ public class Quest
     public int experienceReward;
     public int goldReward;
 
+    public Transform target;
+
     public QuestGoal goal;
 
     public void checkComplete()
