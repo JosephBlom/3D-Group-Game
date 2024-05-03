@@ -6,20 +6,20 @@ public class SecretsInScene : MonoBehaviour
 {
     public List<GameObject> secretsInScene = new List<GameObject>();
 
-    [SerializeField] GameObject player;
+    [SerializeField] Player player;
 
     private void Start()
     {
-        foundSecrets(player.GetComponent<Player>());
+        foundSecrets(player);
     }
 
     public void foundSecrets(Player player)
     {
         for(int i = 0; i < secretsInScene.Count; i++)
         {
-            for(int z = 0; z < player.foundSecrets.Count; z++)
+            for (int z = 0; z < player.foundSecretsNames.Count; z++)
             {
-                if (player.foundSecrets[z].secretName.Equals(secretsInScene[i]))
+                if (player.foundSecretsNames[z] == secretsInScene[i].GetComponent<Secret>().secretName)
                 {
                     secretsInScene[i].SetActive(false);
                 }

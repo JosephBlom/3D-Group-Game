@@ -19,6 +19,11 @@ public class CheckForSecret : MonoBehaviour
         player = GetComponent<Player>();
     }
 
+    private void Update()
+    {
+        itemRaycast(Input.GetMouseButtonDown(0));
+    }
+
     private void itemRaycast(bool hasClicked = false)
     {
         itemHoverText.text = "";
@@ -35,7 +40,8 @@ public class CheckForSecret : MonoBehaviour
                     if (newSecret)
                     {
                         player.foundSecrets.Add(newSecret);
-                        player.foundSecretsNames.Add(newSecret.name);
+                        player.foundSecretsNames.Add(newSecret.secretName);
+                        newSecret.gameObject.SetActive(false);
                     }
                 }
                 else //show name
