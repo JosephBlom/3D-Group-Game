@@ -52,7 +52,7 @@ public class PlayerUI : MonoBehaviour
         tinyshieldSlider.value = healthSystem.playerShield;
         healthText.text = healthSystem.playerHealth.ToString();
         shieldHPText.text = healthSystem.playerShield.ToString();
-        timerText.text = uiTimer.ToString();
+        timerText.text = uiTimer.ToString("F2");
     }
     // call these 2 when picking up/equipping gun
     public void ChangeMaxAmmo()

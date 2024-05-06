@@ -53,10 +53,6 @@ public class Inventory : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            if(GetComponentInChildren<GunSystem>() != null)
-            {
-                GetComponentInChildren<GunSystem>().active = false;
-            }
             toggleInventory(!inventory.activeInHierarchy);
         }
         if(inventory.activeInHierarchy && Input.GetMouseButtonDown(0))
@@ -187,6 +183,10 @@ public class Inventory : MonoBehaviour
 
         Cursor.lockState = enable ? CursorLockMode.None : CursorLockMode.Locked;
         Cursor.visible = enable;
+        if (GetComponentInChildren<GunSystem>() != null)
+        {
+            GetComponentInChildren<GunSystem>().active = enable ? false : true;
+        }
 
         GetComponentInChildren<StarterAssets.StarterAssetsInputs>().cursorInputForLook = !enable;
     }
