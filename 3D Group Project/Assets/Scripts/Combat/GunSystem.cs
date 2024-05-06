@@ -36,6 +36,7 @@ public class GunSystem : MonoBehaviour
     private bool canAttack = true;
     private bool reloading = false;
     public int ammoCount;
+    public bool active = true;
 
     private void Awake()
     {
@@ -47,7 +48,7 @@ public class GunSystem : MonoBehaviour
     }
     private void Update()
     {
-        if (transform.parent != Camera.main.transform)
+        if (transform.parent != Camera.main.transform || !active)
         {
             return;
         }

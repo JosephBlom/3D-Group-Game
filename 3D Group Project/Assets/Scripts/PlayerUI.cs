@@ -35,6 +35,8 @@ public class PlayerUI : MonoBehaviour
     }
     private void Update()
     {
+        float uiTimer = Mathf.Round(player.timer * 100.0f) * 0.01f;
+
         EnableAmmoUI();
         if (gunsystem != null)
         {
@@ -50,7 +52,7 @@ public class PlayerUI : MonoBehaviour
         tinyshieldSlider.value = healthSystem.playerShield;
         healthText.text = healthSystem.playerHealth.ToString();
         shieldHPText.text = healthSystem.playerShield.ToString();
-        timerText.text = player.timer.ToString();
+        timerText.text = uiTimer.ToString();
     }
     // call these 2 when picking up/equipping gun
     public void ChangeMaxAmmo()

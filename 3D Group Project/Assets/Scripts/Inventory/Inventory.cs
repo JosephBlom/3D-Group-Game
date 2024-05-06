@@ -53,6 +53,10 @@ public class Inventory : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Z))
         {
+            if(GetComponentInChildren<GunSystem>() != null)
+            {
+                GetComponentInChildren<GunSystem>().active = false;
+            }
             toggleInventory(!inventory.activeInHierarchy);
         }
         if(inventory.activeInHierarchy && Input.GetMouseButtonDown(0))
