@@ -9,6 +9,24 @@ TagManager:
   - DialogueCanvas
   - PlayerObject
   - Equipment
+  - Apple
+  - Avocado
+  - Banana
+  - Broccoli
+  - Carrot
+  - Fish
+  - Garlic
+  - Pot
+  - Knife
+  - Brown_Mushroom
+  - Pear
+  - Pepper
+  - Flat_Plate
+  - Bowled_Plate
+  - Pumpkin
+  - Steak
+  - Tomato
+  - Watermelon
   layers:
   - Default
   - TransparentFX
