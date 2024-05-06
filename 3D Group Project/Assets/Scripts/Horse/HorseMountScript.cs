@@ -34,6 +34,7 @@ public class HorseMountScript : MonoBehaviour
     {
         if (player != null)
         {
+            passivenav.GetComponent<NavMeshAgent>().ResetPath();
             player.transform.parent.transform.position = playerMountPoint.transform.position + new Vector3(0, 0, 1);
             player.transform.parent.parent.GetComponent<Player>().horse.gameObject.SetActive(true);
             playerHeight = player.transform.parent.GetComponent<CharacterController>().height;
