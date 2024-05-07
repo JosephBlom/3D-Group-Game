@@ -1627,6 +1627,18 @@ MonoBehaviour:
   itemsToDrop: []
   goldAmount: 0
   expAmount: 0
+--- !u!114 &996426386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 996426375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d74a448fac5fba04790f482dd0ac5590, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1159974867 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5220652338428500255, guid: 8f48a4befe2c9694b8b12531cc021705, type: 3}
@@ -3715,6 +3727,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4983447170498954998, guid: 7480c7c03e60bd34ca2546c1a436505d, type: 3}
       insertIndex: 6
       addedObject: {fileID: 996426385}
+    - targetCorrespondingSourceObject: {fileID: 4983447170498954998, guid: 7480c7c03e60bd34ca2546c1a436505d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 996426386}
   m_SourcePrefab: {fileID: 100100000, guid: 7480c7c03e60bd34ca2546c1a436505d, type: 3}
 --- !u!1 &1856212911
 GameObject:
