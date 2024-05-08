@@ -71,7 +71,7 @@ public class MainMenuScript : MonoBehaviour
         }
         mainMenuGameCanvas.enabled = false;
     }
-    public void ClosePrompt()
+    public void CloseWarning()
     {
         warningCanvas.enabled = false;
     }
