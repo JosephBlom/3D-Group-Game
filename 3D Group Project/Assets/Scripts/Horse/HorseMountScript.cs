@@ -37,9 +37,6 @@ public class HorseMountScript : MonoBehaviour
             passivenav.GetComponent<NavMeshAgent>().ResetPath();
             player.transform.parent.transform.position = playerMountPoint.transform.position + new Vector3(0, 0, 1);
             player.transform.parent.parent.GetComponent<Player>().horse.gameObject.SetActive(true);
-            playerHeight = player.transform.parent.GetComponent<CharacterController>().height;
-            playerMovespeed = player.transform.parent.GetComponent<FirstPersonController>().MoveSpeed;
-            playerOffset = player.transform.parent.GetComponent<FirstPersonController>().GroundedOffset;
             player.transform.parent.GetComponent<CharacterController>().height = 5;
             player.transform.parent.GetComponent<FirstPersonController>().MoveSpeed = 10;
             player.transform.parent.GetComponent<FirstPersonController>().GroundedOffset = 1.65f;
@@ -53,9 +50,9 @@ public class HorseMountScript : MonoBehaviour
     public void UnmountHorse()
     {
         player.transform.parent.parent.GetComponent<Player>().horse.gameObject.SetActive(false);
-        player.transform.parent.GetComponent<CharacterController>().height = playerHeight;
-        player.transform.parent.GetComponent<FirstPersonController>().MoveSpeed = playerMovespeed;
-        player.transform.parent.GetComponent<FirstPersonController>().GroundedOffset = playerOffset;
+        player.transform.parent.GetComponent<CharacterController>().height = player.GetComponent<PlayerHealthSystem>().playerHeight;
+        player.transform.parent.GetComponent<FirstPersonController>().MoveSpeed = player.GetComponent<PlayerHealthSystem>().playerMoveSpeed;
+        player.transform.parent.GetComponent<FirstPersonController>().GroundedOffset = player.GetComponent<PlayerHealthSystem>().playerOffset;
         gameObject.transform.parent = null;
         foreach (Transform child in transform)
         {

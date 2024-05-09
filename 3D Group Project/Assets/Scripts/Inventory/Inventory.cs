@@ -30,9 +30,11 @@ public class Inventory : MonoBehaviour
     private List<Item> allItems;
 
     private PlayerManager playerManager;
+    public bool canUse = true;
 
     private void Start()
     {
+        canUse = true;
         toggleInventory(false);
         Cursor.visible = true;
 
@@ -51,7 +53,7 @@ public class Inventory : MonoBehaviour
     {
         itemRaycast(Input.GetMouseButtonDown(0));
 
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Z) && canUse)
         {
             toggleInventory(!inventory.activeInHierarchy);
         }
