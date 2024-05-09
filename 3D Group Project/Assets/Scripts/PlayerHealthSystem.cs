@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
+using StarterAssets;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerHealthSystem : MonoBehaviour
@@ -16,6 +19,9 @@ public class PlayerHealthSystem : MonoBehaviour
     [SerializeField] private float playerShieldRegenTick = 0.05f;
     [SerializeField] private int playerShieldRegenDelay = 5;
 
+    [Header("Death Settings")]
+    [SerializeField] private Canvas deathCanvas;
+
     [Header("Misc Settings")]
     [SerializeField] public bool extraHealthActive = false;
 
@@ -23,11 +29,32 @@ public class PlayerHealthSystem : MonoBehaviour
     private float maxHealth;
     private float maxShield;
 
+    public float playerMoveSpeed;
+    public float playerSprintSpeed;
+    public float playerJumpSpeed;
+    public float playerHeight;
+    public float playerOffset;
+
     public bool isAlive = true;
     private bool shieldRegen = false;
     private bool regenActive = false;
     private void Awake()
     {
+        playerMoveSpeed = transform.parent.GetComponent<FirstPersonController>().MoveSpeed;
+        playerSprintSpeed = transform.parent.GetComponent<FirstPersonController>().SprintSpeed;
+        playerJumpSpeed = 1.2f;
+        playerHeight = transform.parent.GetComponent<CharacterController>().height;
+        playerOffset = transform.parent.GetComponent<FirstPersonController>().GroundedOffset;
+
+        transform.parent.GetComponent<FirstPersonController>().MoveSpeed = playerMoveSpeed;
+        transform.parent.GetComponent<FirstPersonController>().SprintSpeed = playerSprintSpeed;
+        transform.parent.GetComponent<FirstPersonController>().JumpHeight = playerJumpSpeed;
+        transform.parent.GetComponent<CharacterController>().height = playerHeight;
+        transform.parent.GetComponent<FirstPersonController>().GroundedOffset = playerOffset;
+
+        isAlive = true;
+        Cursor.lockState = CursorLockMode.Locked;
+        deathCanvas.enabled = false;
         playerUI = GetComponent<PlayerUI>();
         maxHealth = playerHealth;
         maxShield = playerShield;
@@ -36,20 +63,6 @@ public class PlayerHealthSystem : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            PlayerTakeDamage(5);
-        }
-        else if(Input.GetKeyDown(KeyCode.V))
-        {
-            PlayerHeal(5);
-        }
-        else if(Input.GetKeyDown(KeyCode.H))
-        {
-            SetMaxHealth(50);
-            SetMaxShield(5);
-        }
-
         PlayerHealthRegen();
         PlayerShieldRegen();
         HealthFix();
@@ -74,6 +87,10 @@ public class PlayerHealthSystem : MonoBehaviour
         {
             playerHealth -= damage;
             regenActive = false;
+        }
+        if(playerHealth <= 0)
+        {
+            Die();
         }
     }
     public void PlayerHeal(float health)
@@ -204,6 +221,37 @@ public class PlayerHealthSystem : MonoBehaviour
     {
         SetMaxHealth(maxHealth -= item.healthBonus);
         SetMaxShield(maxShield -= item.sheildBonus);
+    }
+
+    public void Die()
+    {
+        isAlive = false;
+        if(transform.parent.parent.GetComponentInChildren<GunSystem>() != null)
+        {
+            transform.parent.parent.GetComponentInChildren<GunSystem>().active = false;
+        }
+        else if(transform.parent.parent.GetComponentInChildren<MeleeSystem>() != null)
+        {
+           transform.parent.parent.GetComponentInChildren<MeleeSystem>().active = false;
+        }
+
+        Cursor.lockState = CursorLockMode.None;
+        transform.parent.parent.GetComponentInChildren<CinemachineBrain>().enabled = false;
+        gameObject.transform.parent.parent.GetComponent<Inventory>().canUse = false;
+        transform.parent.GetComponent<FirstPersonController>().MoveSpeed = 0;
+        transform.parent.GetComponent<FirstPersonController>().SprintSpeed = 0;
+        transform.parent.GetComponent<FirstPersonController>().JumpHeight = 0;
+        playerHealth = 0;
+        deathCanvas.enabled = true;
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 
 }
