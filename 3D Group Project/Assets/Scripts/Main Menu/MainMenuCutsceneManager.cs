@@ -21,33 +21,67 @@ public class MainMenuCutsceneManager : MonoBehaviour
     [SerializeField] private GameObject shipPosition02;
     [SerializeField] private GameObject shipPosition03;
 
+    MainMenuScript mainMenu;
+    private bool cutsceneActive = false;
+    [SerializeField] private float skipTimer = 0;
+
     private void Start()
     {
+        mainMenu = FindFirstObjectByType<MainMenuScript>();
         Camera.main.gameObject.transform.position = mainCameraPosition.transform.position;
         Camera.main.gameObject.transform.rotation = mainCameraPosition.transform.rotation;
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKey(KeyCode.X) && cutsceneActive)
         {
-            StartCoroutine(IntroCutscene());
+            skipTimer += Time.deltaTime;
+
+            if(skipTimer >= 5)
+            {
+                StopAllCoroutines();
+                mainMenu.StartNewGame();
+            }
         }
+    }
+
+    public void StartCutscene()
+    {
+        StartCoroutine(IntroCutscene());
     }
 
     public IEnumerator IntroCutscene()
     {
         GameObject camera = Camera.main.gameObject;
 
-        ChangeSetting(camera, cameraPosition01);
-        ChangeSetting(ship, mainshipPosition);
-        yield return new WaitForSeconds(3);
-        ship.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 250);
-        Debug.Log("Grubby Inc. presents");
-        yield return new WaitForSeconds(3);
-        ChangeSetting(camera, cameraPosition02);
-        yield return new WaitForSeconds(5);
-        ChangeSetting(camera, cameraPosition03);
-        Debug.Log("Spaceline");
+        if(!cutsceneActive)
+        {
+            cutsceneActive = true;
+            mainMenu.mainMenuGameCanvas.enabled = false;
+            mainMenu.warningCanvas.enabled = false;
+
+            yield return new WaitForSeconds(1.5f);
+            mainMenu.GetComponent<Canvas>().enabled = false;
+
+            mainMenu.cutsceneCanvas.enabled = true;
+            mainMenu.titleText.text = "";
+
+            ChangeSetting(camera, cameraPosition01);
+            ChangeSetting(ship, mainshipPosition);
+            yield return new WaitForSeconds(3);
+            mainMenu.titleText.text = "Grubby Inc. presents";
+            yield return new WaitForSeconds(1);
+            ship.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 250);
+            yield return new WaitForSeconds(3);
+            mainMenu.titleText.text = "";
+            ChangeSetting(camera, cameraPosition02);
+            yield return new WaitForSeconds(5);
+            ChangeSetting(camera, cameraPosition03);
+            yield return new WaitForSeconds(2);
+            mainMenu.titleText.text = "Spaceline";
+            yield return new WaitForSeconds(9);
+            mainMenu.StartNewGame();
+        }
     }
 
     private void ChangeSetting(GameObject objChange, GameObject newObject)
