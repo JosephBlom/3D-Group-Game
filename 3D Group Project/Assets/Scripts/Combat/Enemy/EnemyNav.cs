@@ -10,6 +10,7 @@ public class EnemyNav : MonoBehaviour
     [Header("Navigation Settings")]
     [SerializeField] float chaseDistance;
     [SerializeField] GameObject player;
+    [SerializeField] Animation moveAnimation;
     [SerializeField] bool patrolling;
 
     [Header("Enemy Settings")]
