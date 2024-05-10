@@ -1193,11 +1193,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2163764288354348493, guid: fb3430ac19a7ac142b26c8b1aa02c6b8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 458.83792
+      value: 459
       objectReference: {fileID: 0}
     - target: {fileID: 2163764288354348493, guid: fb3430ac19a7ac142b26c8b1aa02c6b8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.14998713
+      value: 2.0900238
       objectReference: {fileID: 0}
     - target: {fileID: 2163764288354348493, guid: fb3430ac19a7ac142b26c8b1aa02c6b8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3218,11 +3218,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7979613848296506930, guid: 82d4d3f83e3970845ab4096bfaf50ecb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 458.0628
+      value: 458
       objectReference: {fileID: 0}
     - target: {fileID: 7979613848296506930, guid: 82d4d3f83e3970845ab4096bfaf50ecb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.14996329
+      value: 2.09
       objectReference: {fileID: 0}
     - target: {fileID: 7979613848296506930, guid: 82d4d3f83e3970845ab4096bfaf50ecb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6979,6 +6979,111 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 369f6e2183b722643a362091261e9359, type: 3}
   m_PrefabInstance: {fileID: 377214959}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &379393107
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6218782637493128764, guid: 82d4d3f83e3970845ab4096bfaf50ecb, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300078, guid: 5f3a7deba91ee3341b2266db1be8c0a0, type: 3}
+    - target: {fileID: 7979613848296506930, guid: 82d4d3f83e3970845ab4096bfaf50ecb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7979613848296506930, guid: 82d4d3f83e3970845ab4096bfaf50ecb, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7979613848296506930, guid: 82d4d3f83e3970845ab4096bfaf50ecb, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7979613848296506930, guid: 82d4d3f83e3970845ab4096bfaf50ecb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 462
+      objectReference: {fileID: 0}
+    - target: {fileID: 7979613848296506930, guid: 82d4d3f83e3970845ab4096bfaf50ecb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.0900404
+      objectReference: {fileID: 0}
+    - target: {fileID: 7979613848296506930, guid: 82d4d3f83e3970845ab4096bfaf50ecb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 506.67636
+      objectReference: {fileID: 0}
+    - target: {fileID: 7979613848296506930, guid: 82d4d3f83e3970845ab4096bfaf50ecb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7979613848296506930, guid: 82d4d3f83e3970845ab4096bfaf50ecb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7979613848296506930, guid: 82d4d3f83e3970845ab4096bfaf50ecb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7979613848296506930, guid: 82d4d3f83e3970845ab4096bfaf50ecb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7979613848296506930, guid: 82d4d3f83e3970845ab4096bfaf50ecb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7979613848296506930, guid: 82d4d3f83e3970845ab4096bfaf50ecb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7979613848296506930, guid: 82d4d3f83e3970845ab4096bfaf50ecb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7979613848296506930, guid: 82d4d3f83e3970845ab4096bfaf50ecb, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8005918796740889483, guid: 82d4d3f83e3970845ab4096bfaf50ecb, type: 3}
+      propertyPath: m_Size.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8005918796740889483, guid: 82d4d3f83e3970845ab4096bfaf50ecb, type: 3}
+      propertyPath: m_Size.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8005918796740889483, guid: 82d4d3f83e3970845ab4096bfaf50ecb, type: 3}
+      propertyPath: m_Size.z
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8149805910439801909, guid: 82d4d3f83e3970845ab4096bfaf50ecb, type: 3}
+      propertyPath: m_Name
+      value: Test Shard (Item)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8149805910439801909, guid: 82d4d3f83e3970845ab4096bfaf50ecb, type: 3}
+      propertyPath: m_TagString
+      value: Special Item
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643214249237643702, guid: 82d4d3f83e3970845ab4096bfaf50ecb, type: 3}
+      propertyPath: name
+      value: Arcadian Shard
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643214249237643702, guid: 82d4d3f83e3970845ab4096bfaf50ecb, type: 3}
+      propertyPath: description
+      value: A piece required to save this world.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643214249237643702, guid: 82d4d3f83e3970845ab4096bfaf50ecb, type: 3}
+      propertyPath: maxQuantity
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 82d4d3f83e3970845ab4096bfaf50ecb, type: 3}
 --- !u!1001 &382604309
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26454,6 +26559,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5233365517448181564, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
+      propertyPath: dialogue.altDialogueLines.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5233365517448181564, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
       propertyPath: dialogue.dialogueLines.Array.data[0].line
       value: Hello Adventurer.
       objectReference: {fileID: 0}
@@ -26473,6 +26582,31 @@ PrefabInstance:
     - target: {fileID: 5233365517448181564, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
       propertyPath: dialogue.dialogueLines.Array.data[2].quest
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5233365517448181564, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
+      propertyPath: dialogue.altDialogueLines.Array.data[0].line
+      value: Did you do it?
+      objectReference: {fileID: 0}
+    - target: {fileID: 5233365517448181564, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
+      propertyPath: dialogue.altDialogueLines.Array.data[1].line
+      value: Oh? They gave something back?
+      objectReference: {fileID: 0}
+    - target: {fileID: 5233365517448181564, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
+      propertyPath: dialogue.altDialogueLines.Array.data[2].line
+      value: Ooh! Perfect.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5233365517448181564, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
+      propertyPath: dialogue.altDialogueLines.Array.data[3].line
+      value: You must be here for some reason right? I can sense it.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5233365517448181564, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
+      propertyPath: dialogue.altDialogueLines.Array.data[4].line
+      value: "You\u2019re looking for the Arcadian Pieces, well I have one, it\u2019s
+        an antique."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5233365517448181564, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
+      propertyPath: dialogue.altDialogueLines.Array.data[5].line
+      value: "But I\u2019m happy to give it to you, you\u2019ll need it."
       objectReference: {fileID: 0}
     - target: {fileID: 7984524479806740692, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
       propertyPath: m_LocalPosition.x
@@ -40080,11 +40214,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7979613848296506930, guid: 82d4d3f83e3970845ab4096bfaf50ecb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 457.16382
+      value: 457
       objectReference: {fileID: 0}
     - target: {fileID: 7979613848296506930, guid: 82d4d3f83e3970845ab4096bfaf50ecb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.15000382
+      value: 2.0900404
       objectReference: {fileID: 0}
     - target: {fileID: 7979613848296506930, guid: 82d4d3f83e3970845ab4096bfaf50ecb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -46716,6 +46850,7 @@ SceneRoots:
   - {fileID: 1615777473}
   - {fileID: 133064379}
   - {fileID: 1915595873}
+  - {fileID: 379393107}
   - {fileID: 183180481}
   - {fileID: 76919718}
   - {fileID: 1926285018}
