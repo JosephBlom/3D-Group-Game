@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3324280509091117587}
   - component: {fileID: 320497042052016335}
   - component: {fileID: -2381235805639682426}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fish
   m_TagString: Fish
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Fish
   description: New Description
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 72201bda6b1a0654889ceba498be0c61, type: 3}
   healthBonus: 0
   sheildBonus: 0
   baseDamage: 0

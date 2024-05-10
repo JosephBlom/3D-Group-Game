@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4315500326021963542}
   - component: {fileID: 3536583935104870871}
   - component: {fileID: 7389996580144228902}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Broccoli
   m_TagString: Broccoli
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Broccoli
   description: New Description
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 94071637e7d09194b8e4d98736954152, type: 3}
   healthBonus: 0
   sheildBonus: 0
   baseDamage: 0

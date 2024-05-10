@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3748647932032102058}
   - component: {fileID: 3235510023441151109}
   - component: {fileID: -5560508352332792812}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tomato
   m_TagString: Tomato
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Tomato
   description: New Description
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: fe849e638f53eff49b3181de4f1dff89, type: 3}
   healthBonus: 0
   sheildBonus: 0
   baseDamage: 0

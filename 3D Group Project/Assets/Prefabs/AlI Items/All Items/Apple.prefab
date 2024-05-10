@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2190277101982414724}
   - component: {fileID: 6275758905170123359}
   - component: {fileID: 3320259558302635912}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Apple
   m_TagString: Apple
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Apple
   description: New Description
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 5747153267563cf4e911a6906a43826d, type: 3}
   healthBonus: 0
   sheildBonus: 0
   baseDamage: 0

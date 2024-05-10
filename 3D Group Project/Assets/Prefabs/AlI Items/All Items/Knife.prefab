@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6281853863405593395}
   - component: {fileID: 5004205371930277924}
   - component: {fileID: -8771470084074337061}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Knife
   m_TagString: Knife
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Knife
   description: New Description
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 5b910b5394c609f4fa5d1014cbb72500, type: 3}
   healthBonus: 0
   sheildBonus: 0
   baseDamage: 0

@@ -120,7 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Plate
   description: New Description
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 778242ee527429e488566c5d2d3b672c, type: 3}
   healthBonus: 0
   sheildBonus: 0
   baseDamage: 0

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4800431917281650443}
   - component: {fileID: 9074005148136849144}
   - component: {fileID: 906448081060150153}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: KitchenProps_01
   m_TagString: Pot
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Pot
   description: New Description
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 66bbcfa1bc12f8c40babee62d7325fc2, type: 3}
   healthBonus: 0
   sheildBonus: 0
   baseDamage: 0

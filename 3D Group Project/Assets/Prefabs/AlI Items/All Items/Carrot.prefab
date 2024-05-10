@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2820147246341464806}
   - component: {fileID: 8985614805652588435}
   - component: {fileID: 758440166601127538}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Carrot
   m_TagString: Carrot
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Carrot
   description: New Description
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 0d5ff4cde0e4b204eb75f2ffa507d02a, type: 3}
   healthBonus: 0
   sheildBonus: 0
   baseDamage: 0

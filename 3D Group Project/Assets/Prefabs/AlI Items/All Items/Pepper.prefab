@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 767423317600671175}
   - component: {fileID: 1399567718674903674}
   - component: {fileID: -6521177604163386638}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pepper
   m_TagString: Pepper
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Pepper
   description: New Description
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: b820702ec22ddc741a10252b284acf73, type: 3}
   healthBonus: 0
   sheildBonus: 0
   baseDamage: 0
