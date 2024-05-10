@@ -9316,6 +9316,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5233365517448181564, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
+      propertyPath: dialogue.altDialogueLines.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5233365517448181564, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
       propertyPath: dialogue.dialogueLines.Array.data[0].line
       value: Welcome to our lively town!
       objectReference: {fileID: 0}
@@ -9353,6 +9357,23 @@ PrefabInstance:
     - target: {fileID: 5233365517448181564, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
       propertyPath: dialogue.dialogueLines.Array.data[4].quest
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5233365517448181564, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
+      propertyPath: dialogue.altDialogueLines.Array.data[0].line
+      value: Thank you for stopping the raiders!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5233365517448181564, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
+      propertyPath: dialogue.altDialogueLines.Array.data[1].line
+      value: Can we ask you of one more favor?
+      objectReference: {fileID: 0}
+    - target: {fileID: 5233365517448181564, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
+      propertyPath: dialogue.altDialogueLines.Array.data[2].line
+      value: "Nearby is a mineshaft, our miners haven\u2019t come back and we\u2019re
+        worried."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5233365517448181564, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
+      propertyPath: dialogue.altDialogueLines.Array.data[3].line
+      value: Can you please go find them and help guide them back to town?
       objectReference: {fileID: 0}
     - target: {fileID: 7984524479806740692, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15348,7 +15369,13 @@ MonoBehaviour:
   playerShield: 100
   playerShieldRegenTick: 0.05
   playerShieldRegenDelay: 5
+  deathCanvas: {fileID: 0}
   extraHealthActive: 0
+  playerMoveSpeed: 0
+  playerSprintSpeed: 0
+  playerJumpSpeed: 0
+  playerHeight: 0
+  playerOffset: 0
   isAlive: 1
 --- !u!54 &729115345
 Rigidbody:
@@ -34954,6 +34981,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5233365517448181564, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
+      propertyPath: dialogue.altDialogueLines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5233365517448181564, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
       propertyPath: dialogue.dialogueLines.Array.data[0].line
       value: Hello Adventurer.
       objectReference: {fileID: 0}
@@ -34977,6 +35008,14 @@ PrefabInstance:
     - target: {fileID: 5233365517448181564, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
       propertyPath: dialogue.dialogueLines.Array.data[3].quest
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5233365517448181564, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
+      propertyPath: dialogue.altDialogueLines.Array.data[0].line
+      value: Thank you for the tools!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5233365517448181564, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
+      propertyPath: dialogue.altDialogueLines.Array.data[1].line
+      value: We'll be able to work efficiently again.
       objectReference: {fileID: 0}
     - target: {fileID: 7463539345158865803, guid: 0f91336970d19164a93549ab4eab0b65, type: 3}
       propertyPath: playerManager
