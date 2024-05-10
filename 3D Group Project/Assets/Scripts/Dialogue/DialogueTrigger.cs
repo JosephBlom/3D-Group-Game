@@ -17,6 +17,7 @@ public class DialogueLine
 public class Dialogue
 {
     public List<DialogueLine> dialogueLines = new List<DialogueLine>();
+    public List<DialogueLine> altDialogueLines = new List<DialogueLine>();
 }
 
 public class DialogueTrigger : MonoBehaviour

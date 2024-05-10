@@ -10,7 +10,7 @@ public class QuestManager : MonoBehaviour
     public PlayerManager player;
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<PlayerManager>();
+        player = GameObject.FindGameObjectWithTag("PlayerObject").GetComponentInChildren<PlayerManager>();
     }
 
     public void AcceptQuest()

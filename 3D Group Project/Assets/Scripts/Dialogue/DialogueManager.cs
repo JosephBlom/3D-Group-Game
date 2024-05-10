@@ -15,24 +15,32 @@ public class DialogueManager : MonoBehaviour
     GameObject NPC;
 
     private Queue<DialogueLine> sentences;
+    private Queue<DialogueLine> altSenetences;
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         dialogueCanvas.enabled = false;
         sentences = new Queue<DialogueLine>();
+        altSenetences = new Queue<DialogueLine>();
     }
 
     public void StartDialogue(Dialogue dialogue, GameObject NPC)
     {
         this.NPC = NPC;
         sentences.Clear();
+        altSenetences.Clear();
 
         dialogueCanvas.enabled = true;
 
         foreach (DialogueLine sentence in dialogue.dialogueLines)
         {
             sentences.Enqueue(sentence);
+        }
+
+        foreach (DialogueLine words in dialogue.altDialogueLines)
+        {
+            altSenetences.Enqueue(words);
         }
 
         DisplayNextSentence();
@@ -57,11 +65,13 @@ public class DialogueManager : MonoBehaviour
             Quest quest = NPC.GetComponent<QuestManager>().quest;
             if (quest.completed)
             {
+                sentence = altSenetences.Dequeue();
                 acceptQuest.GetComponentInChildren<TextMeshProUGUI>().text = "Completed";
                 acceptQuest.enabled = false;
             }
             else if (quest.isActive && !quest.completed)
             {
+                sentence = altSenetences.Dequeue();
                 acceptQuest.enabled = false;
                 acceptQuest.GetComponentInChildren<TextMeshProUGUI>().text = "Need to complete mission!";
             }
