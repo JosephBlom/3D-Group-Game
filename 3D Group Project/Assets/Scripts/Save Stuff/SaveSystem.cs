@@ -35,4 +35,16 @@ public static class SaveSystem
             return null;
         }
     }
+
+    public static void StartNewGame()
+    {
+        string path = Application.persistentDataPath + "/.game";
+        if (File.Exists(path))
+        {
+            File.Delete(path);
+        }
+        BinaryFormatter formatter = new BinaryFormatter();
+        FileStream stream = new FileStream(path, FileMode.Create);
+        stream.Close();
+    }
 }
