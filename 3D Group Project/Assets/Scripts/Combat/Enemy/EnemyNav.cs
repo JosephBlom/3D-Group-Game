@@ -117,7 +117,7 @@ public class EnemyNav : MonoBehaviour
     private void RangedAttack()
     {
         Vector3 rangedRadius = player.transform.position - transform.position;
-        Vector3 targetPos = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
+        Vector3 targetPos = new Vector3(player.transform.position.x, transform.position.y + 1, player.transform.position.z);
         IEnumerator cooldown = MeleeCooldown(rangedFirerate);
         IEnumerator reloadCooldown = ReloadTime(rangedCooldown);
 
