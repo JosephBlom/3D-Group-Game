@@ -28,6 +28,13 @@ public class PlayerData
         foundSecrets = player.foundSecretsNames;
     }
 
+    public PlayerData()
+    {
+        counter = 0;
+        timer = 0;
+        gold = 0;
+    }
+
     private void fillInventory(Inventory script)
     {
         List<Slot> inventory = script.inventorySlots;

@@ -43,8 +43,5 @@ public static class SaveSystem
         {
             File.Delete(path);
         }
-        BinaryFormatter formatter = new BinaryFormatter();
-        FileStream stream = new FileStream(path, FileMode.Create);
-        stream.Close();
     }
 }
