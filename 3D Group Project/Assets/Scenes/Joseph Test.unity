@@ -1813,18 +1813,50 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1248837181153346051, guid: 6e4019dcbde26c8408f888128d0a9a67, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1248837181153346051, guid: 6e4019dcbde26c8408f888128d0a9a67, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1248837181153346051, guid: 6e4019dcbde26c8408f888128d0a9a67, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2481238512529961780, guid: 6e4019dcbde26c8408f888128d0a9a67, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2481238512529961780, guid: 6e4019dcbde26c8408f888128d0a9a67, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418242719736652026, guid: 6e4019dcbde26c8408f888128d0a9a67, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418242719736652026, guid: 6e4019dcbde26c8408f888128d0a9a67, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418242719736652026, guid: 6e4019dcbde26c8408f888128d0a9a67, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5253260683702870551, guid: 6e4019dcbde26c8408f888128d0a9a67, type: 3}
-      propertyPath: meleeDebug
+      propertyPath: animator
       value: 
-      objectReference: {fileID: 2816307868724958422, guid: 25df066311754a741a75d1870ddfeb4d, type: 3}
-    - target: {fileID: 5253260683702870551, guid: 6e4019dcbde26c8408f888128d0a9a67, type: 3}
-      propertyPath: meleeFirepoint
-      value: 
-      objectReference: {fileID: 825996873}
-    - target: {fileID: 5253260683702870551, guid: 6e4019dcbde26c8408f888128d0a9a67, type: 3}
-      propertyPath: rangedFirepoint
-      value: 
-      objectReference: {fileID: 825996872}
+      objectReference: {fileID: 1989674821}
+    - target: {fileID: 6408579106281893140, guid: 6e4019dcbde26c8408f888128d0a9a67, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6408579106281893140, guid: 6e4019dcbde26c8408f888128d0a9a67, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6782667309670242428, guid: 6e4019dcbde26c8408f888128d0a9a67, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.995264
@@ -1874,16 +1906,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e4019dcbde26c8408f888128d0a9a67, type: 3}
---- !u!1 &825996872 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4499763006227860804, guid: 6e4019dcbde26c8408f888128d0a9a67, type: 3}
-  m_PrefabInstance: {fileID: 825996871}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &825996873 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2183701882636800255, guid: 6e4019dcbde26c8408f888128d0a9a67, type: 3}
-  m_PrefabInstance: {fileID: 825996871}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &855720754
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3008,6 +3030,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1989674821 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4972723599130171459, guid: 6e4019dcbde26c8408f888128d0a9a67, type: 3}
+  m_PrefabInstance: {fileID: 825996871}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1997255724 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6959552068207030082, guid: a79f1d1ad7d152b42b1f8e379b20e688, type: 3}

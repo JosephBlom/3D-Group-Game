@@ -10,7 +10,7 @@ public class EnemyNav : MonoBehaviour
     [Header("Navigation Settings")]
     [SerializeField] float chaseDistance;
     [SerializeField] GameObject player;
-    [SerializeField] Animation moveAnimation;
+    [SerializeField] Animator animator;
     [SerializeField] bool patrolling;
 
     [Header("Enemy Settings")]
@@ -65,13 +65,25 @@ public class EnemyNav : MonoBehaviour
         {
             agent.destination = player.transform.position;
             if (patrolling)
+            {
                 GetComponent<Patrol>().chasePlayer = true;
+                animator.SetBool("Patrol", false);
+            }
+            animator.SetBool("Run", true);
+            animator.SetBool("Idle", false);
+
         }
         else
         {
             agent.destination = home;
             if (patrolling)
+            {
                 GetComponent<Patrol>().chasePlayer = false;
+                animator.SetBool("Patrol", true);
+                animator.SetBool("Run", false);
+            }
+               
+
         }
     }
     private IEnumerator MeleeAttack()
@@ -85,6 +97,7 @@ public class EnemyNav : MonoBehaviour
             gameObject.transform.LookAt(targetPos);
             agent.isStopped = true;
             yield return new WaitForSeconds(meleeDelay);
+            animator.SetBool("Attack", true);
             GameObject meleeHitbox = Instantiate(meleeDebug, meleeFirepoint.transform.position, Quaternion.identity);
             meleeHitbox.transform.localScale = new Vector3(meleeRange, meleeRange, meleeRange);
             meleeHitbox.transform.parent = meleeFirepoint.transform;

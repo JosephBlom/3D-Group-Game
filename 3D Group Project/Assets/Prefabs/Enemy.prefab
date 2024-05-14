@@ -1026,6 +1026,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chaseDistance: 8
   player: {fileID: 0}
+  moveAnimation: {fileID: 0}
+  patrolling: 0
   meleeEnabled: 1
   rangedEnabled: 0
   meleeRange: 2.5
