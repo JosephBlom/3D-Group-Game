@@ -53,8 +53,7 @@ public class MainMenuScript : MonoBehaviour
         int nextSceneIndex = currentSceneIndex + 1;
 
         SceneManager.LoadScene(nextSceneIndex);
-        saveManager.player = FindFirstObjectByType<Player>();
-        saveManager.SavePlayer();
+        SaveSystem.StartNewGame();
     }
     public void LoadGame()
     {
@@ -62,8 +61,8 @@ public class MainMenuScript : MonoBehaviour
         int nextSceneIndex = currentSceneIndex + 1;
 
         SceneManager.LoadScene(nextSceneIndex);
-        saveManager.player = FindFirstObjectByType<Player>();
-        saveManager.LoadPlayer();
+        //saveManager.player = FindFirstObjectByType<Player>();
+        //saveManager.LoadPlayer();
     }
     public void OpenSettings()
     {
