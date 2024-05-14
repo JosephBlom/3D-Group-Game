@@ -2864,7 +2864,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chaseDistance: 8
   player: {fileID: 0}
-  moveAnimation: {fileID: 7400000, guid: cf89b5b5696850049bee7666bdf12f11, type: 2}
+  animator: {fileID: 4972723599130171459}
   patrolling: 0
   meleeEnabled: 1
   rangedEnabled: 0

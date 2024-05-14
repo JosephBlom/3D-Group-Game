@@ -1081,6 +1081,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4101448461941989022, guid: a79f1d1ad7d152b42b1f8e379b20e688, type: 3}
+      propertyPath: deathCanvas
+      value: 
+      objectReference: {fileID: 1187296146}
     - target: {fileID: 4124004918291566867, guid: a79f1d1ad7d152b42b1f8e379b20e688, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1845,10 +1849,6 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5253260683702870551, guid: 6e4019dcbde26c8408f888128d0a9a67, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 1989674821}
     - target: {fileID: 6408579106281893140, guid: 6e4019dcbde26c8408f888128d0a9a67, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2526,6 +2526,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!223 &1187296146 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 512582567346510725, guid: dafaaf1ca24907e48a04132ecb31d784, type: 3}
+  m_PrefabInstance: {fileID: 1138220109}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1262991368 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8671495650519275044, guid: bc8ddb07ad052944ea268fbd2310c05a, type: 3}
@@ -3030,11 +3035,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &1989674821 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 4972723599130171459, guid: 6e4019dcbde26c8408f888128d0a9a67, type: 3}
-  m_PrefabInstance: {fileID: 825996871}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1997255724 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6959552068207030082, guid: a79f1d1ad7d152b42b1f8e379b20e688, type: 3}

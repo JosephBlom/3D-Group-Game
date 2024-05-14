@@ -110,6 +110,7 @@ public class EnemyNav : MonoBehaviour
         }
         else
         {
+            animator.SetBool("Attack", false);
             agent.isStopped = false;
         }
     }
