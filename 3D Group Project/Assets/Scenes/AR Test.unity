@@ -4432,6 +4432,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1241812038891773517, guid: 7480c7c03e60bd34ca2546c1a436505d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.859
+      objectReference: {fileID: 0}
     - target: {fileID: 1869088388648898078, guid: 7480c7c03e60bd34ca2546c1a436505d, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -4525,8 +4529,40 @@ PrefabInstance:
       value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 5293426906926081803, guid: 7480c7c03e60bd34ca2546c1a436505d, type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 7808518807400987192, guid: c57924375db6bc9448ce6cfcf5e054e5, type: 3}
+    - target: {fileID: 5293426906926081803, guid: 7480c7c03e60bd34ca2546c1a436505d, type: 3}
+      propertyPath: ammoCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5293426906926081803, guid: 7480c7c03e60bd34ca2546c1a436505d, type: 3}
+      propertyPath: bulletSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5293426906926081803, guid: 7480c7c03e60bd34ca2546c1a436505d, type: 3}
       propertyPath: meleeDamage
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5293426906926081803, guid: 7480c7c03e60bd34ca2546c1a436505d, type: 3}
+      propertyPath: meleeEnabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5293426906926081803, guid: 7480c7c03e60bd34ca2546c1a436505d, type: 3}
+      propertyPath: chaseDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5293426906926081803, guid: 7480c7c03e60bd34ca2546c1a436505d, type: 3}
+      propertyPath: rangedEnabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5293426906926081803, guid: 7480c7c03e60bd34ca2546c1a436505d, type: 3}
+      propertyPath: rangedFirerate
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5293426906926081803, guid: 7480c7c03e60bd34ca2546c1a436505d, type: 3}
+      propertyPath: rangedAggroDistance
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 5780762074401087699, guid: 7480c7c03e60bd34ca2546c1a436505d, type: 3}
       propertyPath: m_Sprite
@@ -14439,7 +14475,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8391908560003473798}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
