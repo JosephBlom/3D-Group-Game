@@ -50,6 +50,7 @@ public class ProjectileBehavior : MonoBehaviour
             }
             else
             {
+                SpawnParticle();
                 GameObject explosion = Instantiate(explosionCollider, gameObject.transform.position, Quaternion.identity);
                 explosion.transform.localScale = new Vector3(explosionRadius, explosionRadius, explosionRadius);
                 explosion.GetComponent<ExplosionBehavior>().shooter = shooter;

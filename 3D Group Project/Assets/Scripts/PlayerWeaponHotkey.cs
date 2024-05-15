@@ -32,8 +32,8 @@ public class PlayerWeaponHotkey : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            UnequipWeapon(shotgun);
             UnequipWeapon(automatic);
+            UnequipWeapon(shotgun);
 
             EquipWeapon(rocketLauncher);
             equipped = rocketLauncher;

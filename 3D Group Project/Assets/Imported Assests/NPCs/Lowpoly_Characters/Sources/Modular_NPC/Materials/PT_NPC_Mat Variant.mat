@@ -29,10 +29,15 @@ Material:
     m_Floats:
     - _LEATHER2SMOOTHNESS: 0
     m_Colors:
-    - _CLOTH3COLOR: {r: 0.254717, g: 0.14172243, b: 0.092515126, a: 0}
-    - _CLOTH4COLOR: {r: 0.38300994, g: 0.5234051, b: 0.5377358, a: 0}
-    - _EYESCOLOR: {r: 0.36320755, g: 0.7264151, b: 0, a: 1}
+    - _CLOTH1COLOR: {r: 0.18709433, g: 0.011472771, b: 0.011472771, a: 0}
+    - _CLOTH2COLOR: {r: 0.509434, g: 0, b: 0, a: 0}
+    - _CLOTH3COLOR: {r: 0.31132078, g: 0, b: 0.005744395, a: 0}
+    - _CLOTH4COLOR: {r: 1, g: 1, b: 1, a: 0}
+    - _EYESCOLOR: {r: 0.5566038, g: 0, b: 0.27702925, a: 1}
+    - _HAIRCOLOR: {r: 0.3207547, g: 0.16811314, b: 0.11044855, a: 0}
     - _LEATHER1COLOR: {r: 0, g: 0, b: 0, a: 1}
-    - _LEATHER2COLOR: {r: 0.7830189, g: 0.25574434, b: 0, a: 1}
+    - _LEATHER2COLOR: {r: 0, g: 0, b: 0, a: 1}
+    - _LEATHER3COLOR: {r: 0, g: 0, b: 0, a: 1}
+    - _LEATHER4COLOR: {r: 0.2830189, g: 0.2830189, b: 0.2830189, a: 1}
     - _SKINCOLOR: {r: 0.8679245, g: 0.6100036, b: 0.53631186, a: 1}
   m_BuildTextureStacks: []
