@@ -58,8 +58,6 @@ public class PlayerHealthSystem : MonoBehaviour
         playerUI = GetComponent<PlayerUI>();
         maxHealth = playerHealth;
         maxShield = playerShield;
-        Debug.Log("maxHealth = " + maxHealth);
-        Debug.Log("maxSheild = " + maxShield);
     }
     private void Update()
     {
