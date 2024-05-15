@@ -2756,6 +2756,7 @@ GameObject:
   - component: {fileID: 6160038180585171124}
   - component: {fileID: 8366803506221400716}
   - component: {fileID: 8877987607921918805}
+  - component: {fileID: 7123641679440395633}
   m_Layer: 9
   m_Name: LowPolySkeleton
   m_TagString: Untagged
@@ -2949,6 +2950,28 @@ CapsuleCollider:
   m_Height: 1.4
   m_Direction: 1
   m_Center: {x: 0, y: 0.7, z: 0}
+--- !u!114 &7123641679440395633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8172442304542317006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01fa0c039ada4214e8335d97fd97925e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemDrops:
+  - {fileID: 2868853890169812279, guid: d201902fd2a31bb4db845a600b20d922, type: 3}
+  - {fileID: 8175730195772822054, guid: ecb12b08f27d82b4899207c4222a5d47, type: 3}
+  - {fileID: 3463602224925877302, guid: c58e9eea0f1af0343897c941068dda78, type: 3}
+  - {fileID: 4896742202223629583, guid: 48fc09df7cd701741b5ded17923f72ad, type: 3}
+  - {fileID: 406756041984939561, guid: 37d6f72b7210e014f840b42386368b3f, type: 3}
+  - {fileID: 8816901499698493001, guid: 83f72650df5c39941b236ab3772edfe6, type: 3}
+  - {fileID: 2240590521259217963, guid: 3625933a5b4b7624aaf5eb429b22b2ce, type: 3}
+  itemsToDrop: []
+  goldAmount: 0
 --- !u!1 &8569649574974592577
 GameObject:
   m_ObjectHideFlags: 0

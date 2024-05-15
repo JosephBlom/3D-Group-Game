@@ -156,4 +156,4 @@ MonoBehaviour:
   currentQuantity: 1
   maxQuantity: 1
   cost: 1
-  dropChance: 0
+  dropChance: 100

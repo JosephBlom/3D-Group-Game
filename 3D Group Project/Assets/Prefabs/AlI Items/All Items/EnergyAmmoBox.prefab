@@ -212,7 +212,7 @@ MonoBehaviour:
   currentQuantity: 1
   maxQuantity: 16
   cost: 1
-  dropChance: 0
+  dropChance: 10
 --- !u!114 &899163101653587622
 MonoBehaviour:
   m_ObjectHideFlags: 0
