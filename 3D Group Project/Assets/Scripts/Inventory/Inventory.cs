@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Inventory : MonoBehaviour
 {
@@ -28,6 +29,9 @@ public class Inventory : MonoBehaviour
     [SerializeField] ItemList list;
     private Player player;
     private List<Item> allItems;
+
+    [Header("Specific Items")]
+    public List<Item> crystals = new List<Item>();
 
     private PlayerManager playerManager;
     public bool canUse = true;
@@ -110,6 +114,10 @@ public class Inventory : MonoBehaviour
                 if (hasClicked) //pick up
                 {
                     Item newItem = hit.collider.GetComponent<Item>();
+                    if (newItem.CompareTag("Crystal"))
+                    {
+                        CheckForWin();
+                    }
                     if (newItem)
                     {
                         playerManager.quest.goal.ItemCollected(hit.collider.tag);
@@ -337,6 +345,40 @@ public class Inventory : MonoBehaviour
                 droppedItem.GetComponent<Item>().currentQuantity = curSlot.slotQuantity;
                 curSlot.setItem(null, null);
                 break;
+            }
+        }
+    }
+
+    void CheckForWin()
+    {
+        for(int i = 0; i < inventorySlots.Count; i++)
+        {
+            List<Item> items = new List<Item>();
+            Slot curSlot = inventorySlots[i];
+            foreach(Item crystal in crystals)
+            {
+                if(crystal.name == curSlot.getItem().name)
+                {
+                    items.Add(curSlot.getItem());
+                }
+            }
+
+            if(items.Count == crystals.Count)
+            {
+                player.timerOn = false;
+                if(player.fastestTime == 0)
+                {
+                    player.fastestTime = player.timer;
+                }
+                else
+                {
+                    if(player.fastestTime > player.timer)
+                    {
+                        player.fastestTime = player.timer;
+                    }
+                }
+
+                SceneManager.LoadScene(0);
             }
         }
     }

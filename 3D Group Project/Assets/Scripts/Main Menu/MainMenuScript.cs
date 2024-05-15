@@ -11,6 +11,7 @@ public class MainMenuScript : MonoBehaviour
     [Header("Cutscene UI")]
     [SerializeField] public TextMeshProUGUI titleText;
     [SerializeField] public Canvas cutsceneCanvas;
+    [SerializeField] public TextMeshProUGUI fastTimeTxt;
 
     [Header("Canvas Objects")]
     [SerializeField] private Canvas settingsCanvas;
@@ -19,6 +20,7 @@ public class MainMenuScript : MonoBehaviour
 
     [Header("misc")]
     [SerializeField] private CanvasGroup fadegroup;
+    public Player player;
     public bool fadeIn = false;
     public bool fadeOut = false;
 
@@ -34,6 +36,8 @@ public class MainMenuScript : MonoBehaviour
         settingsCanvas.enabled = false;
         mainMenuGameCanvas.enabled = false;
         warningCanvas.enabled = false;
+
+        fastTimeTxt.text = "Fastest Time: " + player.fastestTime;
     }
 
     public void OpenGameOptions()

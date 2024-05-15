@@ -7,6 +7,7 @@ public class PlayerData
 {
     public int counter;
     public float timer;
+    public float fastestTime;
     public List<string> itemNames = new List<string>();
     public List<string> itemDescription = new List<string>();
     public List<int> itemCurQuantity = new List<int>();
@@ -19,6 +20,7 @@ public class PlayerData
     {
         counter = player.counter;
         timer = player.timer;
+        fastestTime = player.fastestTime;
         gold = player.gold;
         fillInventory(player.GetComponent<Inventory>());
         position = new float[3];
@@ -32,6 +34,7 @@ public class PlayerData
     {
         counter = 0;
         timer = 0;
+        fastestTime = 0;
         gold = 0;
     }
 
