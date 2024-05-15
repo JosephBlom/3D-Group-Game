@@ -9,6 +9,7 @@ public class ProjectileBehavior : MonoBehaviour
     [SerializeField] private bool delayedExplosive = false;
 
     [Header("Variant Settings")]
+    [SerializeField] public GameObject collisionParticle;
     [SerializeField] public GameObject explosionCollider;
     [SerializeField] private int explosionDelay = 5;
     [SerializeField] private float explosionRadius = 5;
@@ -59,6 +60,7 @@ public class ProjectileBehavior : MonoBehaviour
         }
         if(despawnOnCollision && !explosive)
         {
+            SpawnParticle();
             Destroy(gameObject);
         }
     }
@@ -72,6 +74,14 @@ public class ProjectileBehavior : MonoBehaviour
         Destroy(gameObject);
         Destroy(explosion, 2.5f);
         StopAllCoroutines();
+    }
+
+    private void SpawnParticle()
+    {
+        collisionParticle.SetActive(true);
+        collisionParticle.transform.parent = null;
+        collisionParticle.transform.position = gameObject.transform.position;
+        Destroy(collisionParticle, 3);
     }
 
 }

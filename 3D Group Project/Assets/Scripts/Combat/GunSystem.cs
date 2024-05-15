@@ -127,4 +127,9 @@ public class GunSystem : MonoBehaviour
         Debug.Log("Reloaded. new ammo is " + ammoCount);
         canAttack = true;
     }
+
+    private void OnDisable()
+    {
+        canAttack = true;
+    }
 }
