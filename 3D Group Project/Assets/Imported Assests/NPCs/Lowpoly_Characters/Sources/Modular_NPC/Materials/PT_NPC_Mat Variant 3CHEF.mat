@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PT_NPC_Mat Variant
+  m_Name: PT_NPC_Mat Variant 3CHEF
   m_Shader: {fileID: 4800000, guid: 5fdb92501eac48d4a87329098a14e790, type: 3}
-  m_Parent: {fileID: 2100000, guid: c79855c6f54ed954293d041acc3120a8, type: 2}
+  m_Parent: {fileID: 2100000, guid: 95496a5642aad1149b46bc669137ad51, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords:
@@ -30,10 +30,10 @@ Material:
     - _LEATHER2SMOOTHNESS: 0
     m_Colors:
     - _CLOTH1COLOR: {r: 0.18709433, g: 0.011472771, b: 0.011472771, a: 0}
-    - _CLOTH2COLOR: {r: 0.5849056, g: 0.42212528, b: 0.42212528, a: 0}
-    - _CLOTH3COLOR: {r: 0.2615817, g: 0.21146315, b: 0.4528302, a: 0}
-    - _CLOTH4COLOR: {r: 1, g: 0.7216981, b: 0.7216981, a: 0}
-    - _EYESCOLOR: {r: 0.4316701, g: 0.9433962, b: 0.3693485, a: 1}
+    - _CLOTH2COLOR: {r: 0.509434, g: 0, b: 0, a: 0}
+    - _CLOTH3COLOR: {r: 0.31132078, g: 0, b: 0.005744395, a: 0}
+    - _CLOTH4COLOR: {r: 1, g: 1, b: 1, a: 0}
+    - _EYESCOLOR: {r: 0.5566038, g: 0, b: 0.27702925, a: 1}
     - _HAIRCOLOR: {r: 0.3207547, g: 0.16811314, b: 0.11044855, a: 0}
     - _LEATHER1COLOR: {r: 0, g: 0, b: 0, a: 1}
     - _LEATHER2COLOR: {r: 0, g: 0, b: 0, a: 1}
