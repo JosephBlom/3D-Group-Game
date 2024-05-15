@@ -61,6 +61,7 @@ public class PauseManager : MonoBehaviour
     void lockMouse(bool enable)
     {
         Cursor.lockState = enable ? CursorLockMode.None : CursorLockMode.Locked;
+        Cursor.visible = enable;
         FindFirstObjectByType<StarterAssets.StarterAssetsInputs>().gameObject.GetComponent<StarterAssets.StarterAssetsInputs>().cursorInputForLook = !enable;
     }
 }
