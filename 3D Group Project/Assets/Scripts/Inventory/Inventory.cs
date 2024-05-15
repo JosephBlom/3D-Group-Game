@@ -51,7 +51,7 @@ public class Inventory : MonoBehaviour
 
     private void Update()
     {
-        itemRaycast(Input.GetMouseButtonDown(0));
+        itemRaycast(Input.GetKeyDown(KeyCode.E));
 
         if (Input.GetKeyDown(KeyCode.Z) && canUse)
         {
@@ -99,6 +99,14 @@ public class Inventory : MonoBehaviour
         {
             if(hit.collider != null)
             {
+                if(Input.GetKeyDown(KeyCode.E) && hit.collider.gameObject.tag == "Ammo")
+                {
+                    int ammoType = hit.collider.gameObject.GetComponent<AmmoBox>().ammoType;
+
+                    GetComponent<PlayerAmmoManager>().AddAmmo(hit.collider.gameObject.GetComponent<AmmoBox>().ammoAdded, ammoType);
+                    Destroy(hit.collider.gameObject);
+                    return;
+                }
                 if (hasClicked) //pick up
                 {
                     Item newItem = hit.collider.GetComponent<Item>();

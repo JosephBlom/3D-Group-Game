@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   automatic: 0
-  bullet: {fileID: 7808518807400987192, guid: 6e8ae2e3421f0684fb9481db9100445d, type: 3}
+  bullet: {fileID: 7808518807400987192, guid: e4ce2ac99a289bb4bbf2b2f2e779a858, type: 3}
   bulletCount: 7
   explosionDamage: 35
   weaponInaccuracy: 0.15
@@ -168,3 +168,4 @@ MonoBehaviour:
   firepoint: {fileID: 696492633184019784}
   playerAmmoManager: {fileID: 0}
   ammoCount: 0
+  active: 1
